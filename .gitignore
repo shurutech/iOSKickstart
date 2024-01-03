@@ -1,0 +1,116 @@
+
+# Xcode
+.DS_Store
+*/.DS_Store
+*.swp
+*.xcuserdatad
+*/DerivedData/
+*/.idea/
+*/xcuserdata/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Checkouts
+Carthage/Build
+
+# Swift Package Manager
+.build/
+Packages/
+
+# Compiled source
+*.o
+*.link
+*.swiftdoc
+*.swiftmodule
+
+# Generated files
+*.hmap
+*.ipa
+*.dSYM.zip
+*.bcsymbolmap
+
+# Xcode user-specific files
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+
+# Android
+local.properties
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# IDE (e.g., AppCode, Rider)
+.idea/
+
+# Mac
+.DS_Store
+
+# Playgrounds
+.playground
+
+# Swift Package Manager
+.build/
+
+# CocoaPods
+/Pods
+Podfile.lock
+
+# Carthage
+/Carthage
+/Carthage/Checkouts
+
+# Accio dependency manager
+/.accio/
+
+# Bitcode
+*.bitcode
+
+# Various settings
+*.hmap
+# *.xcworkspace
+
+# Package directories
+.packages
+.package.resolved
+
+# SPM manifest
+# Package.resolved
+
+# Xcode
+xcuserdata/
+
+# macOS
+.DS_Store
+
+# Xcode per-user config
+*.xcuserdatad
+
+# Xcode workspace
+#*.xcworkspace
+
+# Xcode project
+#*.xcodeproj
+
+# Swift Package Manager
+.build/
+
+# Mint
+/Mintfile
+
+# Temporary files
+.DS_Store
+
+# Package directories
+.packages
+
+# Code owners
+CODEOWNERS
+
