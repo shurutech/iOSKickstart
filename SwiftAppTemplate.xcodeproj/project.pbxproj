@@ -8,17 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		6B67758D2B4537E20014DAC3 /* SwiftAppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */; };
-		6B67758F2B4537E20014DAC3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67758E2B4537E20014DAC3 /* ContentView.swift */; };
+		6B67758F2B4537E20014DAC3 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67758E2B4537E20014DAC3 /* SplashScreen.swift */; };
 		6B6775912B4537E30014DAC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B6775902B4537E30014DAC3 /* Assets.xcassets */; };
 		6B6775942B4537E30014DAC3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B6775932B4537E30014DAC3 /* Preview Assets.xcassets */; };
+		6B67759D2B454D310014DAC3 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67759C2B454D310014DAC3 /* RootCoordinator.swift */; };
+		6B6775A22B4552780014DAC3 /* AuthenticationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775A12B4552780014DAC3 /* AuthenticationScreen.swift */; };
+		6B6775A42B45528D0014DAC3 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775A32B45528D0014DAC3 /* OnboardingScreen.swift */; };
+		6B6775A62B455F790014DAC3 /* AcceptTermsAndConditionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775A52B455F790014DAC3 /* AcceptTermsAndConditionsScreen.swift */; };
+		6B6775A92B4564610014DAC3 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775A82B4564610014DAC3 /* RootViewModel.swift */; };
+		6B6775AC2B456D220014DAC3 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775AB2B456D220014DAC3 /* AuthenticationManager.swift */; };
+		6B6775B02B457D800014DAC3 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775AF2B457D800014DAC3 /* MainScreen.swift */; };
+		6B6775B22B4583540014DAC3 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775B12B4583540014DAC3 /* PrimaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6B6775892B4537E20014DAC3 /* SwiftAppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAppTemplateApp.swift; sourceTree = "<group>"; };
-		6B67758E2B4537E20014DAC3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6B67758E2B4537E20014DAC3 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		6B6775902B4537E30014DAC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B6775932B4537E30014DAC3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6B67759C2B454D310014DAC3 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		6B6775A12B4552780014DAC3 /* AuthenticationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationScreen.swift; sourceTree = "<group>"; };
+		6B6775A32B45528D0014DAC3 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		6B6775A52B455F790014DAC3 /* AcceptTermsAndConditionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTermsAndConditionsScreen.swift; sourceTree = "<group>"; };
+		6B6775A82B4564610014DAC3 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		6B6775AB2B456D220014DAC3 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		6B6775AE2B45764E0014DAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6B6775AF2B457D800014DAC3 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		6B6775B12B4583540014DAC3 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,8 +52,8 @@
 		6B6775802B4537E20014DAC3 = {
 			isa = PBXGroup;
 			children = (
-				6B67758B2B4537E20014DAC3 /* SwiftAppTemplate */,
 				6B67758A2B4537E20014DAC3 /* Products */,
+				6B67758B2B4537E20014DAC3 /* SwiftAppTemplate */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +68,13 @@
 		6B67758B2B4537E20014DAC3 /* SwiftAppTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */,
-				6B67758E2B4537E20014DAC3 /* ContentView.swift */,
+				6B6775AE2B45764E0014DAC3 /* Info.plist */,
 				6B6775902B4537E30014DAC3 /* Assets.xcassets */,
+				6B6775AD2B4575300014DAC3 /* ReusableViews */,
 				6B6775922B4537E30014DAC3 /* Preview Content */,
+				6B6775AA2B456CEC0014DAC3 /* Managers */,
+				6B67759A2B454B0C0014DAC3 /* Screens */,
+				6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */,
 			);
 			path = SwiftAppTemplate;
 			sourceTree = "<group>";
@@ -65,6 +85,76 @@
 				6B6775932B4537E30014DAC3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6B67759A2B454B0C0014DAC3 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				6B6775A72B4562A20014DAC3 /* Splash */,
+				6B67759E2B4551CE0014DAC3 /* Authentication */,
+				6B67759F2B4551F70014DAC3 /* Onboarding */,
+				6B67759B2B454B9A0014DAC3 /* Root */,
+				6B6775A02B45520D0014DAC3 /* TermsAndConditions */,
+				6B6775AF2B457D800014DAC3 /* MainScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		6B67759B2B454B9A0014DAC3 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				6B67759C2B454D310014DAC3 /* RootCoordinator.swift */,
+				6B6775A82B4564610014DAC3 /* RootViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		6B67759E2B4551CE0014DAC3 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				6B6775A12B4552780014DAC3 /* AuthenticationScreen.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		6B67759F2B4551F70014DAC3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				6B6775A32B45528D0014DAC3 /* OnboardingScreen.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		6B6775A02B45520D0014DAC3 /* TermsAndConditions */ = {
+			isa = PBXGroup;
+			children = (
+				6B6775A52B455F790014DAC3 /* AcceptTermsAndConditionsScreen.swift */,
+			);
+			path = TermsAndConditions;
+			sourceTree = "<group>";
+		};
+		6B6775A72B4562A20014DAC3 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				6B67758E2B4537E20014DAC3 /* SplashScreen.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		6B6775AA2B456CEC0014DAC3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6B6775AB2B456D220014DAC3 /* AuthenticationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		6B6775AD2B4575300014DAC3 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				6B6775B12B4583540014DAC3 /* PrimaryButton.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +227,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B67758F2B4537E20014DAC3 /* ContentView.swift in Sources */,
+				6B6775A42B45528D0014DAC3 /* OnboardingScreen.swift in Sources */,
+				6B6775AC2B456D220014DAC3 /* AuthenticationManager.swift in Sources */,
+				6B6775B22B4583540014DAC3 /* PrimaryButton.swift in Sources */,
+				6B6775A92B4564610014DAC3 /* RootViewModel.swift in Sources */,
+				6B67759D2B454D310014DAC3 /* RootCoordinator.swift in Sources */,
+				6B6775A22B4552780014DAC3 /* AuthenticationScreen.swift in Sources */,
+				6B6775A62B455F790014DAC3 /* AcceptTermsAndConditionsScreen.swift in Sources */,
+				6B6775B02B457D800014DAC3 /* MainScreen.swift in Sources */,
+				6B67758F2B4537E20014DAC3 /* SplashScreen.swift in Sources */,
 				6B67758D2B4537E20014DAC3 /* SwiftAppTemplateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,18 +372,25 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAppTemplate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftAppTemplate/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftAppTemplate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.learn.SwiftAppTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,18 +407,25 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAppTemplate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftAppTemplate/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftAppTemplate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.learn.SwiftAppTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
