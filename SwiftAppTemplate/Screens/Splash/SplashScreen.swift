@@ -2,7 +2,7 @@
 //  SplashScreen.swift
 //  SwiftAppTemplate
 //
-//  Created by Vijay Goswami on 03/01/24.
+//  Created by Vijay Goswami on 04/01/24.
 //
 
 import SwiftUI
