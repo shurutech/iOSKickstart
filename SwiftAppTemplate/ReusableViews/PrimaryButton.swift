@@ -8,21 +8,41 @@
 import SwiftUI
 
 struct PrimaryButton: View {
-    var label: String
-    var onClick: () -> Void
-    var isEnable: Bool
+    let label: String
+    let onClick: () -> Void
+    let isEnable: Bool
     
     // MARK: - Views
     var body: some View {
+        button
+        .padding(.horizontal, 20)
+    }
+    
+    var button : some View {
         Button(action: { onClick() }, label: {
             Text(label)
-                .foregroundColor(.white)
-                .padding(10)
-                .frame(maxWidth: .infinity)
-                .background(isEnable ? Color.green : Color.gray)
-                .cornerRadius(10)
+                .applyButtonModifier(isEnabled: isEnable)
         })
-        .padding(.horizontal, 20)
+    }
+}
+
+extension View {
+    func applyButtonModifier(isEnabled: Bool) -> some View {
+        modifier(ButtonModifier(isEnabled: isEnabled))
+    }
+}
+
+struct ButtonModifier : ViewModifier {
+    var isEnabled: Bool
+    
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .padding(12)
+            .frame(maxWidth: .infinity)
+            .background(isEnabled ? Color.blue : Color.gray)
+            .cornerRadius(10)
+            .shadow(radius: 10)
     }
 }
 

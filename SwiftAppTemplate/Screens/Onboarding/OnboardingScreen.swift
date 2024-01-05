@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct OnboardingScreen: View {
-    var onCompleted: () -> Void
+    let onCompleted: () -> Void
+    let onBackPressed: () -> Void
     
     var body: some View {
         ZStack {
             VStack {
-                Text("Onboarding")
-                
-                PrimaryButton(label: "Done", onClick: {
-                   onCompleted()
-                }, isEnable: true)
+                Header(text: "Onboarding", hasBackButton: true, onBackArrowClick: { onBackPressed() })
+                Spacer()
+                TextButton(onClick: { onCompleted() }, text: "Done")
             }
+            .padding()
         }
     }
 }
 
 #Preview {
-    OnboardingScreen(onCompleted: {})
+    OnboardingScreen(onCompleted: {}, onBackPressed: {})
 }

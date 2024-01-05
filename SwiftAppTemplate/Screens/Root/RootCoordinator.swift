@@ -32,13 +32,13 @@ struct RootCoordinator: View {
                         appStart()
                     }
             case .authorisation:
-                AuthenticationScreen()
+                AuthorizationScreen()
             case .acceptPolicy:
                 AcceptTermsAndConditionsScreen(onCompleted: { rootViewModel.markTermsAndConditionsAccepted() })
             case .onboarding:
-                OnboardingScreen(onCompleted: { rootViewModel.markOnboardingDone() })
+                OnboardingScreen(onCompleted: { rootViewModel.markOnboardingDone() }, onBackPressed: { rootViewModel.isTermsAndConditionsAccepted = false })
             case .mainApp:
-                MainScreen()
+                HomeView()
             }
         }
         .onChange(of: rootViewModel.isAppStartCompleted) { _ in updateRoot() }
