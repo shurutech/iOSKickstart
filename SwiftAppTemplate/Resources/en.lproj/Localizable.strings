@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  SwiftAppTemplate
+
+  Created by Vijay Goswami on 05/01/24.
+  
+*/
+
+//MARK: - AuthorizationScreen
+"Login/SignUp" = "Login/SignUp";
+"Login" = "Login";
+
+//MARK: - AcceptTermsAndConditionsScreen
+"Terms & Conditions" = "Terms & Conditions";
+"Accept" = "Accept";
+
+//MARK: - OnboardingScreen
+"Onboarding" = "Onboarding";
+"Done" = "Done";

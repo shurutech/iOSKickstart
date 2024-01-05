@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct OnboardingScreen: View {
+    private let title: LocalizedStringKey = "Onboarding"
+    private let buttonLabel: LocalizedStringKey = "Done"
     let onCompleted: () -> Void
     let onBackPressed: () -> Void
     
     var body: some View {
         ZStack {
             VStack {
-                Header(text: "Onboarding", hasBackButton: true, onBackArrowClick: { onBackPressed() })
+                Header(text: title, hasBackButton: true, onBackArrowClick: { onBackPressed() })
                 Spacer()
-                TextButton(onClick: { onCompleted() }, text: "Done")
+                TextButton(onClick: { onCompleted() }, text: buttonLabel)
             }
             .padding()
         }

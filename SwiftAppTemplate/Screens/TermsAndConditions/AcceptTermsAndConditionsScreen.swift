@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct AcceptTermsAndConditionsScreen: View {
+    private let title: LocalizedStringKey = "Terms & Conditions"
+    private let buttonLabel: LocalizedStringKey = "Accept"
+    
     let onCompleted: () -> Void
     
     var body: some View {
         ZStack {
             VStack {
-                Header(text: "Terms & Conditions")
+                Header(text: title)
                 Spacer()
-                TextButton(onClick: { onCompleted() }, text: "Accept")
+                TextButton(onClick: { onCompleted() }, text: buttonLabel)
             }
         }
         .padding()

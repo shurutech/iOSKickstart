@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct AuthorizationScreen: View {
+    private let title: LocalizedStringKey = "Login/SignUp"
+    private let buttonLabel: LocalizedStringKey = "Login"
+    
+    //MARK: - Views
     
     var body: some View {
         ZStack {
             VStack {
-                Header(text: "Login/SignUp")
+                Header(text: title)
                 Spacer()
-                TextButton(onClick: { AuthenticationManager.shared.login() }, text: "Login")
+                TextButton(onClick: onLoginButtonClick, text: buttonLabel)
             }
             .padding()
         }
+    }
+    
+    //MARK: - Functions
+    
+    private func onLoginButtonClick() {
+        AuthenticationManager.shared.login()
     }
 }
 
