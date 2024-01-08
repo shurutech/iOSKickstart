@@ -18,12 +18,13 @@ struct Header : View {
                 if(hasBackButton) {
                     Button(action: onBackArrowClick) {
                         Image(systemName: "arrow.backward")
+                            .foregroundColor(.primary)
                     }
                 }
                 Spacer()
                 Text(text)
-                    .font(.title)
-                    .bold()
+                    .font(.notoSansBold24)
+                    .foregroundColor(.primary)
                 Spacer()
             }
             .padding()

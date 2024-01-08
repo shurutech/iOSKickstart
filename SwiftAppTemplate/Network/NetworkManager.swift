@@ -26,7 +26,7 @@ class NetworkManager {
     
     // MARK: - Methods
     
-    func request(_ api: ApiEndpoint, completion: @escaping (Result<Data, Error>) -> Void) {
+    func request(_ api: APIEndpoints, completion: @escaping (Result<Data, Error>) -> Void) {
         let authToken = "example" //getAuthToken()
 
         let url = authBaseURL + api.path

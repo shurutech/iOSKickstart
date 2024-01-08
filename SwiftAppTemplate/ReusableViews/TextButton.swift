@@ -15,13 +15,13 @@ struct TextButton : View {
     var onClick: () -> Void
     var text: LocalizedStringKey
     var style: Style = .filled
-    var color: Color = .blue
+    var color: Color = .primary
     
     // MARK: - Views
     var body: some View {
         Button(action: onClick){
             Text(text)
-                .font(.subheadline)
+                .font(.notoSansMedium12)
                 .frame(maxWidth: .infinity)
                 .padding(14)
                 .foregroundColor(style == .filled ? .white : color)
@@ -41,12 +41,12 @@ struct TextButton : View {
 
 #Preview {
     VStack{
-        TextButton(onClick: {}, text: "Click Me", style: .filled, color: .blue)
-        TextButton(onClick: {}, text: "Click Me", style: .outline, color: .blue)
-        TextButton(onClick: {}, text: "Click Me", style: .textOnly, color: .blue)
+        TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primary)
+        TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primary)
+        TextButton(onClick: {}, text: "Click Me", style: .textOnly, color: .primary)
         HStack{
-            TextButton(onClick: {}, text: "Click Me", style: .outline, color: .blue)
-            TextButton(onClick: {}, text: "Click Me", style: .filled, color: .blue)
+            TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primary)
+            TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primary)
         }
     }
     .padding()

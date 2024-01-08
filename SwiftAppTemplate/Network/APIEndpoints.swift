@@ -6,7 +6,7 @@
 //
 import Alamofire
 
-enum ApiEndpoint{
+enum APIEndpoints{
     case getWeather(city: String)
     case updateUser(user: User)
     
