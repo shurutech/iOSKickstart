@@ -31,6 +31,8 @@
 		C9D533B32B45425300E6E9B7 /* MessageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D533B22B45425300E6E9B7 /* MessageTabView.swift */; };
 		C9D533B72B45455F00E6E9B7 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D533B62B45455F00E6E9B7 /* TabItem.swift */; };
 		C9D533BA2B45459800E6E9B7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D533B92B45459800E6E9B7 /* HomeViewModel.swift */; };
+		C9FE2B872B46BE2400E7D49E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE2B862B46BE2400E7D49E /* CardView.swift */; };
+		C9FE2B892B46CB4D00E7D49E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE2B882B46CB4D00E7D49E /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		C9D533B22B45425300E6E9B7 /* MessageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTabView.swift; sourceTree = "<group>"; };
 		C9D533B62B45455F00E6E9B7 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		C9D533B92B45459800E6E9B7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C9FE2B862B46BE2400E7D49E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C9FE2B882B46CB4D00E7D49E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +139,14 @@
 		6B67759A2B454B0C0014DAC3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C9D533AB2B453F3F00E6E9B7 /* Home */,
 				6B6775A72B4562A20014DAC3 /* Splash */,
 				6B67759E2B4551CE0014DAC3 /* Authentication */,
 				6B67759F2B4551F70014DAC3 /* Onboarding */,
 				6B67759B2B454B9A0014DAC3 /* Root */,
 				6B6775A02B45520D0014DAC3 /* TermsAndConditions */,
 				6B6775AF2B457D800014DAC3 /* MainScreen.swift */,
+				C9FE2B882B46CB4D00E7D49E /* WebView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 			children = (
 				6B71035F2B4822B800A2F5F1 /* Header.swift */,
 				6B7103612B4822D000A2F5F1 /* TextButton.swift */,
+				6B6775B12B4583540014DAC3 /* PrimaryButton.swift */,
+				C9FE2B862B46BE2400E7D49E /* CardView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -341,6 +349,8 @@
 				C9D533BA2B45459800E6E9B7 /* HomeViewModel.swift in Sources */,
 				C9D533B72B45455F00E6E9B7 /* TabItem.swift in Sources */,
 				C9D533AF2B45421B00E6E9B7 /* HomeTabView.swift in Sources */,
+				C9FE2B892B46CB4D00E7D49E /* WebView.swift in Sources */,
+				C9FE2B872B46BE2400E7D49E /* CardView.swift in Sources */,
 				C9D533B32B45425300E6E9B7 /* MessageTabView.swift in Sources */,
 				053960DA2B458FF800E58369 /* User.swift in Sources */,
 				053960DC2B459BE800E58369 /* NetworkManager.swift in Sources */,

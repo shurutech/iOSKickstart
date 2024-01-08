@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MessageTabView: View {
     var body: some View {
-        Text("This is the messages screen")
+        WebView(urlString: "https://shurutech.com/")
+            .edgesIgnoringSafeArea(.top)
     }
 }
 

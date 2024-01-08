@@ -9,7 +9,14 @@ import SwiftUI
 
 struct HomeTabView: View {
     var body: some View {
-        Text("This is the Home Screen")
+        ScrollView{
+            VStack{
+                ForEach(0..<10){_ in
+                    CardView().padding(5)
+                }
+            }
+        }
+        .padding(.horizontal, 20)
     }
 }
 
