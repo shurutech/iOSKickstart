@@ -138,7 +138,7 @@
 		6B67759A2B454B0C0014DAC3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6BCD5E542B4BD891004CF3AC /* Home */,
+				6BCD5E542B4BD891004CF3AC /* Main */,
 				6B6775A72B4562A20014DAC3 /* Splash */,
 				6B67759E2B4551CE0014DAC3 /* Authentication */,
 				6B67759F2B4551F70014DAC3 /* Onboarding */,
@@ -217,7 +217,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		6BCD5E542B4BD891004CF3AC /* Home */ = {
+		6BCD5E542B4BD891004CF3AC /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				6BCD5E552B4BD891004CF3AC /* TabViews */,
@@ -225,8 +225,8 @@
 				6BCD5E5B2B4BD891004CF3AC /* HomeView.swift */,
 				6BCD5E5C2B4BD891004CF3AC /* Models */,
 			);
-			name = Home;
-			path = ../../../../../../Downloads/Home;
+			name = Main;
+			path = ../../../../../../Downloads/Main;
 			sourceTree = "<group>";
 		};
 		6BCD5E552B4BD891004CF3AC /* TabViews */ = {
