@@ -286,6 +286,8 @@
 				6BB5611D2B4C19930026382B /* Colors.swift */,
 			);
 			path = Utils;
+               sourceTree = "<group>";
+        };
 		C92870162B4BF5F20007DD1E /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
