@@ -20,7 +20,6 @@ class NetworkManager {
 
     // MARK: - Attributes
     
-    private let authBaseURL = "base-url"
     private let session: Session = .default
     
     
@@ -29,7 +28,7 @@ class NetworkManager {
     func request(_ api: APIEndpoints, completion: @escaping (Result<Data, Error>) -> Void) {
         let authToken = "example" //getAuthToken()
 
-        let url = authBaseURL + api.path
+        let url = AppConfig.BASE_URL.absoluteString + api.path
         var headers: HTTPHeaders = [:]
         headers.add(name: "Authorization", value: "Bearer \(authToken)")
         

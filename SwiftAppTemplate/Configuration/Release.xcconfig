@@ -1,0 +1,12 @@
+//
+//  Release.xcconfig
+//  SwiftAppTemplate
+//
+//  Created by Vijay Goswami on 08/01/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = https:/$()/example.release.com
+EXAMPLE_KEY = 123455_release
