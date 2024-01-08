@@ -9,16 +9,18 @@ import SwiftUI
 
 struct ProfileTabView: View {
     var body: some View {
-        UserInfo()
-        Spacer()
-        ScrollView{
-            VStack{
-                ForEach(0..<5){_ in
-                    CardView().padding(5)
+        VStack{
+            UserInfo()
+            Spacer()
+            ScrollView{
+                VStack{
+                    ForEach(0..<5){_ in
+                        CardView().padding(5)
+                    }
                 }
             }
+            .padding(.horizontal, 20)
         }
-        .padding(.horizontal, 20)
     }
 }
 

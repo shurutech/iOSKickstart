@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class HomeViewModel: ObservableObject {
+class MainViewModel: ObservableObject {
     @Published var selectedTab: Tab = .home
 
     var tabs: [Tab] = [.home, .profile, .messages]

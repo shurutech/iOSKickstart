@@ -11,7 +11,7 @@
 		053960D72B458B1F00E58369 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 053960D62B458B1F00E58369 /* Alamofire */; };
 		053960DA2B458FF800E58369 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053960D92B458FF800E58369 /* User.swift */; };
 		053960DC2B459BE800E58369 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053960DB2B459BE800E58369 /* NetworkManager.swift */; };
-		6B0EAA262B4BE024006D2CE4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA252B4BE024006D2CE4 /* HomeView.swift */; };
+		6B0EAA262B4BE024006D2CE4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA252B4BE024006D2CE4 /* MainView.swift */; };
 		6B0EAA2A2B4BE042006D2CE4 /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA272B4BE042006D2CE4 /* ProfileTabView.swift */; };
 		6B0EAA2B2B4BE042006D2CE4 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA282B4BE042006D2CE4 /* HomeTabView.swift */; };
 		6B0EAA2C2B4BE042006D2CE4 /* MessageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA292B4BE042006D2CE4 /* MessageTabView.swift */; };
@@ -45,12 +45,12 @@
 		053960D32B4584E100E58369 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		053960D92B458FF800E58369 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		053960DB2B459BE800E58369 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		6B0EAA252B4BE024006D2CE4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = SwiftAppTemplate/Screens/Home/HomeView.swift; sourceTree = SOURCE_ROOT; };
-		6B0EAA272B4BE042006D2CE4 /* ProfileTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTabView.swift; path = SwiftAppTemplate/Screens/Home/TabViews/ProfileTabView.swift; sourceTree = SOURCE_ROOT; };
-		6B0EAA282B4BE042006D2CE4 /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTabView.swift; path = SwiftAppTemplate/Screens/Home/TabViews/HomeTabView.swift; sourceTree = SOURCE_ROOT; };
-		6B0EAA292B4BE042006D2CE4 /* MessageTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTabView.swift; path = SwiftAppTemplate/Screens/Home/TabViews/MessageTabView.swift; sourceTree = SOURCE_ROOT; };
-		6B0EAA2D2B4BE061006D2CE4 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = SwiftAppTemplate/Screens/Home/ViewModels/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
-		6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabItem.swift; path = SwiftAppTemplate/Screens/Home/Models/TabItem.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA252B4BE024006D2CE4 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = SwiftAppTemplate/Screens/MainTabView/MainView.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA272B4BE042006D2CE4 /* ProfileTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTabView.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/ProfileTabView.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA282B4BE042006D2CE4 /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTabView.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/HomeTabView.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA292B4BE042006D2CE4 /* MessageTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTabView.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/MessageTabView.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA2D2B4BE061006D2CE4 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = SwiftAppTemplate/Screens/MainTabView/ViewModels/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabItem.swift; path = SwiftAppTemplate/Screens/MainTabView/Models/TabItem.swift; sourceTree = SOURCE_ROOT; };
 		6B6775892B4537E20014DAC3 /* SwiftAppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAppTemplateApp.swift; sourceTree = "<group>"; };
 		6B6775902B4537E30014DAC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		6B67759A2B454B0C0014DAC3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6B57B1E72B4BDEC200E62524 /* Home */,
+				C92870162B4BF5F20007DD1E /* MainTabView */,
 				6B6775A72B4562A20014DAC3 /* Splash */,
 				6B67759E2B4551CE0014DAC3 /* Authentication */,
 				6B67759F2B4551F70014DAC3 /* Onboarding */,
@@ -286,6 +286,41 @@
 				6BB5611D2B4C19930026382B /* Colors.swift */,
 			);
 			path = Utils;
+		C92870162B4BF5F20007DD1E /* MainTabView */ = {
+			isa = PBXGroup;
+			children = (
+				6B0EAA252B4BE024006D2CE4 /* MainView.swift */,
+				C92870172B4BF6070007DD1E /* TabViews */,
+				C92870182B4BF6150007DD1E /* ViewModels */,
+				C92870192B4BF6280007DD1E /* Models */,
+			);
+			path = MainTabView;
+			sourceTree = "<group>";
+		};
+		C92870172B4BF6070007DD1E /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				6B0EAA282B4BE042006D2CE4 /* HomeTabView.swift */,
+				6B0EAA272B4BE042006D2CE4 /* ProfileTabView.swift */,
+				6B0EAA292B4BE042006D2CE4 /* MessageTabView.swift */,
+			);
+			path = TabViews;
+			sourceTree = "<group>";
+		};
+		C92870182B4BF6150007DD1E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6B0EAA2D2B4BE061006D2CE4 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C92870192B4BF6280007DD1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,7 +413,7 @@
 				6B0EAA2A2B4BE042006D2CE4 /* ProfileTabView.swift in Sources */,
 				6B0EAA2B2B4BE042006D2CE4 /* HomeTabView.swift in Sources */,
 				6B7103642B48234000A2F5F1 /* AuthorizationScreen.swift in Sources */,
-				6B0EAA262B4BE024006D2CE4 /* HomeView.swift in Sources */,
+				6B0EAA262B4BE024006D2CE4 /* MainView.swift in Sources */,
 				6B6775A92B4564610014DAC3 /* RootViewModel.swift in Sources */,
 				6BB5611C2B4C02D10026382B /* Fonts.swift in Sources */,
 				6B0EAA302B4BE075006D2CE4 /* TabItem.swift in Sources */,

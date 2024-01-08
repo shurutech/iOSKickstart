@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    @StateObject var viewModel: HomeViewModel = HomeViewModel()
+struct MainView: View {
+    @StateObject var viewModel: MainViewModel = MainViewModel()
     
     var body: some View {
         TabView(selection: $viewModel.selectedTab) {
@@ -24,5 +24,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    MainView()
 }
