@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TabItem {
-    var title: String
+    var title: LocalizedStringKey
     var icon: String
     var view: AnyView
 }

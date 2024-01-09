@@ -22,11 +22,11 @@ enum Tab {
     var tabItem: TabItem {
         switch self {
         case .home:
-            return TabItem(title: "Home", icon: "house.circle.fill", view: AnyView(HomeTabView()))
+            return TabItem(title: LocalizedStringKey("Home"), icon: "house.circle.fill", view: AnyView(HomeTabView()))
         case .profile:
-            return TabItem(title: "Profile", icon: "person.crop.circle.fill", view: AnyView(ProfileTabView()))
+            return TabItem(title: LocalizedStringKey("Profile"), icon: "person.crop.circle.fill", view: AnyView(ProfileTabView()))
         case .messages:
-            return TabItem(title: "Messages", icon: "message.circle.fill", view: AnyView(MessageTabView()))
+            return TabItem(title: LocalizedStringKey("Messages"), icon: "message.circle.fill", view: AnyView(MessageTabView()))
         }
     }
 }

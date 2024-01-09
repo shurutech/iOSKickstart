@@ -17,3 +17,8 @@
 //MARK: - OnboardingScreen
 "Onboarding" = "Onboarding";
 "Next" = "Next";
+
+//MARK: - Tabs
+"Home" = "Home";
+"Profile" = "Profile";
+"Messages" = "Messages";

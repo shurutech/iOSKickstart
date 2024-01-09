@@ -8,45 +8,44 @@
 import SwiftUI
 
 struct ProfileTabView: View {
+    @State var presentSettingsPage = false
+    
     var body: some View {
-        VStack{
-            UserInfo()
-            Spacer()
-            ScrollView{
-                VStack{
-                    ForEach(0..<5){_ in
-                        CardView().padding(5)
+        NavigationView{
+            VStack{
+                HStack{
+                    UserInfoView()
+                    NavigationLink(destination: SettingsView()){
+                        Image(systemName: "gearshape")
+                            .resizable()
+                            .frame(width: 30, height: 30)
                     }
                 }
-            }
-            .padding(.horizontal, 20)
+                Spacer()
+                ScrollView{
+                    VStack{
+                        ForEach(0..<5){_ in
+                            CardView().padding(5)
+                        }
+                    }
+                }
+            }.padding(.horizontal, 25)
+
         }
     }
 }
 
-struct UserInfo: View{
+struct UserInfoView: View{
     var name = "User Name"
     var email = "useremail@shurutech.com"
     
     var body: some View{
         VStack{
-            TextKeyValue(key: "Name:", value: name)
-            TextKeyValue(key: "Email:", value: email)
-        }.padding(20)
+            TextKeyValueView(key: "Name:", value: name)
+            TextKeyValueView(key: "Email:", value: email)
+        }
     }
     
-}
-
-struct TextKeyValue: View {
-    var key: String
-    var value: String
-    
-    var body: some View {
-        HStack{
-            Text(key)
-            Text(value)
-        }.frame(maxWidth: .infinity, alignment: .leading)
-    }
 }
 
 #Preview {
