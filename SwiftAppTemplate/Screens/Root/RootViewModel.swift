@@ -22,8 +22,8 @@ class RootViewModel : ObservableObject {
         guard !isAppStartCompleted else { return }
         
         // All starting set up will be done here
-        // load time testing 2 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int(1.5 * 1000))) {
+        // testing load time 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int(2 * 1000))) {
             self.isAppStartCompleted = true
         }
        
