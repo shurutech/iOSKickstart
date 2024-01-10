@@ -38,7 +38,7 @@ struct RootCoordinator: View {
             case .onboarding:
                 OnboardingScreen(onCompleted: { rootViewModel.markOnboardingDone() }, onBackPressed: { rootViewModel.isTermsAndConditionsAccepted = false })
             case .mainApp:
-                MainView()
+                TabViewController()
             }
         }
         .onChange(of: rootViewModel.isAppStartCompleted) { _ in updateRoot() }

@@ -11,22 +11,22 @@ import SwiftUI
 class MainViewModel: ObservableObject {
     @Published var selectedTab: Tab = .home
 
-    var tabs: [Tab] = [.home, .profile, .messages]
+    var tabs: [Tab] = [.home, .profile, .support]
 }
 
 enum Tab {
     case home
     case profile
-    case messages
+    case support
 
     var tabItem: TabItem {
         switch self {
         case .home:
-            return TabItem(title: LocalizedStringKey("Home"), icon: "house.circle.fill", view: AnyView(HomeTabView()))
+            return TabItem(title: LocalizedStringKey("Home"), icon: "house.circle.fill", view: AnyView(HomeScreen()))
         case .profile:
-            return TabItem(title: LocalizedStringKey("Profile"), icon: "person.crop.circle.fill", view: AnyView(ProfileTabView()))
-        case .messages:
-            return TabItem(title: LocalizedStringKey("Messages"), icon: "message.circle.fill", view: AnyView(MessageTabView()))
+            return TabItem(title: LocalizedStringKey("Profile"), icon: "person.crop.circle.fill", view: AnyView(ProfileScreen()))
+        case .support:
+            return TabItem(title: LocalizedStringKey("Support"), icon: "message.circle.fill", view: AnyView(SupportScreen()))
         }
     }
 }

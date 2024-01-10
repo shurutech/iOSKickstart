@@ -11,10 +11,10 @@
 		053960D72B458B1F00E58369 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 053960D62B458B1F00E58369 /* Alamofire */; };
 		053960DA2B458FF800E58369 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053960D92B458FF800E58369 /* User.swift */; };
 		053960DC2B459BE800E58369 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053960DB2B459BE800E58369 /* NetworkManager.swift */; };
-		6B0EAA262B4BE024006D2CE4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA252B4BE024006D2CE4 /* MainView.swift */; };
-		6B0EAA2A2B4BE042006D2CE4 /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA272B4BE042006D2CE4 /* ProfileTabView.swift */; };
-		6B0EAA2B2B4BE042006D2CE4 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA282B4BE042006D2CE4 /* HomeTabView.swift */; };
-		6B0EAA2C2B4BE042006D2CE4 /* MessageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA292B4BE042006D2CE4 /* MessageTabView.swift */; };
+		6B0EAA262B4BE024006D2CE4 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA252B4BE024006D2CE4 /* TabViewController.swift */; };
+		6B0EAA2A2B4BE042006D2CE4 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA272B4BE042006D2CE4 /* ProfileScreen.swift */; };
+		6B0EAA2B2B4BE042006D2CE4 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA282B4BE042006D2CE4 /* HomeScreen.swift */; };
+		6B0EAA2C2B4BE042006D2CE4 /* SupportScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA292B4BE042006D2CE4 /* SupportScreen.swift */; };
 		6B0EAA2E2B4BE061006D2CE4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA2D2B4BE061006D2CE4 /* MainViewModel.swift */; };
 		6B0EAA302B4BE075006D2CE4 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */; };
 		6B6775912B4537E30014DAC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B6775902B4537E30014DAC3 /* Assets.xcassets */; };
@@ -40,9 +40,11 @@
 		6BB561272B4D50420026382B /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB561262B4D50420026382B /* LoaderView.swift */; };
 		6BE6626A2B46A8B4000FCFC9 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE662692B46A8B4000FCFC9 /* SplashScreen.swift */; };
 		6BF62A092B483394004E2165 /* SwiftAppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */; };
-		C928701C2B4C0EA70007DD1E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701B2B4C0EA70007DD1E /* SettingsView.swift */; };
+		C928701C2B4C0EA70007DD1E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */; };
 		C928701E2B4D2E290007DD1E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701D2B4D2E290007DD1E /* CustomTextField.swift */; };
 		C92870202B4D55EC0007DD1E /* TextKeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701F2B4D55EC0007DD1E /* TextKeyValueView.swift */; };
+		C92870222B4E82850007DD1E /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92870212B4E82850007DD1E /* UserPreferences.swift */; };
+		C96166152B4EC054001D6644 /* InfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96166142B4EC054001D6644 /* InfoScreen.swift */; };
 		C9FE2B872B46BE2400E7D49E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE2B862B46BE2400E7D49E /* CardView.swift */; };
 		C9FE2B892B46CB4D00E7D49E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE2B882B46CB4D00E7D49E /* WebView.swift */; };
 /* End PBXBuildFile section */
@@ -51,10 +53,10 @@
 		053960D32B4584E100E58369 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		053960D92B458FF800E58369 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		053960DB2B459BE800E58369 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		6B0EAA252B4BE024006D2CE4 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = SwiftAppTemplate/Screens/MainTabView/MainView.swift; sourceTree = SOURCE_ROOT; };
-		6B0EAA272B4BE042006D2CE4 /* ProfileTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTabView.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/ProfileTabView.swift; sourceTree = SOURCE_ROOT; };
-		6B0EAA282B4BE042006D2CE4 /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTabView.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/HomeTabView.swift; sourceTree = SOURCE_ROOT; };
-		6B0EAA292B4BE042006D2CE4 /* MessageTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTabView.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/MessageTabView.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA252B4BE024006D2CE4 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabViewController.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViewController.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA272B4BE042006D2CE4 /* ProfileScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileScreen.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/ProfileScreen.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA282B4BE042006D2CE4 /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeScreen.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/HomeScreen.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA292B4BE042006D2CE4 /* SupportScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SupportScreen.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/SupportScreen.swift; sourceTree = SOURCE_ROOT; };
 		6B0EAA2D2B4BE061006D2CE4 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = SwiftAppTemplate/Screens/MainTabView/ViewModels/MainViewModel.swift; sourceTree = SOURCE_ROOT; };
 		6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabItem.swift; path = SwiftAppTemplate/Screens/MainTabView/Models/TabItem.swift; sourceTree = SOURCE_ROOT; };
 		6B6775892B4537E20014DAC3 /* SwiftAppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,9 +86,11 @@
 		6BB561242B4C34CF0026382B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6BB561262B4D50420026382B /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		6BE662692B46A8B4000FCFC9 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		C928701B2B4C0EA70007DD1E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		C928701D2B4D2E290007DD1E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		C928701F2B4D55EC0007DD1E /* TextKeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextKeyValueView.swift; sourceTree = "<group>"; };
+		C92870212B4E82850007DD1E /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		C96166142B4EC054001D6644 /* InfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreen.swift; sourceTree = "<group>"; };
 		C9FE2B862B46BE2400E7D49E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C9FE2B882B46CB4D00E7D49E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +181,7 @@
 		6B67759A2B454B0C0014DAC3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C96166132B4EC044001D6644 /* Info */,
 				C928701A2B4C0E8D0007DD1E /* Settings */,
 				C92870162B4BF5F20007DD1E /* MainTabView */,
 				6B6775A72B4562A20014DAC3 /* Splash */,
@@ -267,6 +272,7 @@
 				6BB5611B2B4C02D10026382B /* Fonts.swift */,
 				6BB5611D2B4C19930026382B /* Colors.swift */,
 				6BB561222B4C32C80026382B /* AppConfig.swift */,
+				C92870212B4E82850007DD1E /* UserPreferences.swift */,
 				6BB561242B4C34CF0026382B /* Constants.swift */,
 			);
 			path = Utils;
@@ -284,7 +290,7 @@
 		C92870162B4BF5F20007DD1E /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
-				6B0EAA252B4BE024006D2CE4 /* MainView.swift */,
+				6B0EAA252B4BE024006D2CE4 /* TabViewController.swift */,
 				C92870172B4BF6070007DD1E /* TabViews */,
 				C92870182B4BF6150007DD1E /* ViewModels */,
 				C92870192B4BF6280007DD1E /* Models */,
@@ -295,9 +301,9 @@
 		C92870172B4BF6070007DD1E /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
-				6B0EAA282B4BE042006D2CE4 /* HomeTabView.swift */,
-				6B0EAA272B4BE042006D2CE4 /* ProfileTabView.swift */,
-				6B0EAA292B4BE042006D2CE4 /* MessageTabView.swift */,
+				6B0EAA282B4BE042006D2CE4 /* HomeScreen.swift */,
+				6B0EAA272B4BE042006D2CE4 /* ProfileScreen.swift */,
+				6B0EAA292B4BE042006D2CE4 /* SupportScreen.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -321,9 +327,17 @@
 		C928701A2B4C0E8D0007DD1E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				C928701B2B4C0EA70007DD1E /* SettingsView.swift */,
+				C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		C96166132B4EC044001D6644 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				C96166142B4EC054001D6644 /* InfoScreen.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,19 +421,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92870222B4E82850007DD1E /* UserPreferences.swift in Sources */,
 				6BF62A092B483394004E2165 /* SwiftAppTemplateApp.swift in Sources */,
 				6BB561232B4C32C80026382B /* AppConfig.swift in Sources */,
 				6BB5611E2B4C19930026382B /* Colors.swift in Sources */,
-				C928701C2B4C0EA70007DD1E /* SettingsView.swift in Sources */,
+				C928701C2B4C0EA70007DD1E /* SettingsScreen.swift in Sources */,
 				6B7103622B4822D000A2F5F1 /* TextButton.swift in Sources */,
-				6B0EAA2C2B4BE042006D2CE4 /* MessageTabView.swift in Sources */,
+				6B0EAA2C2B4BE042006D2CE4 /* SupportScreen.swift in Sources */,
 				6B6775A42B45528D0014DAC3 /* OnboardingScreen.swift in Sources */,
 				6B6775AC2B456D220014DAC3 /* AuthenticationManager.swift in Sources */,
 				6BB561252B4C34CF0026382B /* Constants.swift in Sources */,
-				6B0EAA2A2B4BE042006D2CE4 /* ProfileTabView.swift in Sources */,
-				6B0EAA2B2B4BE042006D2CE4 /* HomeTabView.swift in Sources */,
+				6B0EAA2A2B4BE042006D2CE4 /* ProfileScreen.swift in Sources */,
+				6B0EAA2B2B4BE042006D2CE4 /* HomeScreen.swift in Sources */,
 				6B7103642B48234000A2F5F1 /* AuthorizationScreen.swift in Sources */,
-				6B0EAA262B4BE024006D2CE4 /* MainView.swift in Sources */,
+				6B0EAA262B4BE024006D2CE4 /* TabViewController.swift in Sources */,
 				6B6775A92B4564610014DAC3 /* RootViewModel.swift in Sources */,
 				6BB5611C2B4C02D10026382B /* Fonts.swift in Sources */,
 				6B0EAA302B4BE075006D2CE4 /* TabItem.swift in Sources */,
@@ -429,6 +444,7 @@
 				6B6775B02B457D800014DAC3 /* MainScreen.swift in Sources */,
 				6BE6626A2B46A8B4000FCFC9 /* SplashScreen.swift in Sources */,
 				6B7103602B4822B800A2F5F1 /* Header.swift in Sources */,
+				C96166152B4EC054001D6644 /* InfoScreen.swift in Sources */,
 				C9FE2B892B46CB4D00E7D49E /* WebView.swift in Sources */,
 				6B0EAA2E2B4BE061006D2CE4 /* MainViewModel.swift in Sources */,
 				C9FE2B872B46BE2400E7D49E /* CardView.swift in Sources */,

@@ -13,29 +13,36 @@ struct CardView: View {
     var backgroundColor = Color.white
     var cornerRadius = 10.0
     var shadowRadius = 5.0
-    var borderColor = Color.gray
-    var borderWidth = 1.0
+    var infoAction: () -> Void
     
     var body: some View {
-        VStack(spacing: 20){
-            Text(title)
-                .font(.title)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Text(subTitle)
-                .font(.caption)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .multilineTextAlignment(.leading)
+        HStack{
+            VStack(spacing: 20){
+                Text(title)
+                    .font(.notoSansBold20)
+                    .foregroundColor(.primary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text(subTitle)
+                    .font(.notoSansMedium16)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.leading)
+            }
+            Image(systemName: "info.circle")
+                .resizable()
+                .frame(width: 25, height: 25)
+                .foregroundColor(.secondary)
+                .onTapGesture {
+                    infoAction()
+                }
         }
         .padding()
         .background(backgroundColor)
         .cornerRadius(cornerRadius)
-        .shadow(radius: shadowRadius)
-        .border(borderColor, width: borderWidth)
-        
+        .shadow(color: Color.gray.opacity(0.5), radius: shadowRadius)
     }
 }
 
 #Preview {
-    CardView()
+    CardView(infoAction: {})
 }

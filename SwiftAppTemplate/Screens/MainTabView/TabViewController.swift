@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct TabViewController: View {
     @StateObject var viewModel: MainViewModel = MainViewModel()
     
     var body: some View {
@@ -19,10 +19,10 @@ struct MainView: View {
                     }
                     .tag(tab)
             }
-        }
+        }.accentColor(.primary)
     }
 }
 
 #Preview {
-    MainView()
+    TabViewController()
 }

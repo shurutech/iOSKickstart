@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MessageTabView: View {
+struct SupportScreen: View {
     var body: some View {
         WebView(urlString: "https://shurutech.com/")
             .edgesIgnoringSafeArea(.top)
@@ -15,5 +15,5 @@ struct MessageTabView: View {
 }
 
 #Preview {
-    MessageTabView()
+    SupportScreen()
 }

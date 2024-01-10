@@ -22,3 +22,11 @@
 "Home" = "Home";
 "Profile" = "Profile";
 "Messages" = "Messages";
+
+//MARK: - Settings
+"Settings" = "Settings";
+
+//MARK: - Details
+"Details" = "Details";
+
+
