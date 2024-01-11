@@ -8,5 +8,10 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
+APP_NAME = Template
+APP_ICON = AppIconRelease
+APP_BUNDLE_ID = com.shurutech.Template
+APP_VERSION = 1.0.0
+
 BASE_URL = https:/$()/example.release.com
 EXAMPLE_KEY = 123455_release

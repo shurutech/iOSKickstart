@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  MainTabCoordinator.swift
 //  SwiftAppTemplate
 //
 //  Created by Gunveer Sandhu on 03/01/24.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TabViewController: View {
-    @StateObject var viewModel: MainViewModel = MainViewModel()
+struct MainTabCoordinator: View {
+    @StateObject var viewModel: MainTabViewModel = MainTabViewModel()
     
     var body: some View {
         TabView(selection: $viewModel.selectedTab) {
@@ -24,5 +24,5 @@ struct TabViewController: View {
 }
 
 #Preview {
-    TabViewController()
+    MainTabCoordinator()
 }
