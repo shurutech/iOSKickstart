@@ -18,9 +18,9 @@ struct SettingsScreen: View {
     
     var body: some View {
         VStack(spacing: 30){
-            CustomTextField(inputText: $userName, placeholder: "Enter Name", cornerRadius: 10, borderColor: .primary)
+            CustomTextField(inputText: $userName, placeholder: "Enter Name", cornerRadius: 10, borderColor: .primaryNavyBlue)
             
-            CustomTextField(inputText: $userEmail, placeholder: "Enter Email", cornerRadius: 10, borderColor: .primary)
+            CustomTextField(inputText: $userEmail, placeholder: "Enter Email", cornerRadius: 10, borderColor: .primaryNavyBlue)
             
             
             TextButton(onClick: {

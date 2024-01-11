@@ -15,7 +15,7 @@ struct TextButton : View {
     var onClick: () -> Void
     var text: String
     var style: Style = .filled
-    var color: Color = .primary
+    var color: Color = .primaryNavyBlue
     
     // MARK: - Views
     var body: some View {
@@ -41,12 +41,12 @@ struct TextButton : View {
 
 #Preview {
     VStack{
-        TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primary)
-        TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primary)
-        TextButton(onClick: {}, text: "Click Me", style: .textOnly, color: .primary)
+        TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primaryNavyBlue)
+        TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primaryNavyBlue)
+        TextButton(onClick: {}, text: "Click Me", style: .textOnly, color: .primaryNavyBlue)
         HStack{
-            TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primary)
-            TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primary)
+            TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primaryNavyBlue)
+            TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primaryNavyBlue)
         }
     }
     .padding()

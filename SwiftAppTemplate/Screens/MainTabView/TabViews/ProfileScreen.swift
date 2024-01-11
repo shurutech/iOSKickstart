@@ -25,7 +25,7 @@ struct ProfileScreen: View {
                             .frame(width: 20, height: 20)
                         Text(LocalizedStringKey("Settings"))
                             .font(.notoSansRegular16)
-                    }.foregroundColor(.secondary)
+                    }.foregroundColor(.secondaryLightBlue)
                 }
                 Spacer()
             }.padding(.horizontal, 25)
@@ -42,7 +42,7 @@ struct UserInfoView: View{
             TextKeyValueView(key: "Name:", value: name)
             TextKeyValueView(key: "Email:", value: email)
         }
-        .foregroundColor(.primary)
+        .foregroundColor(.primaryNavyBlue)
         .onAppear{
             name  = UserPreferences().userName
             email  = UserPreferences().userEmail

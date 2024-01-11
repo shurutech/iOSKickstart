@@ -10,7 +10,7 @@ import SwiftUI
 struct SplashScreen: View {
     var body: some View {
         ZStack {
-            Color.primary.ignoresSafeArea(.all)
+            Color.primaryNavyBlue.ignoresSafeArea(.all)
             VStack {
                 Image(.logo)
             }

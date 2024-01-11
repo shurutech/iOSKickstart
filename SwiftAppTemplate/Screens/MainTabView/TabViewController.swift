@@ -19,7 +19,7 @@ struct TabViewController: View {
                     }
                     .tag(tab)
             }
-        }.accentColor(.primary)
+        }.accentColor(.primaryNavyBlue)
     }
 }
 

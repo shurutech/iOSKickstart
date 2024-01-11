@@ -20,18 +20,18 @@ struct CardView: View {
             VStack(spacing: 20){
                 Text(title)
                     .font(.notoSansBold20)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.primaryNavyBlue)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text(subTitle)
                     .font(.notoSansMedium16)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.secondaryLightBlue)
                     .multilineTextAlignment(.leading)
             }
             Image(systemName: "info.circle")
                 .resizable()
                 .frame(width: 25, height: 25)
-                .foregroundColor(.secondary)
+                .foregroundColor(.secondaryLightBlue)
                 .onTapGesture {
                     infoAction()
                 }

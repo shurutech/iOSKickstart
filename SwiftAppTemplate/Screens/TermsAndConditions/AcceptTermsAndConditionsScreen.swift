@@ -26,7 +26,7 @@ struct AcceptTermsAndConditionsScreen: View {
                 
                 Spacer()
                 
-                TextButton(onClick: { onNextPressed() }, text: getLocalString(buttonText), color: canGoNext() ? .primary : .gray)
+                TextButton(onClick: { onNextPressed() }, text: getLocalString(buttonText), color: canGoNext() ? .primaryNavyBlue : .gray)
             }
         }
         .padding()
@@ -41,12 +41,12 @@ struct AcceptTermsAndConditionsScreen: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.primaryNavyBlue)
             }
             
             Text(getLocalString(tncText))
                 .font(.notoSansMedium16)
-                .foregroundColor(.primary)
+                .foregroundColor(.primaryNavyBlue)
         }
         .padding(.top, 30)
         .frame(maxWidth: .infinity, alignment: .leading)
