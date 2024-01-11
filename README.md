@@ -3,7 +3,7 @@
 ## APP ENTRY POINT:
  - SwiftAppTemplateApp.swift file: When user clicks app icon, this will be the starting code for app. It should not have any heavy components. It will navigate to first View. Here we are using RootCoordinator.
  
- ** Screens Folder **
+ **Screens Folder**
  
   RootCoordinator:
    - This is initial view which will decide the flow of screens for Splash, Authorisation(Login/Signup), TermsAndConditions, Onboarding, MainTabs Views. This uses the RootViewModel for logics. Here we can add or remove screens as per App flow.
@@ -16,7 +16,7 @@
     - This uses MainTabViewModel for getting data of a particular Tab's screen.
     - Particular tab screen will have there own content.
     
-** ReusableViews Folder **
+**ReusableViews Folder**
   - Here we have all the sub views or components that have multiple uses in different screens for example PrimaryButtonView or some list's single item View
   
 ** Managers Folders **
