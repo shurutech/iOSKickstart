@@ -44,6 +44,7 @@
 		6BB561322B4E78650026382B /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB561312B4E78650026382B /* KeyChainStorage.swift */; };
 		6BB561352B4E78C50026382B /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6BB561342B4E78C50026382B /* KeychainSwift */; };
 		6BB561392B4EB3A30026382B /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB561382B4EB3A30026382B /* WeatherService.swift */; };
+		6BB5613B2B4FBE670026382B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5613A2B4FBE670026382B /* README.md */; };
 		6BE6626A2B46A8B4000FCFC9 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE662692B46A8B4000FCFC9 /* SplashScreen.swift */; };
 		6BF62A092B483394004E2165 /* SwiftAppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */; };
 		C928701C2B4C0EA70007DD1E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */; };
@@ -96,6 +97,7 @@
 		6BB5612F2B4E77350026382B /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		6BB561312B4E78650026382B /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
 		6BB561382B4EB3A30026382B /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		6BB5613A2B4FBE670026382B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		6BE662692B46A8B4000FCFC9 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		C928701D2B4D2E290007DD1E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		6B67758B2B4537E20014DAC3 /* SwiftAppTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				6BB5613A2B4FBE670026382B /* README.md */,
 				6BB561282B4E6C0E0026382B /* Services */,
 				6BB5611F2B4C30980026382B /* Configuration */,
 				6BB5611A2B4C02A90026382B /* Utils */,
@@ -437,6 +440,7 @@
 				6BB561192B4C01FB0026382B /* NotoSans-Bold.ttf in Resources */,
 				6B71036A2B4827CD00A2F5F1 /* Localizable.strings in Resources */,
 				6B6775912B4537E30014DAC3 /* Assets.xcassets in Resources */,
+				6BB5613B2B4FBE670026382B /* README.md in Resources */,
 				6BB561172B4C01FB0026382B /* NotoSans-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
