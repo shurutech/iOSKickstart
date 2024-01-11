@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Header : View {
-    var text: LocalizedStringKey
+    var text: String
     var hasBackButton: Bool = false
     var onBackArrowClick: () -> Void = {}
     

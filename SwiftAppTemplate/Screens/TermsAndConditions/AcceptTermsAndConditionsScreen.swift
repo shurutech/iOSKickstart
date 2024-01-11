@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct AcceptTermsAndConditionsScreen: View {
-    private let title: LocalizedStringKey = "Terms & Conditions"
-    private let buttonLabel: LocalizedStringKey = "Next"
+    private let title: String = "Terms & Conditions"
+    private let buttonText: String = "Next"
+    private let tncText: String = "Read and accept Terms & Conditions"
     
     let onCompleted: () -> Void
     @State var isTermsSelected: Bool = false
@@ -19,13 +20,13 @@ struct AcceptTermsAndConditionsScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: title)
+                Header(text: getLocalString(title))
                 
                 termsView
                 
                 Spacer()
                 
-                TextButton(onClick: { onNextPressed() }, text: buttonLabel, color: canGoNext() ? .primary : .gray)
+                TextButton(onClick: { onNextPressed() }, text: getLocalString(buttonText), color: canGoNext() ? .primary : .gray)
             }
         }
         .padding()
@@ -43,7 +44,7 @@ struct AcceptTermsAndConditionsScreen: View {
                     .foregroundColor(.primary)
             }
             
-            Text("Terms and Conditions")
+            Text(getLocalString(tncText))
                 .font(.notoSansMedium16)
                 .foregroundColor(.primary)
         }

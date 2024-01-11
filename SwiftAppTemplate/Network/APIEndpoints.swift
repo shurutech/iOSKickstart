@@ -10,21 +10,21 @@ enum APIEndpoints{
     case getWeather(city: String)
     case updateUser(user: User)
     
-    var method: HTTPMethod{
-        switch self{
-        case .getWeather:
-            return .get
-        case .updateUser:
-            return .put
+    var data: (HTTPMethod, String) {
+        switch self {
+        case .getWeather: return (.get, "/data/2.5/weather")
+        case .updateUser: return (.put, "/api/v1/users")
         }
     }
-    
-    var path: String{
-        switch self{
+
+    // MARK: - Parameters
+
+    var urlParameters: [String:String?] {
+        switch self {
         case .getWeather(let city):
-            return "/data/2.5/weather?q=\(city)"
-        case .updateUser:
-            return "/users" //only for example, endpoint does not exist
+            return ["q": city]
+        default:
+            return [:]
         }
     }
             

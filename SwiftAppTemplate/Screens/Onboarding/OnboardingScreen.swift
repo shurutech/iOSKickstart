@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct OnboardingScreen: View {
-    private let title: LocalizedStringKey = "Onboarding"
-    private let buttonLabel: LocalizedStringKey = "Next"
+    private let title: String = "Onboarding"
     let images: [Image] = [
         Image(.logo),
         Image(.logo)
@@ -28,11 +27,11 @@ struct OnboardingScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: title, hasBackButton: true, onBackArrowClick: { onBackPressed() })
+                Header(text: getLocalString(title), hasBackButton: true, onBackArrowClick: { onBackPressed() })
                 
                 pageView
                 
-                TextButton(onClick: onNextButtonPressed, text: buttonLabel)
+                TextButton(onClick: onNextButtonPressed, text: getLocalString(buttonText))
             }
             .padding()
         }

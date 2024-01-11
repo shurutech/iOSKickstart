@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct User: Encodable{
+struct User: Codable{
     let name: String
 }

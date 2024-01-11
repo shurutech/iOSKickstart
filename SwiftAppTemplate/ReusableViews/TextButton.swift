@@ -13,7 +13,7 @@ struct TextButton : View {
     
     // MARK: - Attributes
     var onClick: () -> Void
-    var text: LocalizedStringKey
+    var text: String
     var style: Style = .filled
     var color: Color = .primary
     

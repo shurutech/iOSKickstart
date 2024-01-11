@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class AuthenticationManager : ObservableObject {
     static let shared = AuthenticationManager()
     private init() {}
@@ -17,11 +18,17 @@ class AuthenticationManager : ObservableObject {
     
     // MARK: - Functions
     
-    func login() {
-        isAuthenticated = true
+    func login() async throws {
+        let authToken = "dummy_token_qwertyuiopasdfghjklzxcvbnm"
+        if(KeyChainStorage.shared.setAuthToken(authToken)){
+            isAuthenticated = true
+        }
+        else {
+            print("Failed to store token")
+        }
     }
     
-    func logout() {
+    func logout() async throws {
         isAuthenticated = false
     }
     

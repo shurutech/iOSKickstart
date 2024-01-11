@@ -24,7 +24,6 @@
 		6B6775A62B455F790014DAC3 /* AcceptTermsAndConditionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775A52B455F790014DAC3 /* AcceptTermsAndConditionsScreen.swift */; };
 		6B6775A92B4564610014DAC3 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775A82B4564610014DAC3 /* RootViewModel.swift */; };
 		6B6775AC2B456D220014DAC3 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775AB2B456D220014DAC3 /* AuthenticationManager.swift */; };
-		6B6775B02B457D800014DAC3 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6775AF2B457D800014DAC3 /* MainScreen.swift */; };
 		6B7103602B4822B800A2F5F1 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B71035F2B4822B800A2F5F1 /* Header.swift */; };
 		6B7103622B4822D000A2F5F1 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7103612B4822D000A2F5F1 /* TextButton.swift */; };
 		6B7103642B48234000A2F5F1 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7103632B48234000A2F5F1 /* AuthorizationScreen.swift */; };
@@ -38,6 +37,13 @@
 		6BB561232B4C32C80026382B /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB561222B4C32C80026382B /* AppConfig.swift */; };
 		6BB561252B4C34CF0026382B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB561242B4C34CF0026382B /* Constants.swift */; };
 		6BB561272B4D50420026382B /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB561262B4D50420026382B /* LoaderView.swift */; };
+		6BB5612A2B4E6F650026382B /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB561292B4E6F650026382B /* AppError.swift */; };
+		6BB5612C2B4E70F30026382B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5612B2B4E70F30026382B /* Utility.swift */; };
+		6BB5612E2B4E75220026382B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5612D2B4E75220026382B /* UserService.swift */; };
+		6BB561302B4E77350026382B /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5612F2B4E77350026382B /* ErrorHandler.swift */; };
+		6BB561322B4E78650026382B /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB561312B4E78650026382B /* KeyChainStorage.swift */; };
+		6BB561352B4E78C50026382B /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6BB561342B4E78C50026382B /* KeychainSwift */; };
+		6BB561392B4EB3A30026382B /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB561382B4EB3A30026382B /* WeatherService.swift */; };
 		6BE6626A2B46A8B4000FCFC9 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE662692B46A8B4000FCFC9 /* SplashScreen.swift */; };
 		6BF62A092B483394004E2165 /* SwiftAppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */; };
 		C928701C2B4C0EA70007DD1E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */; };
@@ -69,7 +75,6 @@
 		6B6775A82B4564610014DAC3 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		6B6775AB2B456D220014DAC3 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		6B6775AE2B45764E0014DAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		6B6775AF2B457D800014DAC3 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		6B71035F2B4822B800A2F5F1 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		6B7103612B4822D000A2F5F1 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		6B7103632B48234000A2F5F1 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
@@ -85,6 +90,12 @@
 		6BB561222B4C32C80026382B /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		6BB561242B4C34CF0026382B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6BB561262B4D50420026382B /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		6BB561292B4E6F650026382B /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		6BB5612B2B4E70F30026382B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		6BB5612D2B4E75220026382B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		6BB5612F2B4E77350026382B /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		6BB561312B4E78650026382B /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
+		6BB561382B4EB3A30026382B /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		6BE662692B46A8B4000FCFC9 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		C928701D2B4D2E290007DD1E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -100,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB561352B4E78C50026382B /* KeychainSwift in Frameworks */,
 				053960D72B458B1F00E58369 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +124,7 @@
 			children = (
 				053960D32B4584E100E58369 /* APIEndpoints.swift */,
 				053960DB2B459BE800E58369 /* NetworkManager.swift */,
+				6BB561292B4E6F650026382B /* AppError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -154,6 +167,7 @@
 		6B67758B2B4537E20014DAC3 /* SwiftAppTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				6BB561282B4E6C0E0026382B /* Services */,
 				6BB5611F2B4C30980026382B /* Configuration */,
 				6BB5611A2B4C02A90026382B /* Utils */,
 				6B7103662B48268800A2F5F1 /* Resources */,
@@ -189,7 +203,6 @@
 				6B67759F2B4551F70014DAC3 /* Onboarding */,
 				6B67759B2B454B9A0014DAC3 /* Root */,
 				6B6775A02B45520D0014DAC3 /* TermsAndConditions */,
-				6B6775AF2B457D800014DAC3 /* MainScreen.swift */,
 				C9FE2B882B46CB4D00E7D49E /* WebView.swift */,
 			);
 			path = Screens;
@@ -274,6 +287,9 @@
 				6BB561222B4C32C80026382B /* AppConfig.swift */,
 				C92870212B4E82850007DD1E /* UserPreferences.swift */,
 				6BB561242B4C34CF0026382B /* Constants.swift */,
+				6BB5612B2B4E70F30026382B /* Utility.swift */,
+				6BB5612F2B4E77350026382B /* ErrorHandler.swift */,
+				6BB561312B4E78650026382B /* KeyChainStorage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -285,6 +301,15 @@
 				6BB561212B4C30CF0026382B /* Release.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		6BB561282B4E6C0E0026382B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6BB5612D2B4E75220026382B /* UserService.swift */,
+				6BB561382B4EB3A30026382B /* WeatherService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		C92870162B4BF5F20007DD1E /* MainTabView */ = {
@@ -358,6 +383,7 @@
 			name = SwiftAppTemplate;
 			packageProductDependencies = (
 				053960D62B458B1F00E58369 /* Alamofire */,
+				6BB561342B4E78C50026382B /* KeychainSwift */,
 			);
 			productName = SwiftAppTemplate;
 			productReference = 6B6775892B4537E20014DAC3 /* SwiftAppTemplate.app */;
@@ -389,6 +415,7 @@
 			mainGroup = 6B6775802B4537E20014DAC3;
 			packageReferences = (
 				053960D52B458B1F00E58369 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				6BB561332B4E78C50026382B /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 6B67758A2B4537E20014DAC3 /* Products */;
 			projectDirPath = "";
@@ -423,7 +450,6 @@
 			files = (
 				C92870222B4E82850007DD1E /* UserPreferences.swift in Sources */,
 				6BF62A092B483394004E2165 /* SwiftAppTemplateApp.swift in Sources */,
-				6BB561232B4C32C80026382B /* AppConfig.swift in Sources */,
 				6BB5611E2B4C19930026382B /* Colors.swift in Sources */,
 				C928701C2B4C0EA70007DD1E /* SettingsScreen.swift in Sources */,
 				6B7103622B4822D000A2F5F1 /* TextButton.swift in Sources */,
@@ -439,17 +465,23 @@
 				6BB5611C2B4C02D10026382B /* Fonts.swift in Sources */,
 				6B0EAA302B4BE075006D2CE4 /* TabItem.swift in Sources */,
 				6B67759D2B454D310014DAC3 /* RootCoordinator.swift in Sources */,
+				6BB5612E2B4E75220026382B /* UserService.swift in Sources */,
+				6BB5612A2B4E6F650026382B /* AppError.swift in Sources */,
 				6B6775A62B455F790014DAC3 /* AcceptTermsAndConditionsScreen.swift in Sources */,
 				6BB561272B4D50420026382B /* LoaderView.swift in Sources */,
-				6B6775B02B457D800014DAC3 /* MainScreen.swift in Sources */,
 				6BE6626A2B46A8B4000FCFC9 /* SplashScreen.swift in Sources */,
+				6BB561302B4E77350026382B /* ErrorHandler.swift in Sources */,
 				6B7103602B4822B800A2F5F1 /* Header.swift in Sources */,
 				C96166152B4EC054001D6644 /* InfoScreen.swift in Sources */,
 				C9FE2B892B46CB4D00E7D49E /* WebView.swift in Sources */,
 				6B0EAA2E2B4BE061006D2CE4 /* MainViewModel.swift in Sources */,
 				C9FE2B872B46BE2400E7D49E /* CardView.swift in Sources */,
+				6BB561232B4C32C80026382B /* AppConfig.swift in Sources */,
 				C928701E2B4D2E290007DD1E /* CustomTextField.swift in Sources */,
+				6BB561392B4EB3A30026382B /* WeatherService.swift in Sources */,
 				053960DA2B458FF800E58369 /* User.swift in Sources */,
+				6BB561322B4E78650026382B /* KeyChainStorage.swift in Sources */,
+				6BB5612C2B4E70F30026382B /* Utility.swift in Sources */,
 				053960DC2B459BE800E58369 /* NetworkManager.swift in Sources */,
 				053960D42B4584E100E58369 /* APIEndpoints.swift in Sources */,
 				C92870202B4D55EC0007DD1E /* TextKeyValueView.swift in Sources */,
@@ -699,6 +731,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		6BB561332B4E78C50026382B /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -706,6 +746,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 053960D52B458B1F00E58369 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		6BB561342B4E78C50026382B /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BB561332B4E78C50026382B /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

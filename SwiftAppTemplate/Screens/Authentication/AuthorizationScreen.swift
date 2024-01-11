@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct AuthorizationScreen: View {
-    private let title: LocalizedStringKey = "Login/SignUp"
-    private let buttonLabel: LocalizedStringKey = "Login"
+    private let title: String = "Login/SignUp"
+    private let buttonText: String = "Login"
+    private let nameTitle: String = "Name"
+    private let namePlaceHolder: String = "Your name"
+    private let passwordTitle: String = "Password"
     
     @State var name: String = ""
     @State var password: String = ""
@@ -19,12 +22,12 @@ struct AuthorizationScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: title)
+                Header(text: getLocalString(title))
                 nameField
                     .padding(.vertical, 20)
                 passwordField
                 Spacer()
-                TextButton(onClick: onLoginButtonClick, text: buttonLabel, color: canLogin() ? .primary : .gray)
+                TextButton(onClick: onLoginButtonClick, text: getLocalString(buttonText), color: canLogin() ? .primary : .gray)
             }
             .padding()
         }
@@ -32,10 +35,10 @@ struct AuthorizationScreen: View {
     
     var nameField : some View {
         VStack(alignment: .leading) {
-            Text("Name")
+            Text(getLocalString(nameTitle))
                 .font(.notoSansMedium16)
                 .foregroundColor(.primary)
-            TextField("Your name", text: $name)
+            TextField(getLocalString(namePlaceHolder), text: $name)
                 .padding(14)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -46,10 +49,10 @@ struct AuthorizationScreen: View {
     
     var passwordField : some View {
         VStack(alignment: .leading) {
-            Text("Password")
+            Text(getLocalString(passwordTitle))
                 .font(.notoSansMedium16)
                 .foregroundColor(.primary)
-            SecureField("Password", text: $password)
+            SecureField(getLocalString(passwordTitle), text: $password)
                 .padding(14)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -60,11 +63,23 @@ struct AuthorizationScreen: View {
     
     //MARK: - Functions
     
+    private func login() {
+        Task { @MainActor in
+            do {
+                try await AuthenticationManager.shared.login()
+            }
+            catch {
+                ErrorHandler.recordError(withCustomMessage: "Error logging in.", error)
+            }
+        }
+    }
+    
     private func onLoginButtonClick() {
         if(!canLogin()){
             return
         }
-        AuthenticationManager.shared.login()
+        
+        login()
     }
     
     private func canLogin() -> Bool{

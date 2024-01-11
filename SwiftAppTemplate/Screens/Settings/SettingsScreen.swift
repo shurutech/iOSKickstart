@@ -29,7 +29,7 @@ struct SettingsScreen: View {
             
             Spacer()
             
-            TextButton(onClick: {}, text: "Logout", style: .outline)
+            TextButton(onClick: onLogoutClick, text: "Logout", style: .outline)
         }
         .onAppear{
             setup()
@@ -41,15 +41,30 @@ struct SettingsScreen: View {
     
     // MARK: - Functions
     
-    func onSaveClick(){
+    private func onSaveClick(){
         UserPreferences().userName = userName
         UserPreferences().userEmail = userEmail
         dismiss()
     }
     
-    func setup(){
+    private func setup(){
         userName = UserPreferences().userName
         userEmail = UserPreferences().userEmail
+    }
+    
+    private func onLogoutClick(){
+        logout()
+    }
+    
+    private func logout() {
+        Task { @MainActor in
+            do {
+                try await AuthenticationManager.shared.logout()
+            }
+            catch {
+                ErrorHandler.recordError(withCustomMessage: "Error logging out.", error)
+            }
+        }
     }
 }
 

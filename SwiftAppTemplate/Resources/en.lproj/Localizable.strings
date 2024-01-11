@@ -9,14 +9,18 @@
 //MARK: - AuthorizationScreen
 "Login/SignUp" = "Login/SignUp";
 "Login" = "Login";
+"Name" = "Name";
+"Your name" = "Your name";
+"Password" = "Password";
 
 //MARK: - AcceptTermsAndConditionsScreen
 "Terms & Conditions" = "Terms & Conditions";
-"Accept" = "Accept";
+"Read and accept Terms & Conditions" = "Read and accept Terms & Conditions";
 
 //MARK: - OnboardingScreen
 "Onboarding" = "Onboarding";
 "Next" = "Next";
+"Get Started" = "Get Started";
 
 //MARK: - Tabs
 "Home" = "Home";
