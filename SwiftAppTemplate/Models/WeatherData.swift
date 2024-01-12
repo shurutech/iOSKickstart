@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct WeatherData: Codable {
+struct WeatherData: Codable, Hashable {
+    
     let coord: Coordinates
     let weather: [Weather]
     let base: String
@@ -30,14 +31,14 @@ struct Coordinates: Codable, Hashable {
     let lat: Double
 }
 
-struct Weather: Codable {
+struct Weather: Codable, Hashable {
     let id: Int
     let main: String
     let description: String
     let icon: String
 }
 
-struct Main: Codable {
+struct Main: Codable, Hashable {
     let temp: Double
     let feelsLike: Double
     let tempMin: Double
@@ -57,13 +58,13 @@ struct Main: Codable {
     }
 }
 
-struct Wind: Codable {
+struct Wind: Codable, Hashable {
     let speed: Double
     let deg: Int
     let gust: Double?
 }
 
-struct Rain: Codable {
+struct Rain: Codable, Hashable {
     let oneHour: Double
 
     enum CodingKeys: String, CodingKey {
@@ -71,11 +72,11 @@ struct Rain: Codable {
     }
 }
 
-struct Clouds: Codable {
+struct Clouds: Codable, Hashable {
     let all: Int
 }
 
-struct Sys: Codable {
+struct Sys: Codable, Hashable {
     let type: Int
     let id: Int
     let country: String

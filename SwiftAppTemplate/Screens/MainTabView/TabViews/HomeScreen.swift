@@ -9,35 +9,30 @@ import SwiftUI
 
 struct HomeScreen: View {
     @State var isInfoScreenPresented = false
-    @State var selectedNum = 0
-    
     @StateObject var viewModel: HomeViewModel = HomeViewModel()
     
     var body: some View {
-        NavigationView{
-            VStack{
-                ScrollView(showsIndicators: false){
-                    VStack(spacing: 20){
-                        
-                        if (viewModel.weatherData.count == viewModel.cities.count) {
-                            ForEach(Array(zip(viewModel.cities.indices, viewModel.cities)), id: \.1) { index, city in
-                                CardView(
-                                    title: city,
-                                    subTitle: viewModel.weatherData[index].weather.first?.description ?? "No Data",
-                                    infoAction: {
-                                        isInfoScreenPresented = true
-                                    }
-                                )
-                                .padding(5)
+        VStack{
+            ScrollView(showsIndicators: false){
+                VStack(spacing: 20){
+                    if(!viewModel.isDataLoading){
+                        ForEach(viewModel.weatherData, id: \.self){ data in
+                            CardView(title: data.name,
+                                     subTitle: makeDescription(weatherItem: data))
+                            .onTapGesture {
+                                viewModel.selectedCardIndex = viewModel.weatherData.firstIndex(of: data)!
+                                isInfoScreenPresented = true
                             }
-                        }
+                        }.fullScreenCover(isPresented: $isInfoScreenPresented, content: {
+                            WeatherDetailScreen(weatherData: viewModel.weatherData[viewModel.selectedCardIndex])
+                        })
                     }
                 }
                 .padding(.top)
                 .padding(.horizontal, 20)
-                NavigationLink(destination: InfoScreen(cardNum: selectedNum), isActive: $isInfoScreenPresented){}
             }
         }
+        .frame(maxWidth: .infinity)
         .loader(viewModel.isDataLoading)
         .onAppear{
             getWeatherData()
@@ -59,6 +54,17 @@ struct HomeScreen: View {
             }
         }
     }
+    
+    private func makeDescription(weatherItem: WeatherData) -> String{
+        var description = ""
+        
+        description += "Summary: \(weatherItem.weather[0].description) \n"
+        description += "Temp: \(kelvinToCelsius(kelvinTemp: weatherItem.main.temp)) °C \n"
+        description += "Humidity: \(weatherItem.main.humidity)%"
+        
+        return description
+    }
+
 }
 
 #Preview {

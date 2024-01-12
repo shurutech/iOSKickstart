@@ -13,25 +13,21 @@ struct Header : View {
     var onBackArrowClick: () -> Void = {}
     
     var body: some View {
-        ZStack(alignment: .top) {
-            HStack {
-                if(hasBackButton) {
-                    Button(action: onBackArrowClick) {
-                        Image(systemName: "arrow.backward")
-                            .foregroundColor(.primaryNavyBlue)
-                    }
+        ZStack(alignment: .leading) {
+            if(hasBackButton) {
+                Button(action: onBackArrowClick) {
+                    Image(systemName: "arrow.backward")
+                        .foregroundColor(.primaryNavyBlue)
                 }
-                Spacer()
-                Text(text)
-                    .font(.notoSansBold24)
-                    .foregroundColor(.primaryNavyBlue)
-                Spacer()
             }
-            .padding()
+            Text(text)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .font(.notoSansBold24)
+                .foregroundColor(.primaryNavyBlue)
         }
     }
 }
 
 #Preview {
-    Header(text: "Heading")
+    Header(text: "Heading", hasBackButton: true, onBackArrowClick: {})
 }

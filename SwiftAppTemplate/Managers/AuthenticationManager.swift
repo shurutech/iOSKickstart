@@ -18,8 +18,10 @@ class AuthenticationManager : ObservableObject {
     
     // MARK: - Functions
     
-    func login() async throws {
+    func login(user: User) async throws {
         let authToken = "dummy_token_qwertyuiopasdfghjklzxcvbnm"
+        UserPreferences().userName = user.name
+        UserPreferences().userEmail = user.email
         if(KeyChainStorage.shared.setAuthToken(authToken)){
             isAuthenticated = true
         }

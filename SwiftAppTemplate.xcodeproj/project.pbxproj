@@ -53,7 +53,11 @@
 		C928701E2B4D2E290007DD1E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701D2B4D2E290007DD1E /* CustomTextField.swift */; };
 		C92870202B4D55EC0007DD1E /* TextKeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701F2B4D55EC0007DD1E /* TextKeyValueView.swift */; };
 		C92870222B4E82850007DD1E /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92870212B4E82850007DD1E /* UserPreferences.swift */; };
-		C96166152B4EC054001D6644 /* InfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96166142B4EC054001D6644 /* InfoScreen.swift */; };
+		C93CBE4C2B513B480058965E /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CBE4B2B513B480058965E /* SideMenuView.swift */; };
+		C93CBE522B51480E0058965E /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CBE512B51480E0058965E /* UserInfoView.swift */; };
+		C93CBE542B5155290058965E /* ConfirmationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CBE532B5155290058965E /* ConfirmationSheet.swift */; };
+		C93CBE562B5159620058965E /* CustomBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CBE552B5159620058965E /* CustomBottomSheetView.swift */; };
+		C96166152B4EC054001D6644 /* WeatherDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96166142B4EC054001D6644 /* WeatherDetailScreen.swift */; };
 		C9FE2B872B46BE2400E7D49E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE2B862B46BE2400E7D49E /* CardView.swift */; };
 		C9FE2B892B46CB4D00E7D49E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE2B882B46CB4D00E7D49E /* WebView.swift */; };
 /* End PBXBuildFile section */
@@ -107,7 +111,11 @@
 		C928701D2B4D2E290007DD1E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		C928701F2B4D55EC0007DD1E /* TextKeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextKeyValueView.swift; sourceTree = "<group>"; };
 		C92870212B4E82850007DD1E /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
-		C96166142B4EC054001D6644 /* InfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreen.swift; sourceTree = "<group>"; };
+		C93CBE4B2B513B480058965E /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		C93CBE512B51480E0058965E /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		C93CBE532B5155290058965E /* ConfirmationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationSheet.swift; sourceTree = "<group>"; };
+		C93CBE552B5159620058965E /* CustomBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomSheetView.swift; sourceTree = "<group>"; };
+		C96166142B4EC054001D6644 /* WeatherDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailScreen.swift; sourceTree = "<group>"; };
 		C9FE2B862B46BE2400E7D49E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C9FE2B882B46CB4D00E7D49E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +195,7 @@
 				6B6775AA2B456CEC0014DAC3 /* Managers */,
 				6B67759A2B454B0C0014DAC3 /* Screens */,
 				6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */,
+				C93CBE4B2B513B480058965E /* SideMenuView.swift */,
 			);
 			path = SwiftAppTemplate;
 			sourceTree = "<group>";
@@ -268,8 +277,11 @@
 			isa = PBXGroup;
 			children = (
 				6B71035F2B4822B800A2F5F1 /* Header.swift */,
+				C93CBE552B5159620058965E /* CustomBottomSheetView.swift */,
 				C928701D2B4D2E290007DD1E /* CustomTextField.swift */,
+				C93CBE532B5155290058965E /* ConfirmationSheet.swift */,
 				6B7103612B4822D000A2F5F1 /* TextButton.swift */,
+				C93CBE512B51480E0058965E /* UserInfoView.swift */,
 				C928701F2B4D55EC0007DD1E /* TextKeyValueView.swift */,
 				C9FE2B862B46BE2400E7D49E /* CardView.swift */,
 				6BB561262B4D50420026382B /* LoaderView.swift */,
@@ -369,7 +381,7 @@
 		C96166132B4EC044001D6644 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				C96166142B4EC054001D6644 /* InfoScreen.swift */,
+				C96166142B4EC054001D6644 /* WeatherDetailScreen.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -467,6 +479,7 @@
 				6B0EAA2C2B4BE042006D2CE4 /* SupportScreen.swift in Sources */,
 				6B6775A42B45528D0014DAC3 /* OnboardingScreen.swift in Sources */,
 				6B6775AC2B456D220014DAC3 /* AuthenticationManager.swift in Sources */,
+				C93CBE562B5159620058965E /* CustomBottomSheetView.swift in Sources */,
 				6BB561252B4C34CF0026382B /* Constants.swift in Sources */,
 				6B0EAA2A2B4BE042006D2CE4 /* ProfileScreen.swift in Sources */,
 				6B0EAA2B2B4BE042006D2CE4 /* HomeScreen.swift in Sources */,
@@ -483,9 +496,12 @@
 				6BE6626A2B46A8B4000FCFC9 /* SplashScreen.swift in Sources */,
 				6BB561302B4E77350026382B /* ErrorHandler.swift in Sources */,
 				6B7103602B4822B800A2F5F1 /* Header.swift in Sources */,
-				C96166152B4EC054001D6644 /* InfoScreen.swift in Sources */,
+				C96166152B4EC054001D6644 /* WeatherDetailScreen.swift in Sources */,
 				C9FE2B892B46CB4D00E7D49E /* WebView.swift in Sources */,
+				C93CBE4C2B513B480058965E /* SideMenuView.swift in Sources */,
+				C93CBE522B51480E0058965E /* UserInfoView.swift in Sources */,
 				6B0EAA2E2B4BE061006D2CE4 /* MainTabViewModel.swift in Sources */,
+				C93CBE542B5155290058965E /* ConfirmationSheet.swift in Sources */,
 				C9FE2B872B46BE2400E7D49E /* CardView.swift in Sources */,
 				6BB561232B4C32C80026382B /* AppConfig.swift in Sources */,
 				C928701E2B4D2E290007DD1E /* CustomTextField.swift in Sources */,

@@ -12,39 +12,59 @@ struct SettingsScreen: View {
     
     @State private var userName: String = ""
     @State private var userEmail: String = ""
+    @State private var showConfirmationSheet = false
+    @State private var isConfirmationGiven = false
+    @State private var isLogoutClicked = false
     @Environment(\.dismiss) var dismiss
     
     // MARK: - Views
     
     var body: some View {
-        VStack(spacing: 30){
-            CustomTextField(inputText: $userName, placeholder: "Enter Name", cornerRadius: 10, borderColor: .primaryNavyBlue)
-            
-            CustomTextField(inputText: $userEmail, placeholder: "Enter Email", cornerRadius: 10, borderColor: .primaryNavyBlue)
-            
-            
-            TextButton(onClick: {
-                onSaveClick()
-            }, text: "Save")
-            
-            Spacer()
-            
-            TextButton(onClick: onLogoutClick, text: "Logout", style: .outline)
+        ZStack{
+            VStack(spacing: 30){
+                Header(text: "Settings", hasBackButton: true, onBackArrowClick: {
+                    dismiss()
+                })
+                
+                CustomTextField(inputText: $userName, placeholder: "Enter Name", cornerRadius: 10, borderColor: .primaryNavyBlue)
+                
+                CustomTextField(inputText: $userEmail, placeholder: "Enter Email", cornerRadius: 10, borderColor: .primaryNavyBlue)
+                
+                
+                TextButton(onClick: {
+                    showConfirmationSheet = true
+                }, text: "Save")
+                
+                Spacer()
+                
+                TextButton(onClick: {
+                    showConfirmationSheet = true
+                    isLogoutClicked = true
+                }, text: "Logout", style: .outline)
+            }.padding()
+            CustomBottomSheetView(isOpen: $showConfirmationSheet, maxHeight: 260, content: {
+                ConfirmationSheet(isConfirmationGiven: $isConfirmationGiven, isOpen: $showConfirmationSheet)
+            }).onChange(of: isConfirmationGiven, perform: { value in
+                if value {
+                    isLogoutClicked ? onLogoutClick() : onSaveClick()
+                }
+            })
         }
+        .navigationBarBackButtonHidden(true)
         .onAppear{
             setup()
         }
-        .padding()
-        .navigationTitle(LocalizedStringKey("Settings"))
-        .navigationBarTitleDisplayMode(.large)
     }
     
     // MARK: - Functions
+
     
     private func onSaveClick(){
-        UserPreferences().userName = userName
-        UserPreferences().userEmail = userEmail
-        dismiss()
+        if(isConfirmationGiven){
+            UserPreferences().userName = userName
+            UserPreferences().userEmail = userEmail
+            dismiss()
+        }
     }
     
     private func setup(){
@@ -53,7 +73,10 @@ struct SettingsScreen: View {
     }
     
     private func onLogoutClick(){
-        logout()
+        if(isConfirmationGiven){
+            isConfirmationGiven = false
+            logout()
+        }
     }
     
     private func logout() {

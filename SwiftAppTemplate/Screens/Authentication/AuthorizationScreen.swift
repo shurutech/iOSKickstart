@@ -12,10 +12,13 @@ struct AuthorizationScreen: View {
     private let buttonText: String = "Login"
     private let nameTitle: String = "Name"
     private let namePlaceHolder: String = "Your name"
+    private let emailPlaceHolder: String = "Your email"
     private let passwordTitle: String = "Password"
+    private let emailTitle: String = "Email"
     
     @State var name: String = ""
     @State var password: String = ""
+    @State var email: String = ""
     
     //MARK: - Views
     
@@ -25,6 +28,8 @@ struct AuthorizationScreen: View {
                 Header(text: getLocalString(title))
                 nameField
                     .padding(.vertical, 20)
+                emailField
+                    .padding(.bottom, 20)
                 passwordField
                 Spacer()
                 TextButton(onClick: onLoginButtonClick, text: getLocalString(buttonText), color: canLogin() ? .primaryNavyBlue : .gray)
@@ -61,12 +66,26 @@ struct AuthorizationScreen: View {
         }
     }
     
+    var emailField : some View {
+        VStack(alignment: .leading) {
+            Text(getLocalString(emailTitle))
+                .font(.notoSansMedium16)
+                .foregroundColor(.primaryNavyBlue)
+            TextField(getLocalString(emailPlaceHolder), text: $email)
+                .padding(14)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.primaryNavyBlue,  lineWidth: 1)
+                )
+        }
+    }
+    
     //MARK: - Functions
     
     private func login() {
         Task { @MainActor in
             do {
-                try await AuthenticationManager.shared.login()
+                try await AuthenticationManager.shared.login(user: User(name: name, password: password, email: email))
             }
             catch {
                 ErrorHandler.recordError(withCustomMessage: "Error logging in.", error)

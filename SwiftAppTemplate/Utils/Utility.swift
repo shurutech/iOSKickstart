@@ -12,9 +12,19 @@ func removeFocusFromTextField(){
     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
 }
 
+func kelvinToCelsius(kelvinTemp: Double) -> Double {
+    let celsius = kelvinTemp - 273.15
+    return celsius.rounded(toPlaces: 2)
+}
+
 extension Double {
     func formattedAsIntegerOrDecimal() -> String {
         return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
+    }
+    
+    func rounded(toPlaces places: Int) -> Double {
+        let multiplier = pow(10.0, Double(places))
+        return (self * multiplier).rounded() / multiplier
     }
 }
 

@@ -13,7 +13,7 @@ struct CardView: View {
     var backgroundColor = Color.white
     var cornerRadius = 10.0
     var shadowRadius = 5.0
-    var infoAction: () -> Void
+    var infoAction: () -> Void = {}
     
     var body: some View {
         HStack{
@@ -32,9 +32,6 @@ struct CardView: View {
                 .resizable()
                 .frame(width: 25, height: 25)
                 .foregroundColor(.secondaryLightBlue)
-                .onTapGesture {
-                    infoAction()
-                }
         }
         .padding()
         .background(backgroundColor)
