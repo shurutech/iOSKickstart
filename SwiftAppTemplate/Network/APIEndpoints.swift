@@ -6,8 +6,8 @@
 //
 import Alamofire
 
-enum APIEndpoints{
-    case getWeather(city: String)
+enum APIEndpoints {
+    case getWeather(city: String, appId: String)
     case updateUser(user: User)
     
     var data: (HTTPMethod, String) {
@@ -21,8 +21,8 @@ enum APIEndpoints{
 
     var urlParameters: [String:String?] {
         switch self {
-        case .getWeather(let city):
-            return ["q": city]
+        case .getWeather(let city, let appId):
+            return ["q": city, "appid": appId]
         default:
             return [:]
         }

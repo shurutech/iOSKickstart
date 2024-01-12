@@ -13,5 +13,5 @@ APP_ICON = AppIconDebug
 APP_BUNDLE_ID = com.shurutech.TemplateDebug
 APP_VERSION = 1.0.1
 
-BASE_URL = https:/$()/example.debug.com
+BASE_URL = https:/$()/api.openweathermap.org
 EXAMPLE_KEY = 123455_debug

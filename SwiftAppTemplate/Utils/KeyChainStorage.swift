@@ -14,7 +14,7 @@ class KeyChainStorage {
     
     private let keychainInstance = KeychainSwift()
     
-    let AUTH_TOKEN: String = "AUTH_TOKEN"
+    private let AUTH_TOKEN: String = "AUTH_TOKEN"
     
     func setAuthToken(_ value: String) -> Bool {
         return keychainInstance.set(value, forKey: AUTH_TOKEN)
