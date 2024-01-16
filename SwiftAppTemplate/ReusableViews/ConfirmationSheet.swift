@@ -17,8 +17,12 @@ struct ConfirmationSheet: View {
     var body: some View {
         VStack{
             Text(title)
+                .fixedSize(horizontal: false, vertical: true)
+                .multilineTextAlignment(.center)
                 .font(.notoSansBold24)
             Text(subTitle)
+                .fixedSize(horizontal: false, vertical: true)
+                .multilineTextAlignment(.center)
                 .font(.notoSansMedium12)
                 .padding()
             HStack{

@@ -13,9 +13,10 @@ class HomeViewModel : ObservableObject {
     @Published var isDataLoading = false
     @Published var selectedCardIndex = 0    
     @Published var apiError: AppError?
-    let cities = ["Delhi", "Jaipur", "Mumbai", "Chennai", "Bengaluru", "Kolkata", "Shimla"]
+    let cities = ["Delhi", "Jaipur", "Mumbai", "Chennai", "Bengaluru", "Kolkata"]
     
-    func getWeatherData() async throws {
+    func getWeatherData() async {
+        isDataLoading = true
         weatherData.removeAll()
         for city in cities {
             do {
@@ -26,5 +27,6 @@ class HomeViewModel : ObservableObject {
                 apiError = error as? AppError
             }
         }
+        isDataLoading = false
     }
 }

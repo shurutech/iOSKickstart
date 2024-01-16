@@ -49,6 +49,7 @@
 		6BB5613F2B5010720026382B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5613E2B5010720026382B /* HomeViewModel.swift */; };
 		6BE6626A2B46A8B4000FCFC9 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE662692B46A8B4000FCFC9 /* SplashScreen.swift */; };
 		6BF62A092B483394004E2165 /* SwiftTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67758C2B4537E20014DAC3 /* SwiftTemplateApp.swift */; };
+		C91689552B56890C00E11849 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91689542B56890C00E11849 /* SettingsViewModel.swift */; };
 		C928701C2B4C0EA70007DD1E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */; };
 		C928701E2B4D2E290007DD1E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701D2B4D2E290007DD1E /* CustomTextField.swift */; };
 		C92870202B4D55EC0007DD1E /* TextKeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701F2B4D55EC0007DD1E /* TextKeyValueView.swift */; };
@@ -107,6 +108,7 @@
 		6BB5613C2B50056B0026382B /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		6BB5613E2B5010720026382B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6BE662692B46A8B4000FCFC9 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		C91689542B56890C00E11849 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		C928701D2B4D2E290007DD1E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		C928701F2B4D55EC0007DD1E /* TextKeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextKeyValueView.swift; sourceTree = "<group>"; };
@@ -340,6 +342,14 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		C91689532B5688F500E11849 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C91689542B56890C00E11849 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		C92870162B4BF5F20007DD1E /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +391,7 @@
 		C928701A2B4C0E8D0007DD1E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C91689532B5688F500E11849 /* ViewModels */,
 				C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */,
 			);
 			path = Settings;
@@ -497,6 +508,7 @@
 				6BB5611C2B4C02D10026382B /* Fonts.swift in Sources */,
 				6B0EAA302B4BE075006D2CE4 /* TabItem.swift in Sources */,
 				6B67759D2B454D310014DAC3 /* RootCoordinator.swift in Sources */,
+				C91689552B56890C00E11849 /* SettingsViewModel.swift in Sources */,
 				6BB5612E2B4E75220026382B /* UserService.swift in Sources */,
 				6BB5612A2B4E6F650026382B /* AppError.swift in Sources */,
 				6B6775A62B455F790014DAC3 /* AcceptTermsAndConditionsScreen.swift in Sources */,

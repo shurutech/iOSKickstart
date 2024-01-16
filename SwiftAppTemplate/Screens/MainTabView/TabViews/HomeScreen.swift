@@ -52,16 +52,8 @@ struct HomeScreen: View {
     //MARK: - Functions
     
     private func getWeatherData() {
-        viewModel.isDataLoading = true
         Task { @MainActor in
-            do {
-                try await viewModel.getWeatherData()
-                viewModel.isDataLoading = false
-            }
-            catch {
-                viewModel.isDataLoading = false
-                print("ERRROrrrr \(error)")
-            }
+            await viewModel.getWeatherData()
         }
     }
     

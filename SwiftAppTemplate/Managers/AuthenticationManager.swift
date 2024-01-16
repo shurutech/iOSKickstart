@@ -34,7 +34,7 @@ class AuthenticationManager : ObservableObject {
         isAuthenticated = false
     }
     
-    func deleteAccount() {
+    func deleteAccount() async throws {
         isAuthenticated = false
     }
 }

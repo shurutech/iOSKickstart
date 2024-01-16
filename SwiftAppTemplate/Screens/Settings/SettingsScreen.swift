@@ -10,11 +10,7 @@ import SwiftUI
 struct SettingsScreen: View {
     // MARK: - Attributes
     
-    @State private var userName: String = ""
-    @State private var userEmail: String = ""
-    @State private var showConfirmationSheet = false
-    @State private var isConfirmationGiven = false
-    @State private var isLogoutClicked = false
+    @StateObject var viewModel: SettingsViewModel = SettingsViewModel()
     @Environment(\.dismiss) var dismiss
     
     // MARK: - Views
@@ -22,72 +18,60 @@ struct SettingsScreen: View {
     var body: some View {
         ZStack{
             VStack(spacing: 30){
-                Header(text: "Settings", hasBackButton: true, onBackArrowClick: {
-                    dismiss()
-                })
                 
-                CustomTextField(inputText: $userName, placeholder: "Enter Name", cornerRadius: 10, borderColor: .primaryNavyBlue)
+                Header(text: "Settings", hasBackButton: true, onBackArrowClick: {dismiss()})
                 
-                CustomTextField(inputText: $userEmail, placeholder: "Enter Email", cornerRadius: 10, borderColor: .primaryNavyBlue)
+                customTextFields
                 
+                buttons
                 
-                TextButton(onClick: {
-                    showConfirmationSheet = true
-                }, text: "Save")
-                
-                Spacer()
-                
-                TextButton(onClick: {
-                    showConfirmationSheet = true
-                    isLogoutClicked = true
-                }, text: "Logout", style: .outline)
             }.padding()
-            CustomBottomSheetView(isOpen: $showConfirmationSheet, maxHeight: 260, content: {
-                ConfirmationSheet(isConfirmationGiven: $isConfirmationGiven, isOpen: $showConfirmationSheet)
-            }).onChange(of: isConfirmationGiven, perform: { value in
-                if value {
-                    isLogoutClicked ? onLogoutClick() : onSaveClick()
-                }
-            })
+            
+            if(viewModel.currentBottomSheetType != nil){
+                bottomSheet
+            }
         }
         .navigationBarBackButtonHidden(true)
         .onAppear{
-            setup()
+            viewModel.setup()
         }
     }
     
-    // MARK: - Functions
-
-    
-    private func onSaveClick(){
-        if(isConfirmationGiven){
-            UserPreferences().userName = userName
-            UserPreferences().userEmail = userEmail
-            dismiss()
+    var customTextFields: some View{
+        VStack{
+            CustomTextField(inputText: $viewModel.userName, placeholder: "Enter Name", cornerRadius: 10, borderColor: .primaryNavyBlue)
+            
+            CustomTextField(inputText: $viewModel.userEmail, placeholder: "Enter Email", cornerRadius: 10, borderColor: .primaryNavyBlue)
         }
     }
     
-    private func setup(){
-        userName = UserPreferences().userName
-        userEmail = UserPreferences().userEmail
-    }
-    
-    private func onLogoutClick(){
-        if(isConfirmationGiven){
-            isConfirmationGiven = false
-            logout()
+    var buttons: some View{
+        VStack{
+            TextButton(onClick: {
+                viewModel.currentBottomSheetType = .save
+            }, text: "Save")
+            Spacer()
+            TextButton(onClick: {
+                viewModel.currentBottomSheetType = .logout
+            }, text: "Logout", style: .outline)
+            TextButton(onClick: {
+                viewModel.currentBottomSheetType = .delete
+            }, text: "Delete Account", style: .outline)
         }
     }
     
-    private func logout() {
-        Task { @MainActor in
-            do {
-                try await AuthenticationManager.shared.logout()
+    var bottomSheet: some View{
+        
+        @State var isOpen = Binding<Bool>(
+            get: { viewModel.currentBottomSheetType != nil },
+            set: { if !$0 { viewModel.currentBottomSheetType = nil } }
+        )
+        
+       return CustomBottomSheetView(isOpen: isOpen, maxHeight: viewModel.currentBottomSheetType!.sheetSize, content: {
+            if viewModel.currentBottomSheetType != nil {
+                ConfirmationSheet(isConfirmationGiven: $viewModel.isConfirmationGiven, isOpen: isOpen, title: viewModel.currentBottomSheetType!.title, subTitle: viewModel.currentBottomSheetType!.subTitle)
             }
-            catch {
-                ErrorHandler.recordError(withCustomMessage: "Error logging out.", error)
-            }
-        }
+        })
     }
 }
 
