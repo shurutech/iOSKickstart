@@ -31,6 +31,16 @@ struct HomeScreen: View {
                 .padding(.top)
                 .padding(.horizontal, 20)
             }
+            .alert(isPresented: Binding<Bool>(
+                        get: { viewModel.apiError != nil },
+                        set: { _ in viewModel.apiError = nil }
+                    )) {
+                        Alert(
+                            title: Text("Error"),
+                            message: Text(viewModel.apiError?.localizedDescription ?? "An unknown error occurred"),
+                            dismissButton: .default(Text("OK"))
+                        )
+                    }
         }
         .frame(maxWidth: .infinity)
         .loader(viewModel.isDataLoading)

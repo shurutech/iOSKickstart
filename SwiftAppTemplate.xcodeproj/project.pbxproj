@@ -48,7 +48,7 @@
 		6BB5613D2B50056B0026382B /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5613C2B50056B0026382B /* WeatherData.swift */; };
 		6BB5613F2B5010720026382B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5613E2B5010720026382B /* HomeViewModel.swift */; };
 		6BE6626A2B46A8B4000FCFC9 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE662692B46A8B4000FCFC9 /* SplashScreen.swift */; };
-		6BF62A092B483394004E2165 /* SwiftAppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */; };
+		6BF62A092B483394004E2165 /* SwiftTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67758C2B4537E20014DAC3 /* SwiftTemplateApp.swift */; };
 		C928701C2B4C0EA70007DD1E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */; };
 		C928701E2B4D2E290007DD1E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701D2B4D2E290007DD1E /* CustomTextField.swift */; };
 		C92870202B4D55EC0007DD1E /* TextKeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928701F2B4D55EC0007DD1E /* TextKeyValueView.swift */; };
@@ -73,7 +73,7 @@
 		6B0EAA2D2B4BE061006D2CE4 /* MainTabViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabViewModel.swift; path = SwiftAppTemplate/Screens/MainTabView/ViewModels/MainTabViewModel.swift; sourceTree = SOURCE_ROOT; };
 		6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabItem.swift; path = SwiftAppTemplate/Screens/MainTabView/Models/TabItem.swift; sourceTree = SOURCE_ROOT; };
 		6B6775892B4537E20014DAC3 /* SwiftAppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAppTemplateApp.swift; sourceTree = "<group>"; };
+		6B67758C2B4537E20014DAC3 /* SwiftTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTemplateApp.swift; sourceTree = "<group>"; };
 		6B6775902B4537E30014DAC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B6775932B4537E30014DAC3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B67759C2B454D310014DAC3 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -194,8 +194,7 @@
 				6B6775922B4537E30014DAC3 /* Preview Content */,
 				6B6775AA2B456CEC0014DAC3 /* Managers */,
 				6B67759A2B454B0C0014DAC3 /* Screens */,
-				6B67758C2B4537E20014DAC3 /* SwiftAppTemplateApp.swift */,
-				C93CBE4B2B513B480058965E /* SideMenuView.swift */,
+				6B67758C2B4537E20014DAC3 /* SwiftTemplateApp.swift */,
 			);
 			path = SwiftAppTemplate;
 			sourceTree = "<group>";
@@ -211,6 +210,7 @@
 		6B67759A2B454B0C0014DAC3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				6BB561402B5642100026382B /* SideMenu */,
 				C96166132B4EC044001D6644 /* Info */,
 				C928701A2B4C0E8D0007DD1E /* Settings */,
 				C92870162B4BF5F20007DD1E /* MainTabView */,
@@ -330,6 +330,14 @@
 				6BB561382B4EB3A30026382B /* WeatherService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		6BB561402B5642100026382B /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C93CBE4B2B513B480058965E /* SideMenuView.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		C92870162B4BF5F20007DD1E /* MainTabView */ = {
@@ -472,7 +480,7 @@
 			files = (
 				6BB5613D2B50056B0026382B /* WeatherData.swift in Sources */,
 				C92870222B4E82850007DD1E /* UserPreferences.swift in Sources */,
-				6BF62A092B483394004E2165 /* SwiftAppTemplateApp.swift in Sources */,
+				6BF62A092B483394004E2165 /* SwiftTemplateApp.swift in Sources */,
 				6BB5611E2B4C19930026382B /* Colors.swift in Sources */,
 				C928701C2B4C0EA70007DD1E /* SettingsScreen.swift in Sources */,
 				6B7103622B4822D000A2F5F1 /* TextButton.swift in Sources */,
