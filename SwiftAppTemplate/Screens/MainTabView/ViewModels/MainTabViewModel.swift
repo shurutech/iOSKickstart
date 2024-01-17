@@ -10,9 +10,11 @@ import SwiftUI
 
 class MainTabViewModel: ObservableObject {
     @Published var selectedTab: Tab = .home
+}
 
-    var tabs: [Tab] = [.home, .profile, .support]
-
-
+enum Tab: CaseIterable{
+    case home
+    case profile
+    case support
 }
 

@@ -72,7 +72,7 @@
 		6B0EAA282B4BE042006D2CE4 /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeScreen.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/HomeScreen.swift; sourceTree = SOURCE_ROOT; };
 		6B0EAA292B4BE042006D2CE4 /* SupportScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SupportScreen.swift; path = SwiftAppTemplate/Screens/MainTabView/TabViews/SupportScreen.swift; sourceTree = SOURCE_ROOT; };
 		6B0EAA2D2B4BE061006D2CE4 /* MainTabViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabViewModel.swift; path = SwiftAppTemplate/Screens/MainTabView/ViewModels/MainTabViewModel.swift; sourceTree = SOURCE_ROOT; };
-		6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabItem.swift; path = SwiftAppTemplate/Screens/MainTabView/Models/TabItem.swift; sourceTree = SOURCE_ROOT; };
+		6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabItem.swift; path = SwiftAppTemplate/Screens/MainTabView/TabItem.swift; sourceTree = SOURCE_ROOT; };
 		6B6775892B4537E20014DAC3 /* SwiftAppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B67758C2B4537E20014DAC3 /* SwiftTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTemplateApp.swift; sourceTree = "<group>"; };
 		6B6775902B4537E30014DAC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -354,9 +354,9 @@
 			isa = PBXGroup;
 			children = (
 				6B0EAA252B4BE024006D2CE4 /* MainTabCoordinator.swift */,
+				6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */,
 				C92870172B4BF6070007DD1E /* TabViews */,
 				C92870182B4BF6150007DD1E /* ViewModels */,
-				C92870192B4BF6280007DD1E /* Models */,
 			);
 			path = MainTabView;
 			sourceTree = "<group>";
@@ -378,14 +378,6 @@
 				6BB5613E2B5010720026382B /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		C92870192B4BF6280007DD1E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				6B0EAA2F2B4BE075006D2CE4 /* TabItem.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		C928701A2B4C0E8D0007DD1E /* Settings */ = {

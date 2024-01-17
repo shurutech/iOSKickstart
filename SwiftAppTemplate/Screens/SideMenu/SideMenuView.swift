@@ -28,12 +28,7 @@ struct SideMenuView: View {
                         .padding(.top, 100)
                         .padding(.bottom, 50)
                     
-                    ForEach(Tab.allCases, id: \.self){ row in
-                        RowView(isSelected: selectedSideMenuTab == row, imageName: row.iconName, title: row.title) {
-                            selectedSideMenuTab = row
-                            presentSideMenu.toggle()
-                        }
-                    }
+                    menuItems
                     
                     Spacer()
                 }
@@ -43,7 +38,7 @@ struct SideMenuView: View {
                 )
             }
             Rectangle()
-                .opacity(0.01)
+                .opacity(0.1)
                 .onTapGesture{
                     presentSideMenu.toggle()
                 }
@@ -51,6 +46,23 @@ struct SideMenuView: View {
         .edgesIgnoringSafeArea(.all)
         .onAppear{
             screenWidth = UIScreen.main.bounds.width
+        }
+    }
+    
+    var menuItems: some View{
+        VStack{
+            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.home, imageName: "house.circle.fill", title: "Home", action: {
+                selectedSideMenuTab = .home
+                presentSideMenu.toggle()
+            })
+            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.profile, imageName: "person.crop.circle.fill", title: "Profile", action: {
+                selectedSideMenuTab = .profile
+                presentSideMenu.toggle()
+            })
+            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.support, imageName: "message.circle.fill", title: "Support", action: {
+                selectedSideMenuTab = .support
+                presentSideMenu.toggle()
+            })
         }
     }
     

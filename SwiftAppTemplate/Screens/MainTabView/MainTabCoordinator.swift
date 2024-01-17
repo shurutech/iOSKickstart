@@ -18,17 +18,7 @@ struct MainTabCoordinator: View {
             VStack{
                 topSideMenu
                 
-                TabView(selection: $viewModel.selectedTab) {
-                    ForEach(viewModel.tabs, id: \.self) { tab in
-                        tab.tabItem.view
-                            .tabItem {
-                                Label(tab.tabItem.title, systemImage: tab.tabItem.icon)
-                            }
-                            .tag(tab)
-                    }
-
-                }
-                .accentColor(.primaryNavyBlue)
+                tabView
             }
             
             if (presentSideMenu) {
@@ -36,6 +26,19 @@ struct MainTabCoordinator: View {
                     .transition(edgeTransition)
                     .animation(.easeInOut, value: presentSideMenu)
             }
+        }
+    }
+    
+    var tabView: some View{
+        TabView(selection: $viewModel.selectedTab,
+                content:  {
+            HomeScreen().tabItem { TabItem(title: "Home", icon: "house.circle.fill") }.tag(Tab.home)
+            ProfileScreen().tabItem { TabItem(title: "Profile", icon: "person.crop.circle.fill") }.tag(Tab.profile)
+            SupportScreen().tabItem { TabItem(title: "Support", icon: "message.circle.fill") }.tag(Tab.support)
+        })
+        .accentColor(.secondaryLightBlue)
+        .onAppear{
+            UITabBar.appearance().unselectedItemTintColor = UIColor(Color.primaryNavyBlue)
         }
     }
     

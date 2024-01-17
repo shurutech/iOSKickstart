@@ -33,6 +33,7 @@ struct SettingsScreen: View {
         }
         .navigationBarBackButtonHidden(true)
         .onAppear{
+            viewModel.onSaveChanges = {dismiss()}
             viewModel.setup()
         }
     }

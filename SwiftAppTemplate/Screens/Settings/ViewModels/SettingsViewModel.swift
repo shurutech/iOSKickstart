@@ -61,6 +61,7 @@ class SettingsViewModel: ObservableObject{
         }
     }
     @Published var currentBottomSheetType: BottomSheet?
+    @Published var onSaveChanges: () -> Void = {}
     
     
     func handleConfirmation() {
@@ -79,6 +80,7 @@ class SettingsViewModel: ObservableObject{
     func saveUserInfo() {
         UserPreferences().userName = userName
         UserPreferences().userEmail = userEmail
+        onSaveChanges()
     }
     
     func performLogout() {
