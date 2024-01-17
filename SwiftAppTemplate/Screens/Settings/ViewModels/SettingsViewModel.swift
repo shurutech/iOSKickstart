@@ -78,8 +78,8 @@ class SettingsViewModel: ObservableObject{
     }
     
     func saveUserInfo() {
-        UserPreferences().userName = userName
-        UserPreferences().userEmail = userEmail
+        UserPreferences.shared.userName = userName
+        UserPreferences.shared.userEmail = userEmail
         onSaveChanges()
     }
     
@@ -107,7 +107,7 @@ class SettingsViewModel: ObservableObject{
     
     
     func setup(){
-        userName = UserPreferences().userName
-        userEmail = UserPreferences().userEmail
+        userName = UserPreferences.shared.userName
+        userEmail = UserPreferences.shared.userEmail
     }
 }

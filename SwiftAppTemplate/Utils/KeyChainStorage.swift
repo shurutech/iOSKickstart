@@ -24,4 +24,7 @@ class KeyChainStorage {
         keychainInstance.get(AUTH_TOKEN)
     }
     
+    func deleteAllKey(){
+        keychainInstance.delete(AUTH_TOKEN)
+    }
 }

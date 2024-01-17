@@ -66,6 +66,7 @@ struct RootCoordinator: View {
         }
         else if(!authenticationManager.isAuthenticated) {
             root = .authorisation
+            rootViewModel.setInitialScreenVisitedStatus()
         }
         else if(!rootViewModel.isTermsAndConditionsAccepted) {
             root = .acceptPolicy

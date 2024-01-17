@@ -7,14 +7,27 @@
 
 import Foundation
 
-enum Keys{
-    static let userName = "userName"
-    static let userEmail = "userEmail"
-}
-
 class UserPreferences{
     
-    var defaults = UserDefaults.standard
+    static let shared = UserPreferences()
+
+    private let defaults = UserDefaults.standard
+
+    private init() {}
+    
+    enum Keys {
+        static let userName = "userName"
+        static let userEmail = "userEmail"
+        static let isAuthenticated = "isAuthenticated"
+        static let isPrivacyPolicyAccepted = "isPrivacyPolicyAccepted"
+        static let isOnboardingCompleted = "isOnboardingCompleted"
+    }
+    
+    func deleteAllUserDefaults() {
+        let domain = Bundle.main.bundleIdentifier!
+        defaults.removePersistentDomain(forName: domain)
+        defaults.synchronize()
+    }
     
     var userName: String {
         set{
@@ -40,4 +53,30 @@ class UserPreferences{
         }
     }
     
+    var isAuthenticated: Bool {
+        set{
+            defaults.setValue(newValue, forKey: Keys.isAuthenticated)
+        }
+        get{
+            return defaults.bool(forKey: Keys.isAuthenticated)
+        }
+    }
+    
+    var isPrivacyPolicyAccepted: Bool {
+        set{
+            defaults.setValue(newValue, forKey: Keys.isPrivacyPolicyAccepted)
+        }
+        get{
+            return defaults.bool(forKey: Keys.isPrivacyPolicyAccepted)
+        }
+    }
+    
+    var isOnboardingCompleted: Bool {
+        set{
+            defaults.setValue(newValue, forKey: Keys.isOnboardingCompleted)
+        }
+        get{
+            return defaults.bool(forKey: Keys.isOnboardingCompleted)
+        }
+    }
 }

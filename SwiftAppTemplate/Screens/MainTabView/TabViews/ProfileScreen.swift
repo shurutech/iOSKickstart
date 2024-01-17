@@ -40,8 +40,8 @@ struct ProfileScreen: View {
     }
     
     func updateUserInfo(){
-        userName = UserPreferences().userName
-        userEmail = UserPreferences().userEmail
+        userName = UserPreferences.shared.userName
+        userEmail = UserPreferences.shared.userEmail
     }
 }
 

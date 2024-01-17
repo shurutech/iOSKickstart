@@ -12,8 +12,8 @@ struct SideMenuView: View {
     @Binding var selectedSideMenuTab: Tab
     @Binding var presentSideMenu: Bool
     @State var screenWidth: CGFloat = 0
-    @State private var userName: String = UserPreferences().userName
-    @State private var userEmail: String = UserPreferences().userEmail
+    @State private var userName: String = UserPreferences.shared.userName
+    @State private var userEmail: String = UserPreferences.shared.userEmail
     
     var body: some View {
         HStack(spacing: 0) {
