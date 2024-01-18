@@ -15,6 +15,7 @@
     - This contains all main tabs, in template we have Home, Profile and Support.
     - This uses MainTabViewModel for getting data of a particular Tab's screen.
     - Particular tab screen will have there own content.
+    - There is a SideMenubar that appears from top left menu button - https://medium.com/geekculture/side-menu-in-ios-swiftui-9fe1b69fc487
     
 **ReusableViews Folder**
   - Here we have all the sub views or components that have multiple uses in different screens for example PrimaryButtonView or some list's single item View
