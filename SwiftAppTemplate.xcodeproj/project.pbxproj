@@ -171,7 +171,7 @@
 				6B6FCAA92B59544300A0FD1D /* Info.plist */,
 				6B6775922B4537E30014DAC3 /* Preview Content */,
 				6B67758A2B4537E20014DAC3 /* Products */,
-				6B67758B2B4537E20014DAC3 /* RenameToProjectName */,
+				6B67758B2B4537E20014DAC3 /* SwiftAppTemplate */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,7 +183,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6B67758B2B4537E20014DAC3 /* RenameToProjectName */ = {
+		6B67758B2B4537E20014DAC3 /* SwiftAppTemplate */ = {
 			isa = PBXGroup;
 			children = (
 				6BB5613A2B4FBE670026382B /* README.md */,
@@ -198,7 +198,7 @@
 				6B67759A2B454B0C0014DAC3 /* Screens */,
 				6B67758C2B4537E20014DAC3 /* LaunchApp.swift */,
 			);
-			path = RenameToProjectName;
+			path = SwiftAppTemplate;
 			sourceTree = "<group>";
 		};
 		6B6775922B4537E30014DAC3 /* Preview Content */ = {
