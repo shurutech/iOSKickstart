@@ -3,6 +3,9 @@
 # Ensure execution permissions for the script
 chmod +x "$0"
 
+# Store the list of installed gems before installation
+before_install=$(gem list --local | cut -d" " -f1)
+
 # Check if the xcodeproj is installed, if not install it
 if ! gem list -i xcodeproj > /dev/null 2>&1; then
     echo "Installing xcodeproj..."
@@ -11,6 +14,12 @@ if ! gem list -i xcodeproj > /dev/null 2>&1; then
 else
     echo "xcodeproj gem is already installed."
 fi
+
+# Store the list of installed gems after installation
+after_install=$(gem list --local | cut -d" " -f1)
+
+# Find the newly installed gems
+newly_installed=$(comm -13 <(echo "$before_install" | sort) <(echo "$after_install" | sort))
 
 # Argument: New App Name
 NEW_APP_NAME=$1
@@ -148,6 +157,12 @@ if [ "$XCODEPROJ_INSTALLED" = true ]; then
 else
     echo "xcodeproj gem was already installed, not removing."
 fi
+
+ if [ -n "$newly_installed" ]; then
+     echo "Uninstalling newly installed gems..."
+     sudo gem uninstall $newly_installed
+     echo "Uninstallation complete."
+ fi
 
 echo "Project $NEW_APP_NAME created successfully."
 
