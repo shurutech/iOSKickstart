@@ -150,3 +150,7 @@ else
 fi
 
 echo "Project $NEW_APP_NAME created successfully."
+
+# Remove the create_swift_app.sh script
+rm -f "$DESTINATION_PATH/create_swift_app.sh"
+echo "Removed create_swift_app.sh script from $NEW_APP_NAME."
