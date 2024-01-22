@@ -9,7 +9,7 @@ before_install=$(gem list --local | cut -d" " -f1)
 # Check if the xcodeproj is installed, if not install it
 if ! gem list -i xcodeproj > /dev/null 2>&1; then
     echo "Installing xcodeproj..."
-    sudo gem install xcodeproj
+    gem install xcodeproj --user-install
     XCODEPROJ_INSTALLED=true
 else
     echo "xcodeproj gem is already installed."
@@ -153,14 +153,15 @@ RUBY_SCRIPT
 # Remove xcodeproj, if installed
 if [ "$XCODEPROJ_INSTALLED" = true ]; then
     echo "Removing xcodeproj..."
-    sudo gem uninstall xcodeproj -a -x -I
+    gem uninstall xcodeproj -x
+
 else
     echo "xcodeproj gem was already installed, not removing."
 fi
 
  if [ -n "$newly_installed" ]; then
      echo "Uninstalling newly installed gems..."
-     sudo gem uninstall $newly_installed
+     gem uninstall $newly_installed
      echo "Uninstallation complete."
  fi
 
