@@ -1,7 +1,7 @@
 # iOS-App-Boilerplate
 
 ## APP ENTRY POINT:
- - SwiftAppTemplateApp.swift file: When user clicks app icon, this will be the starting code for app. It should not have any heavy components. It will navigate to first View. Here we are using RootCoordinator.
+ - LaunchApp.swift file: When user clicks app icon, this will be the starting code for app. It should not have any heavy components. It will navigate to first View. Here we are using RootCoordinator.
  
  **Screens Folder**
  
