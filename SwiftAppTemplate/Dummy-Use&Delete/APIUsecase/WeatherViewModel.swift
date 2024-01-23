@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  WeatherViewModel.swift
 //  SwiftAppTemplate
 //
 //  Created by Vijay Goswami on 11/01/24.
@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-class HomeViewModel : ObservableObject {
+class WeatherViewModel : ObservableObject {
     @Published var weatherData: [WeatherData] = []
     @Published var isDataLoading = false
     @Published var selectedCardIndex = 0    

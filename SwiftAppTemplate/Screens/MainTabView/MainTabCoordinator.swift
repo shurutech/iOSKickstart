@@ -32,9 +32,8 @@ struct MainTabCoordinator: View {
     var tabView: some View{
         TabView(selection: $viewModel.selectedTab,
                 content:  {
-            HomeScreen().tabItem { TabItem(title: "Home", icon: "house.circle.fill") }.tag(Tab.home)
-            ProfileScreen().tabItem { TabItem(title: "Profile", icon: "person.crop.circle.fill") }.tag(Tab.profile)
-            SupportScreen().tabItem { TabItem(title: "Support", icon: "message.circle.fill") }.tag(Tab.support)
+            Tab1Screen().tabItem { TabItem(title: "Tab1", icon: "1.circle.fill") }.tag(Tab.tab1)
+            Tab2Screen().tabItem { TabItem(title: "Tab2", icon: "2.circle.fill") }.tag(Tab.tab2)
         })
         .accentColor(.secondaryLightBlue)
         .onAppear{

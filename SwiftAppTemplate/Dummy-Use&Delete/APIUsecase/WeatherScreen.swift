@@ -1,5 +1,5 @@
 //
-//  HomeTabView.swift
+//  WeatherScreen.swift
 //  SwiftAppTemplate
 //
 //  Created by Gunveer Sandhu on 03/01/24.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct HomeScreen: View {
+struct WeatherScreen: View {
     @State var isInfoScreenPresented = false
-    @StateObject var viewModel: HomeViewModel = HomeViewModel()
+    @StateObject var viewModel: WeatherViewModel = WeatherViewModel()
     
     var body: some View {
         VStack{
@@ -70,5 +70,5 @@ struct HomeScreen: View {
 }
 
 #Preview {
-    HomeScreen()
+    WeatherScreen()
 }

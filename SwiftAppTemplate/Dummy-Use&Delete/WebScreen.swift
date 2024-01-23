@@ -1,5 +1,5 @@
 //
-//  SettingsTabView.swift
+//  WebScreen.swift
 //  SwiftAppTemplate
 //
 //  Created by Gunveer Sandhu on 03/01/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SupportScreen: View {
+struct WebScreen: View {
     @State private var isLoading = true
     @State private var showError = false
     var urlString = "https://shurutech.com/"
@@ -28,5 +28,5 @@ struct SupportScreen: View {
 }
 
 #Preview {
-    SupportScreen()
+    WebScreen()
 }

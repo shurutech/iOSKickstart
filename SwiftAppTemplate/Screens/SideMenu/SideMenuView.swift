@@ -51,16 +51,12 @@ struct SideMenuView: View {
     
     var menuItems: some View{
         VStack{
-            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.home, imageName: "house.circle.fill", title: "Home", action: {
-                selectedSideMenuTab = .home
+            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.tab1, imageName: "1.circle.fill", title: "Tab1", action: {
+                selectedSideMenuTab = .tab1
                 presentSideMenu.toggle()
             })
-            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.profile, imageName: "person.crop.circle.fill", title: "Profile", action: {
-                selectedSideMenuTab = .profile
-                presentSideMenu.toggle()
-            })
-            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.support, imageName: "message.circle.fill", title: "Support", action: {
-                selectedSideMenuTab = .support
+            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.tab2, imageName: "2.circle.fill", title: "Tab2", action: {
+                selectedSideMenuTab = .tab2
                 presentSideMenu.toggle()
             })
         }
@@ -98,5 +94,5 @@ struct SideMenuView: View {
 
 
 #Preview {
-    SideMenuView(selectedSideMenuTab: Binding.constant(Tab.home), presentSideMenu: Binding.constant(true))
+    SideMenuView(selectedSideMenuTab: Binding.constant(Tab.tab1), presentSideMenu: Binding.constant(true))
 }
