@@ -188,10 +188,8 @@ END_LINE_ENUM=$(awk -v start="$START_LINE_ENUM" 'NR > start && /}/ {print NR; ex
 
 
 # Delete the old TabView section
-#sed -i '' "${START_LINE},${END_LINE}d" "$SWIFT_FILE_PATH"
-#sed -i '' "${START_LINE_ENUM},${END_LINE_ENUM}d" "$SWIFT_VIEW_MODEL_FILE_PATH"
-delete_lines "$SWIFT_FILE_PATH" 33-37
-delete_lines "$SWIFT_VIEW_MODEL_FILE_PATH" 15-21
+sed -i '' "${START_LINE},${END_LINE}d" "$SWIFT_FILE_PATH"
+sed -i '' "${START_LINE_ENUM},${END_LINE_ENUM}d" "$SWIFT_VIEW_MODEL_FILE_PATH"
 
 # Insert the new TabView code before the original start line
 awk -v line="$START_LINE" -v file="tab_view_temp.txt" 'NR==line{system("cat " file)} {print}' "$SWIFT_FILE_PATH" > temp.swift && mv temp.swift "$SWIFT_FILE_PATH"
@@ -208,7 +206,7 @@ done
 
 
 
-# Ask the user to include the side menu or not
+# Ask the user to include the tnc screen or not
 read -p "Do you require a terms and condition screen? (Yn): " REQUIRE_TNC_SCREEN
 REMOVE_TNC_SCREEN=false
 
@@ -233,7 +231,7 @@ if [ "$REQUIRE_TNC_SCREEN" = "n" ] || [ "$REQUIRE_TNC_SCREEN" = "N" ]; then
     fi
     
     #Removing from root coordinator
-    delete_lines "$pathToRootCoordinator" 14 36 37 40 46 71-73
+    delete_lines "$pathToRootCoordinator" 14 36 37 40 48 73-75
     
     #Removing from RootViewModel
     delete_lines "$pathToRootViewModel" 16 33 37-42
@@ -248,6 +246,49 @@ else
 fi
 
 
+# Ask the user to include the onboarding screen or not
+read -p "Do you require an onboarding screen? (Yn): " REQUIRE_ONBOARDING_SCREEN
+REMOVE_ONBOARDING_SCREEN=false
+
+if [ "$REQUIRE_ONBOARDING_SCREEN" = "n" ] || [ "$REQUIRE_ONBOARDING_SCREEN" = "N" ]; then
+    REMOVE_ONBOARDING_SCREEN=true
+    pathOfOnboardingFolder="$DESTINATION_PATH/$NEW_APP_NAME/Screens/Onboarding"
+    
+    echo "Removing folder: $pathOfOnboardingFolder"
+    rm -rf "$pathOfOnboardingFolder"
+    
+    pathToRootCoordinator="$DESTINATION_PATH/$NEW_APP_NAME/Screens/Root/RootCoordinator.swift"
+    pathToRootViewModel="$DESTINATION_PATH/$NEW_APP_NAME/Screens/Root/RootViewModel.swift"
+    
+    # Check and update permissions
+    if [ ! -r "$pathToRootCoordinator" ] || [ ! -r "$pathToRootViewModel" ]; then
+#        echo "Adding read permissions to $pathToMainCoordinator"
+        chmod +r "$pathToRootCoordinator"
+        chmod +r "$pathToRootViewModel"
+    fi
+    
+    #Removing from rootCoordinator
+    if $REMOVE_TNC_SCREEN; then
+        delete_lines "$pathToRootCoordinator" 14 35-37 44 66 68-70
+    else
+        delete_lines "$pathToRootCoordinator" 15 38-41 49 76-78
+    fi
+    
+    #Removing from RootViewModel
+    if $REMOVE_TNC_SCREEN; then
+        delete_lines "$pathToRootViewModel" 16 31-33 36-41
+    else
+        delete_lines "$pathToRootViewModel" 17 34 44-49
+    fi
+    
+
+elif [ "$REQUIRE_ONBOARDING_SCREEN" = "y" ] || [ "$REQUIRE_ONBOARDING_SCREEN" = "Y" ]; then
+    echo "Onboarding screen will be added."
+else
+    echo "Incorrect input given."
+fi
+
+
 
 # Execute Ruby script
 ruby << RUBY_SCRIPT
@@ -257,6 +298,7 @@ old_project_name = "$OLD_APP_NAME"
 new_project_name = "$NEW_APP_NAME"
 remove_side_menu = $REMOVE_SIDE_MENU
 remove_tnc_screen = $REMOVE_TNC_SCREEN
+remove_onboarding_screen = $REMOVE_ONBOARDING_SCREEN
 num_tab = $NUM_TABS
 project_path = "#{Dir.pwd}/#{new_project_name}.xcodeproj"
 
@@ -330,7 +372,10 @@ project.targets.each do |target|
     if file_ref.path == 'SideMenuView.swift' && remove_side_menu == true
       target.source_build_phase.remove_file_reference(file_ref)
     end
-    if file_ref.path == 'AcceptTermsAndConditionsScreen.swift' && remove_tnc_screen == true
+    if file_ref.path == 'TermsAndConditionsScreen.swift' && remove_tnc_screen == true
+      target.source_build_phase.remove_file_reference(file_ref)
+    end
+    if file_ref.path == 'OnboardingScreen.swift' && remove_onboarding_screen == true
       target.source_build_phase.remove_file_reference(file_ref)
     end
     
@@ -353,7 +398,10 @@ project.targets.each do |target|
         remove_group(child, target, "SideMenuView.swift")
       end
       if remove_tnc_screen == true
-        remove_group(child, target, "AcceptTermsAndConditionsScreen.swift")
+        remove_group(child, target, "TermsAndConditionsScreen.swift")
+      end
+      if remove_onboarding_screen == true
+        remove_group(child, target, "OnboardingScreen.swift")
       end
     end
   end
@@ -364,6 +412,9 @@ if remove_side_menu == true
 end
 if remove_tnc_screen == true
   remove_folder(project.main_group, "TermsAndConditions")
+end
+if remove_onboarding_screen == true
+  remove_folder(project.main_group, "Onboarding")
 end
 
 # Rename a specific group (change 'SpecificGroupName' to the name of the group you want to rename)
