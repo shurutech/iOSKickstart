@@ -36,7 +36,9 @@ struct RootCoordinator: View {
             case .acceptPolicy:
                 AcceptTermsAndConditionsScreen(onCompleted: { rootViewModel.markTermsAndConditionsAccepted() })
             case .onboarding:
-                OnboardingScreen(onCompleted: { rootViewModel.markOnboardingDone() }, onBackPressed: { rootViewModel.isTermsAndConditionsAccepted = false })
+                OnboardingScreen(onCompleted: { rootViewModel.markOnboardingDone() }, onBackPressed: {
+                    rootViewModel.isTermsAndConditionsAccepted = false
+                })
             case .mainApp:
                 MainTabCoordinator()
             }

@@ -27,7 +27,10 @@ struct OnboardingScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: getLocalString(title), hasBackButton: true, onBackArrowClick: { onBackPressed() })
+                Header(text: getLocalString(title)
+                       , hasBackButton: true
+                       ,onBackArrowClick: { onBackPressed() }
+                )
                 
                 pageView
                 

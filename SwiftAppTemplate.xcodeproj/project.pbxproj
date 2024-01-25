@@ -180,6 +180,8 @@
 				6B3D63E02B5FD7A800360B5E /* APIUsecase */,
 				6B6FCA982B594F1500A0FD1D /* ProfileScreen.swift */,
 				6B6FCA9A2B594F1500A0FD1D /* WebScreen.swift */,
+				C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */,
+				C91689542B56890C00E11849 /* SettingsViewModel.swift */,
 			);
 			path = "Dummy-Use&Delete";
 			sourceTree = "<group>";
@@ -246,7 +248,6 @@
 			children = (
 				6B6FCA962B594F1500A0FD1D /* MainTabView */,
 				6BB561402B5642100026382B /* SideMenu */,
-				C928701A2B4C0E8D0007DD1E /* Settings */,
 				6B6775A72B4562A20014DAC3 /* Splash */,
 				6B67759E2B4551CE0014DAC3 /* Authentication */,
 				6B67759F2B4551F70014DAC3 /* Onboarding */,
@@ -401,23 +402,6 @@
 				C93CBE4B2B513B480058965E /* SideMenuView.swift */,
 			);
 			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		C91689532B5688F500E11849 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				C91689542B56890C00E11849 /* SettingsViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		C928701A2B4C0E8D0007DD1E /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				C91689532B5688F500E11849 /* ViewModels */,
-				C928701B2B4C0EA70007DD1E /* SettingsScreen.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
