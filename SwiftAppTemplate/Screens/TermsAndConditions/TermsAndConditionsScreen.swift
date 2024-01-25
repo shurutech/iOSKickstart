@@ -1,5 +1,5 @@
 //
-//  AcceptTermsAndConditionsScreen.swift
+//  TermsAndConditionsScreen.swift
 //  SwiftAppTemplate
 //
 //  Created by Vijay Goswami on 03/01/24.
@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct AcceptTermsAndConditionsScreen: View {
+struct TermsAndConditionsScreen: View {
     private let title: String = "Terms & Conditions"
     private let buttonText: String = "Next"
     private let tncText: String = "Read and accept Terms & Conditions"
     
     let onCompleted: () -> Void
     @State var isTermsSelected: Bool = false
+    @State var isLoading: Bool = true
+    @State var showError: Bool = false
     
     //MARK: - Views
     
@@ -22,12 +24,22 @@ struct AcceptTermsAndConditionsScreen: View {
             VStack {
                 Header(text: getLocalString(title))
                 
+                WebView(urlString: "https://shurutech.com/team/", isLoading: $isLoading, showError: $showError)
+                
                 termsView
                 
                 Spacer()
                 
                 TextButton(onClick: { onNextPressed() }, text: getLocalString(buttonText), color: canGoNext() ? .primaryNavyBlue : .gray)
             }
+        }
+        .loader(isLoading)
+        .alert(isPresented: $showError){
+            Alert(
+                title: Text("Error"),
+                message: Text("Cannot load the webpage. Something went wrong."),
+                dismissButton: .default(Text("OK"))
+            )
         }
         .padding()
     }
@@ -67,5 +79,5 @@ struct AcceptTermsAndConditionsScreen: View {
 }
 
 #Preview {
-    AcceptTermsAndConditionsScreen(onCompleted: {})
+    TermsAndConditionsScreen(onCompleted: {})
 }
