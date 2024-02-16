@@ -1,6 +1,20 @@
 # iOS-App-Boilerplate
-
-## APP ENTRY POINT:
+ - This is an iOS app template, built with SwiftUI. This template can be used for creating new iOS app that has basic screens flow like Splash > Authorisation/Login-SignUp > Terms & Conditions > Onboarding(Carousel) > Main Tab Screens. These screens use basic dummy content. Addition of any new screen or deletion of existing screen can be managed easily. App has organised folder structure for different kind of files.   
+ 
+ **Requirements:
+  -  Xcode 15+
+ 
+ **Create New App
+   - New app can be created with below terminal command. This command execution will require input like New App Name, Sidebar is required(y) or not(n) (Yes or No), Number of Tabs required in created App (Between 2 to 5), Terms and Condition screen is required or not, Onboarding screen is required or not. 
+   bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/ios-swift-template/main/create_swift_app.sh?token=GHSAT0AAAAAACMJYMQ6YPVQ2DA5ZHJK2CUSZNSNOPQ") -i
+ 
+ **Post App Creation
+   - Configuration Folder: Update values of variables like APP_NAME, APP_BUNDLE_ID, BASE_URL in Debug and Release configuration files as per project.
+   NOTE: Different bundle IDs are used for debug and release mode. So two different app will be created. If we want to keep same app, both bundle IDs should be same.     
+   - Dummy-Use&Delete Folder: This folder has files for example purpose. Files of this folder are used in TabsScreens and for API flow use case. For Networking or API use case, Open Weather API is used for fetching weather data in app. Just use files of this folder for references and delete it later.
+   
+## Folder Structure
+   APP ENTRY POINT:
  - LaunchApp.swift file: When user clicks app icon, this will be the starting code for app. It should not have any heavy components. It will navigate to first View. Here we are using RootCoordinator.
  
  **Screens Folder**
@@ -12,9 +26,8 @@
    - When all the screens will be visited then it will be navigate to MainTabCoordinator which have Main Tab screens.
    
    MainTabCoordinator:
-    - This contains all main tabs, in template we have Home, Profile and Support.
-    - This uses MainTabViewModel for getting data of a particular Tab's screen.
-    - Particular tab screen will have there own content.
+    - This contains all main tabs, in template we have Tab1, Tab2, Tab3, Tab4, Tab5.
+    - Particular tab will have there own content with screens like Tab1Screen, Tab2Screen....
     - There is a SideMenubar that appears from top left menu button - https://medium.com/geekculture/side-menu-in-ios-swiftui-9fe1b69fc487
     
 **ReusableViews Folder**
