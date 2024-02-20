@@ -22,7 +22,8 @@ after_install=$(gem list --local | cut -d" " -f1)
 newly_installed=$(comm -13 <(echo "$before_install" | sort) <(echo "$after_install" | sort))
 
 # Get new app name from user
-read -p "Enter the new app name: " NEW_APP_NAME
+echo -e "\033[31mEnter the new app name: \033[0m\c"
+read NEW_APP_NAME
 if [ -z "$NEW_APP_NAME" ]; then
     echo "Error: New app name cannot be empty."
     exit 1
@@ -107,7 +108,8 @@ sed -i '' "s/$OLD_BUNDLE_ID/$NEW_APP_BUNDLE_ID/g" "$RELEASE_CONFIG_FILE"
 sed -i '' "s/$OLD_APP_NAME/$NEW_APP_NAME/g" "$RELEASE_CONFIG_FILE"
 
 # Ask the user to include the side menu or not
-read -p "Do you require a side menu? (Yn): " REQUIRE_SIDE_MENU
+echo -e "\033[31mDo you require a side menu? (Yn): \033[0m\c"
+read REQUIRE_SIDE_MENU
 REMOVE_SIDE_MENU=false
 
 if [ "$REQUIRE_SIDE_MENU" = "n" ] || [ "$REQUIRE_SIDE_MENU" = "N" ]; then
@@ -135,7 +137,8 @@ else
 fi
 
 # Ask user to enter number of tabs required in app
-read -p "Enter the number of tabs between 2 to 5: " NUM_TABS
+echo -e "\033[31mEnter the number of tabs between 2 to 5: \033[0m\c"
+read NUM_TABS
 
 if [ "$NUM_TABS" -ge 2 ] && [ "$NUM_TABS" -le 5 ]; then
     echo "Continuing with $NUM_TABS tabs."
@@ -207,7 +210,8 @@ done
 
 
 # Ask the user to include the tnc screen or not
-read -p "Do you require a terms and condition screen? (Yn): " REQUIRE_TNC_SCREEN
+echo -e "\033[31mDo you require a terms and condition screen? (Yn): \033[0m\c"
+read REQUIRE_TNC_SCREEN
 REMOVE_TNC_SCREEN=false
 
 if [ "$REQUIRE_TNC_SCREEN" = "n" ] || [ "$REQUIRE_TNC_SCREEN" = "N" ]; then
@@ -247,7 +251,8 @@ fi
 
 
 # Ask the user to include the onboarding screen or not
-read -p "Do you require an onboarding screen? (Yn): " REQUIRE_ONBOARDING_SCREEN
+echo -e "\033[31mDo you require an onboarding screen? (Yn): \033[0m\c"
+read REQUIRE_ONBOARDING_SCREEN
 REMOVE_ONBOARDING_SCREEN=false
 
 if [ "$REQUIRE_ONBOARDING_SCREEN" = "n" ] || [ "$REQUIRE_ONBOARDING_SCREEN" = "N" ]; then
@@ -498,5 +503,5 @@ fi
  # Remove the create_swift_app.sh script
 rm -f "$DESTINATION_PATH/create_swift_app.sh"
 
-echo "Project $NEW_APP_NAME created successfully."
+echo "\032[31mProject $NEW_APP_NAME created successfully. \032[0m\c"
 
