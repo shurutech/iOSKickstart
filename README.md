@@ -1,75 +1,61 @@
-# iOS-App-Boilerplate
- - This is an iOS app template, built with SwiftUI. This template can be used for creating new iOS app that has basic screens flow like Splash > Authorisation/Login-SignUp > Terms & Conditions > Onboarding(Carousel) > Main Tab Screens. These screens use basic dummy content. Addition of any new screen or deletion of existing screen can be managed easily. App has organised folder structure for different kind of files.   
+# iOS-Swift-Template
+ - An iOS app template built with SwiftUI. This template is designed for creating new iOS apps with a basic screen flow: Splash > Authorization/Login-SignUp > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app features an organized folder structure for different types of files.  
  
  **Requirements:
   -  Xcode 15+
+  -  MacOS
  
  **Create New App
-   - New app can be created with below terminal command. This command execution will require input like New App Name, Sidebar is required(y) or not(n) (Yes or No), Number of Tabs required in created App (Between 2 to 5), Terms and Condition screen is required or not, Onboarding screen is required or not. 
-   bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/ios-swift-template/main/create_swift_app.sh?token=GHSAT0AAAAAACMJYMQ6YPVQ2DA5ZHJK2CUSZNSNOPQ") -i
+   - You can create a new app with the following terminal command. This process will prompt you for input, such as the new app's name, whether a sidebar is required (y for yes or n for no), the number of tabs needed in the created app (between 2 to 5), and whether the Terms and Conditions and Onboarding screens are required.
+   bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/ios-swift-template/main/create_swift_app.sh?token=GHSAT0AAAAAACMJXZ3AN5E5I5UNEGGQWS2KZOULLUA") -i
  
- **Post App Creation
-   - Configuration Folder: Update values of variables like APP_NAME, APP_BUNDLE_ID, BASE_URL in Debug and Release configuration files as per project.
-   NOTE: Different bundle IDs are used for debug and release mode. So two different app will be created. If we want to keep same app, both bundle IDs should be same.     
-   - Dummy-Use&Delete Folder: This folder has files for example purpose. Files of this folder are used in TabsScreens and for API flow use case. For Networking or API use case, Open Weather API is used for fetching weather data in app. Just use files of this folder for references and delete it later.
+ **Post App Creation**
+   After creating your app, follow these steps:
+
+   - Open the newly created app in Xcode and check the Configuration Folder. Update the values of variables such as APP_NAME, APP_BUNDLE_ID, and BASE_URL in the Debug and Release configuration files as per your project. Note that different APP_BUNDLE_IDs are used for debug and release modes. To create a single app for both modes, ensure both bundle IDs are the same.
+
+   - Dummy-Use&Delete Folder: This folder contains example files used in TabScreens and for API flow use cases. For networking or API use cases, the Open Weather API is utilized for fetching weather data in the app. Use these files for reference, then delete them later.
    
-## Folder Structure
+## App Folders & Files
    APP ENTRY POINT:
- - LaunchApp.swift file: When user clicks app icon, this will be the starting code for app. It should not have any heavy components. It will navigate to first View. Here we are using RootCoordinator.
+ - LaunchApp.swift: The starting point of the app when the user clicks the app icon. It navigates to the first view using RootCoordinator, without any heavy components.
  
  **Screens Folder**
  
-  RootCoordinator:
-   - This is initial view which will decide the flow of screens for Splash, Authorisation(Login/Signup), TermsAndConditions, Onboarding, MainTabs Views. This uses the RootViewModel for logics. Here we can add or remove screens as per App flow.
-   - RootViewModel's start method will have App start set ups and configurations.
-   - This basically handles the screens which are shown once during first time walkthrough flow. In this template we are showing these screens every time, but these can be handled by having variables in UserPreferences(Local storage) 
-   - When all the screens will be visited then it will be navigate to MainTabCoordinator which have Main Tab screens.
-   
-   MainTabCoordinator:
-    - This contains all main tabs, in template we have Tab1, Tab2, Tab3, Tab4, Tab5.
-    - Particular tab will have there own content with screens like Tab1Screen, Tab2Screen....
-    - There is a SideMenubar that appears from top left menu button - https://medium.com/geekculture/side-menu-in-ios-swiftui-9fe1b69fc487
+ - RootCoordinator: Determines the flow of screens (Splash, Authorization, Terms and Conditions, Onboarding, Main Tabs). It uses RootViewModel for logic, handling the walkthrough flow once and saving state in UserPreferences (local storage).
+
+ - MainTabCoordinator: Contains all main tabs (e.g., Tab1, Tab2...). Each tab has its own content and screens (e.g., Tab1Screen, Tab2Screen...). Includes a side menu bar accessible from the top-left menu button. https://medium.com/geekculture/side-menu-in-ios-swiftui-9fe1b69fc487
     
 **ReusableViews Folder**
-  - Here we have all the sub views or components that have multiple uses in different screens for example PrimaryButtonView or some list's single item View
+  - Contains all subviews or components used in multiple screens, e.g., PrimaryButtonView or a list's single item view.
   
-**Managers Folders**
-  - Here we have Manager classes that are used to handle specific App Level functions for example we can use AuthenticationManager that manages Auth0 functionality for login/signup or logout 
+**Managers Folder**
+  - Contains Manager classes for handling specific app-level functions, e.g., AuthenticationManager for managing Auth0 functionality (login/signup/logout). 
 
 ## NETWORKING:
 
 **Network Folder**
- - For rest API requests we are using Alamofire package. 
- - We have NetworkManager class which have API request method that handles success and error
- - All the API endpoints are included in APIEndpoints enum
+ - Utilizes the Alamofire package for REST API requests. The NetworkManager class handles API requests, including success and error management. All the API endpoints are included in APIEndpoints enum.
  
 **Service Folder**
-  - Here we have classes related to specific service that is used to make API calls for example UserService for get/update/delete a User
-  - Service class will call request method of Network class.
-  - Service will be used in particular screen's ViewModel class to provide data
+  - Contains classes for specific services making API calls, e.g., UserService for user-related operations. Services call the network class's request method and are used in screen ViewModel classes.
   
 **Models Folder**
-  - Here we have data structs which will be used to map the json Data used with APIs request and response.
+  - Contains data structures for mapping JSON data used with API requests and responses.
   
 
 ## APP UTILITY:
  
  **Utils Folder**
- - Here we have all utility classes/structs that are used at app level like Fonts/Colors/Constants etc.
- - KeyChainStorage: This is used to set/get data locally in encrypted format, uses KeychianSwift package and helpful while saving/retrieving Secure Data like AUTHORIZATION TOKEN
- - UserPreferences: This is used set/get data locally with device's User Defaults. This does not store data in encrypted format.
+ - Contains utility classes/structs for app-level use, such as Fonts, Colors, Constants, etc. Includes KeyChainStorage for encrypted local data storage and UserPreferences for unencrypted local storage.
 
  **Resources Folder**
- - All the resource files like images, fonts, strings are kept in folder.
+ - All the resource files like images, fonts, strings are kept in this folder.
  - Images/icons for different device resolutions, App icon, colors for different themes like Dark/Light are managed in Assets file. 
- - Localizable have static Texts used in app. This is also used to create app content in different languages.
+ - Localizable have static Texts used in app. Also used to create static app strings in different languages.
+ 
 
  **Configuration Folder**
- - Here we have app configuration files such as Debug and Release.
- - Staging or Production environment specific variables like BASE_URL, KEY/TOKEN are stored in respective config files.
- - These variables are mapped in info.plist file
- - We can change APP_NAME, APP_ICON etc for debug and release configurations
- - Reference: https://www.appcoda.com/xcconfig-guide/
-
-   
+ - Contains app configuration files for Debug and Release modes, including environment-specific variables. These variables are mapped in the Info.plist file, allowing changes to app name, icon, etc., for different configurations.
+ - For more details on managing Xcode configurations: https://www.appcoda.com/xcconfig-guide/
 
