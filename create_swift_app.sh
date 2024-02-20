@@ -503,5 +503,5 @@ fi
  # Remove the create_swift_app.sh script
 rm -f "$DESTINATION_PATH/create_swift_app.sh"
 
-echo "\032[31mProject $NEW_APP_NAME created successfully. \032[0m\c"
+echo -e "\033[32mProject $NEW_APP_NAME created successfully. \033[0m\n"
 
