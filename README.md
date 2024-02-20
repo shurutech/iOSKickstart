@@ -1,11 +1,11 @@
 # iOS-Swift-Template
  - An iOS app template built with SwiftUI. This template is designed for creating new iOS apps with a basic screen flow: Splash > Authorization/Login-SignUp > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app features an organized folder structure for different types of files.  
  
- **Requirements:
+ **Requirements:**
   -  Xcode 15+
   -  MacOS
  
- **Create New App
+ **Create New App**
    - You can create a new app with the following terminal command. This process will prompt you for input, such as the new app's name, whether a sidebar is required (y for yes or n for no), the number of tabs needed in the created app (between 2 to 5), and whether the Terms and Conditions and Onboarding screens are required.
    bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/ios-swift-template/main/create_swift_app.sh?token=GHSAT0AAAAAACMJXZ3AN5E5I5UNEGGQWS2KZOULLUA") -i
  
