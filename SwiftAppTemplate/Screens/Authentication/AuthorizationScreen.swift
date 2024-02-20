@@ -52,12 +52,13 @@ struct AuthorizationScreen: View {
         }
     }
     
-    var passwordField : some View {
+    var emailField : some View {
         VStack(alignment: .leading) {
-            Text(getLocalString(passwordTitle))
+            Text(getLocalString(emailTitle))
                 .font(.notoSansMedium16)
                 .foregroundColor(.primaryNavyBlue)
-            SecureField(getLocalString(passwordTitle), text: $password)
+            TextField(getLocalString(emailPlaceHolder), text: $email)
+                .autocapitalization(.none)
                 .padding(14)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -66,12 +67,12 @@ struct AuthorizationScreen: View {
         }
     }
     
-    var emailField : some View {
+    var passwordField : some View {
         VStack(alignment: .leading) {
-            Text(getLocalString(emailTitle))
+            Text(getLocalString(passwordTitle))
                 .font(.notoSansMedium16)
                 .foregroundColor(.primaryNavyBlue)
-            TextField(getLocalString(emailPlaceHolder), text: $email)
+            SecureField(getLocalString(passwordTitle), text: $password)
                 .padding(14)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)

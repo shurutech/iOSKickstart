@@ -24,7 +24,9 @@ struct TermsAndConditionsScreen: View {
             VStack {
                 Header(text: getLocalString(title))
                 
-                WebView(urlString: "https://shurutech.com/team/", isLoading: $isLoading, showError: $showError)
+                Text("I am entering into an iOS app template.\nI will improve my app as per my needs.\n...")
+                    .foregroundColor(.black)
+                    .padding(.top, 50)
                 
                 termsView
                 
@@ -33,32 +35,25 @@ struct TermsAndConditionsScreen: View {
                 TextButton(onClick: { onNextPressed() }, text: getLocalString(buttonText), color: canGoNext() ? .primaryNavyBlue : .gray)
             }
         }
-        .loader(isLoading)
-        .alert(isPresented: $showError){
-            Alert(
-                title: Text("Error"),
-                message: Text("Cannot load the webpage. Something went wrong."),
-                dismissButton: .default(Text("OK"))
-            )
-        }
         .padding()
     }
     
     var termsView: some View {
-        HStack(spacing: 12) {
-            Button(action: {
-                isTermsSelected.toggle()
-            }) {
+        Button(action: {
+            isTermsSelected.toggle()
+        }) {
+            HStack(spacing: 12) {
                 Image(systemName: isTermsSelected ? "checkmark.square" : "square")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20)
                     .foregroundColor(.primaryNavyBlue)
+                
+                Text(getLocalString(tncText))
+                    .font(.notoSansMedium16)
+                    .foregroundColor(.primaryNavyBlue)
             }
             
-            Text(getLocalString(tncText))
-                .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
         }
         .padding(.top, 30)
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -35,9 +35,9 @@ struct MainTabCoordinator: View {
             Tab1Screen().tabItem { TabItem(title: "Tab1", icon: "1.circle.fill") }.tag(Tab.tab1)
             Tab2Screen().tabItem { TabItem(title: "Tab2", icon: "2.circle.fill") }.tag(Tab.tab2)
         })
-        .accentColor(.secondaryLightBlue)
+        .accentColor(.primaryNavyBlue)
         .onAppear{
-            UITabBar.appearance().unselectedItemTintColor = UIColor(Color.primaryNavyBlue)
+            UITabBar.appearance().unselectedItemTintColor = UIColor(Color.secondaryLightBlue)
         }
     }
     

@@ -10,8 +10,8 @@ import SwiftUI
 struct OnboardingScreen: View {
     private let title: String = "Onboarding"
     let images: [Image] = [
-        Image(.logo),
-        Image(.logo)
+        Image(.onboarding1),
+        Image(.onboarding2)
     ]
     let onCompleted: () -> Void
     let onBackPressed: () -> Void
