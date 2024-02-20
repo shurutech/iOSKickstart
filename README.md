@@ -7,7 +7,7 @@
  
  **Create New App**
    - You can create a new app with the following terminal command. This process will prompt you for input, such as the new app's name, whether a sidebar is required (y for yes or n for no), the number of tabs needed in the created app (between 2 to 5), and whether the Terms and Conditions and Onboarding screens are required.
-  ```bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/ios-swift-template/main/create_swift_app.sh?token=GHSAT0AAAAAACMJXZ3AN5E5I5UNEGGQWS2KZOULLUA") -i```
+   - ```bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/ios-swift-template/main/create_swift_app.sh?token=GHSAT0AAAAAACMJXZ3AN5E5I5UNEGGQWS2KZOULLUA") -i```
  
  **Post App Creation**
    After creating your app, follow these steps:
