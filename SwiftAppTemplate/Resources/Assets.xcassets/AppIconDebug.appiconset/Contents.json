@@ -1,109 +1,109 @@
 {
   "images" : [
     {
-      "filename" : "ic_launcher copy-20@2x.png",
+      "filename" : "AppIconDebug-20@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "ic_launcher copy-20@3x.png",
+      "filename" : "AppIconDebug-20@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "ic_launcher copy-29@2x.png",
+      "filename" : "AppIconDebug-29@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "ic_launcher copy-29@3x.png",
+      "filename" : "AppIconDebug-29@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "ic_launcher copy-40@2x.png",
+      "filename" : "AppIconDebug-40@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "ic_launcher copy-40@3x.png",
+      "filename" : "AppIconDebug-40@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "ic_launcher copy-60@2x.png",
+      "filename" : "AppIconDebug-60@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "ic_launcher copy-60@3x.png",
+      "filename" : "AppIconDebug-60@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "ic_launcher copy-20.png",
+      "filename" : "AppIconDebug-20.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
-      "filename" : "ic_launcher copy-20@2x.png",
+      "filename" : "AppIconDebug-20@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "ic_launcher copy-29.png",
+      "filename" : "AppIconDebug-29.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "ic_launcher copy-29@2x.png",
+      "filename" : "AppIconDebug-29@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "ic_launcher copy-40.png",
+      "filename" : "AppIconDebug-40.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "ic_launcher copy-40@2x.png",
+      "filename" : "AppIconDebug-40@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "ic_launcher copy-76.png",
+      "filename" : "AppIconDebug-76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "ic_launcher copy-76@2x.png",
+      "filename" : "AppIconDebug-76@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "ic_launcher copy-83.5@2x.png",
+      "filename" : "AppIconDebug-83.5@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "ic_launcher copy-1024.png",
+      "filename" : "AppIconDebug-1024.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

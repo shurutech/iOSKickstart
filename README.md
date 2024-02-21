@@ -1,4 +1,5 @@
 # iOS-Swift-Template
+
  - An iOS app template built with SwiftUI. This template is designed for creating new iOS apps with a basic screen flow: Splash > Authorization/Login-SignUp > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app features an organized folder structure for different types of files.  
  
  **Requirements:**
@@ -14,6 +15,8 @@
    After creating your app, follow these steps:
 
    - Open the newly created app in Xcode and check the Configuration Folder. Update the values of variables such as APP_NAME, APP_BUNDLE_ID, and BASE_URL in the Debug and Release configuration files as per your project. Note that different APP_BUNDLE_IDs are used for debug and release modes. To create a single app for both modes, ensure both bundle IDs are the same.
+   
+   - Update Launcher icon and Splash logo as per App display. Icons and images can be updated from Assets file located in Resources folder. 
 
    - Dummy-Use&Delete Folder: This folder contains example files used in TabScreens and for API flow use cases. For networking or API use cases, the Open Weather API is utilized for fetching weather data in the app. Use these files for reference, then delete them later.
    

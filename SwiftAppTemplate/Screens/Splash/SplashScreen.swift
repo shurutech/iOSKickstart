@@ -13,6 +13,9 @@ struct SplashScreen: View {
             Color.primaryNavyBlue.ignoresSafeArea(.all)
             VStack {
                 Image(.logo)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100)
             }
             .padding()
         }
