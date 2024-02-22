@@ -2,7 +2,8 @@
 # iOS-Swift-Template
 
  - An iOS app template built with SwiftUI. This template is designed for creating new iOS apps with a basic screen flow: Splash > Authorization/Login-SignUp > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app features an organized folder structure for different types of files.  
- 
+
+ ## Demo Video
 
 https://github.com/shurutech/ios-swift-template/assets/127201055/c5344d73-d3a3-453f-bf8e-d865e36558bf
 
