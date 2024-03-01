@@ -1,7 +1,19 @@
 ![ic_launcher](https://github.com/shurutech/ios-swift-template/assets/127201055/bc2cacf3-92cb-41de-af15-9a5ece810618)
 # iOS-Swift-Template
 
- - An iOS app template built with SwiftUI. This template is designed for creating new iOS apps with a basic screen flow: Splash > Authorization/Login-SignUp > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app features an organized folder structure for different types of files.  
+ - An iOS app template built with SwiftUI. This template is designed for creating new iOS apps with a basic screen flow: Splash > Authorization/Login-SignUp > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app features an organized folder structure for different types of files.
+
+ **Just use one command and create new iOS App**
+   
+```
+
+ bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/ios-swift-template/main/create_swift_app.sh") -i
+    
+```
+
+   - Copy the above command and paste into terminal.
+   - This process will prompt you for input, such as the new app's name, whether a sidebar is required (y for yes or n for no), the number of tabs needed in the created app (between 2 to 5), and whether the Terms and Conditions and Onboarding screens are required.
+   - New app will be created on Desktop
 
  ## Demo Video
 
@@ -12,10 +24,8 @@ https://github.com/shurutech/ios-swift-template/assets/127201055/c5344d73-d3a3-4
   -  Xcode 15+
   -  MacOS
  
- **Create New App**
-   - You can create a new app with the following terminal command. This process will prompt you for input, such as the new app's name, whether a sidebar is required (y for yes or n for no), the number of tabs needed in the created app (between 2 to 5), and whether the Terms and Conditions and Onboarding screens are required.
-   - ```bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/ios-swift-template/main/create_swift_app.sh") -i```
-   - New app will be created on Desktop
+
+   
  
  **Post App Creation**
    After creating your app, follow these steps:
