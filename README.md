@@ -1,7 +1,8 @@
-![ic_launcher](https://github.com/shurutech/ios-swift-template/assets/127201055/bc2cacf3-92cb-41de-af15-9a5ece810618)
 # iOS-Swift-Template
 
  - An iOS app template built with SwiftUI. This template is designed for creating new iOS apps with a basic screen flow: Splash > Authorization/Login-SignUp > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app features an organized folder structure for different types of files.
+
+## Get Started
 
  **Just use one command and create new iOS App**
    
@@ -20,21 +21,73 @@
 https://github.com/shurutech/ios-swift-template/assets/127201055/c5344d73-d3a3-453f-bf8e-d865e36558bf
 
 
- **Requirements:**
-  -  Xcode 15+
-  -  MacOS
+<details>
+  <summary>Requirements:</summary>
+
+  This is the detailed content that was hidden and can now be seen! You can put any Markdown or HTML content here.
+
+  - Xcode 15+
+  - MacOS
+  - Basic iOS development knowledge
+
+</details>  
+
+<details>
+  <summary>Post App Creation</summary>
+
+  After creating your app, follow these steps:
  
+ - Open the newly created app in Xcode and check the Configuration Folder. Update the values of variables such as APP_NAME, APP_BUNDLE_ID, and BASE_URL in the Debug and Release configuration files as per your project. Note that different APP_BUNDLE_IDs are used for debug and release modes. To create a single app for both modes, ensure both bundle IDs are the same.
+ - Update Launcher icon and Splash logo as per App display. Icons and images can be updated from Assets file located in Resources folder. 
+ - Dummy-Use&Delete Folder: This folder contains example files used in TabScreens and for API flow use cases. For networking or API use cases, the Open Weather API is utilized for fetching weather data in the app. Use these files for reference, then delete them later.
 
-   
- 
- **Post App Creation**
-   After creating your app, follow these steps:
+</details>  
 
-   - Open the newly created app in Xcode and check the Configuration Folder. Update the values of variables such as APP_NAME, APP_BUNDLE_ID, and BASE_URL in the Debug and Release configuration files as per your project. Note that different APP_BUNDLE_IDs are used for debug and release modes. To create a single app for both modes, ensure both bundle IDs are the same.
-   
-   - Update Launcher icon and Splash logo as per App display. Icons and images can be updated from Assets file located in Resources folder. 
+## Next Steps/Features
+- Add authentication methods using auth0, supabase, custom api and allow developers to select as there preference
+- Make main tabs name and icons as per developer choice
+- Provide ability to choose primary and seconday app theme colors
+- Make the app template more generic based on developers feedback
 
-   - Dummy-Use&Delete Folder: This folder contains example files used in TabScreens and for API flow use cases. For networking or API use cases, the Open Weather API is utilized for fetching weather data in the app. Use these files for reference, then delete them later.
+## Contribution Guidelines
+
+Thank you for your interest in contributing to our iOS Swift Template project! We value the contributions of each developer and encourage you to share your ideas, improvements, and fixes with us. To ensure a smooth collaboration process, please follow these guidelines.
+
+Before you begin:
+- Make sure you have a GitHub account.
+- Familiarize yourself with the project by reading the README, exploring the issues, and understanding the app's architecture and coding standards.
+
+## How to Contribute
+
+### Reporting Bugs
+
+Before reporting a bug, please:
+- Check the issue tracker to ensure the bug hasn't already been reported.
+- If the issue is unreported, create a new issue, providing:
+  - A clear title and description.
+  - Steps to reproduce the bug.
+  - Expected behavior and what actually happened.
+  - Any relevant error messages or screenshots.
+
+### Suggesting Enhancements
+
+We love to receive suggestions for enhancements! Please:
+- First, check if the enhancement has already been suggested.
+- If not, open a new issue, describing the enhancement and why it would be beneficial.
+
+### Pull Requests
+
+Ready to contribute code? Follow these steps:
+1. **Fork the repository** - Create your own fork of the project.
+2. **Create a new branch** for your changes - Keep your branch focused on a single feature or bug fix.
+3. **Commit your changes** - Write clear, concise commit messages that explain your changes.
+4. **Follow the coding standards** - Ensure your code adheres to the coding standards used throughout the project.
+5. **Write tests** - If possible, write tests to cover the new functionality or bug fix.
+7. **Submit a pull request** - Provide a clear description of the problem and solution. Include the relevant issue number if applicable.
+
+## Conduct
+
+We are committed to providing a welcoming and inspiring community for all. By participating in this project, you are expected to uphold our Code of Conduct, which promotes respect and collaboration.
    
 ## App Folders & Files
    APP ENTRY POINT:
@@ -79,65 +132,10 @@ https://github.com/shurutech/ios-swift-template/assets/127201055/c5344d73-d3a3-4
  - Contains app configuration files for Debug and Release modes, including environment-specific variables. These variables are mapped in the Info.plist file, allowing changes to app name, icon, etc., for different configurations.
  - For more details on managing Xcode configurations: https://www.appcoda.com/xcconfig-guide/
 
-# Next Steps/Features
-- Add authentication methods and allow developers to select as there preference
-- Make main tabs name as per developer choice
-- Make the app template more generic based on developers feedback
-  
-
-# Contribution Guidelines
-
-Thank you for your interest in contributing to our iOS Swift Template project! We value the contributions of each developer and encourage you to share your ideas, improvements, and fixes with us. To ensure a smooth collaboration process, please follow these guidelines.
-
-## Getting Started
-
-Before you begin:
-- Make sure you have a GitHub account.
-- Familiarize yourself with the project by reading the README, exploring the issues, and understanding the app's architecture and coding standards.
-
-## How to Contribute
-
-### Reporting Bugs
-
-Before reporting a bug, please:
-- Check the issue tracker to ensure the bug hasn't already been reported.
-- If the issue is unreported, create a new issue, providing:
-  - A clear title and description.
-  - Steps to reproduce the bug.
-  - Expected behavior and what actually happened.
-  - Any relevant error messages or screenshots.
-
-### Suggesting Enhancements
-
-We love to receive suggestions for enhancements! Please:
-- First, check if the enhancement has already been suggested.
-- If not, open a new issue, describing the enhancement and why it would be beneficial.
-
-### Pull Requests
-
-Ready to contribute code? Follow these steps:
-1. **Fork the repository** - Create your own fork of the project.
-2. **Create a new branch** for your changes - Keep your branch focused on a single feature or bug fix.
-3. **Commit your changes** - Write clear, concise commit messages that explain your changes.
-4. **Follow the coding standards** - Ensure your code adheres to the coding standards used throughout the project.
-5. **Write tests** - If possible, write tests to cover the new functionality or bug fix.
-6. **Ensure the test suite passes** - Run the project's tests to ensure your changes don't break existing functionality.
-7. **Submit a pull request** - Provide a clear description of the problem and solution. Include the relevant issue number if applicable.
-
-## Conduct
-
-We are committed to providing a welcoming and inspiring community for all. By participating in this project, you are expected to uphold our Code of Conduct, which promotes respect and collaboration.
 
 ## Questions?
 
 Feel free to contact the project maintainers if you have any questions or need further guidance on contributing.
 
 Thank you for contributing to our iOS App Template project! Your efforts help make our project better for everyone.
-
-
-## Contributors
-
-- [@vijay-shuru](https://github.com/vijay-shuru) - Vijay Goswami
-- [@gunveer-shuru](https://github.com/gunveer-shuru) - Gunveer Sandhu
-- [@ashok-shuru](https://github.com/ashok-shuru) - Ashok Kumar
 
