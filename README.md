@@ -47,9 +47,12 @@ https://github.com/shurutech/ios-swift-template/assets/127201055/c5344d73-d3a3-4
 </details>  
 
 ## Next Steps/Features
-- Add authentication methods using auth0, supabase, custom api and allow developers to select as there preference
-- Make main tabs name and icons as per developer choice
+We plan to continue building after the initial release and look forward to the feedback from the community. As of now we have following features planned out for next releases.
+- Add different authentication methods like auth0, supabase, custom api and allow developers to select one from CLI as preferred
+- Accept main tab names and icons from CLI
 - Provide ability to choose primary and seconday app theme colors
+- Add different chat support tool integrations and ability to select one from CLI
+- Add different payment provider integrations and ability to select one from CLI
 - Make the app template more generic based on developers feedback
 
 ## Contribution Guidelines
