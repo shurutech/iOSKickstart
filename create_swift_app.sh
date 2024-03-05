@@ -36,7 +36,7 @@ DESTINATION_PATH="$HOME/Desktop/$NEW_APP_NAME"
 mkdir -p "$DESTINATION_PATH"
 
 # Clone the template project into the destination directory
-git clone https://github.com/shurutech/ios-swift-template.git "$DESTINATION_PATH"
+git clone https://github.com/shurutech/iOSKickstart.git "$DESTINATION_PATH"
 
 # Navigate to the cloned directory
 cd "$DESTINATION_PATH" || exit
