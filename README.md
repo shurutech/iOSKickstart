@@ -143,3 +143,5 @@ Feel free to contact the project maintainers if you have any questions or need f
 
 Thank you for contributing to our iOSKickstart project! Your efforts help make our project better for everyone.
 
+## License
+iOSKickstart is [MIT licensed](https://github.com/shurutech/iOSKickstart/blob/main/LICENSE).
