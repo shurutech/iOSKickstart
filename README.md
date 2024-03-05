@@ -1,4 +1,4 @@
-# iOS-Swift-Template
+# iOSKickstart
 An iOS app boilerplate generator built with SwiftUI. This tool is designed for creating new iOS apps by taking configration on command line, with a basic screen flows: Splash > Authorization/Login-SignUp > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app code follows the idiomatic swift & iOS guidelines.
 
 ## Get Started
@@ -7,7 +7,7 @@ An iOS app boilerplate generator built with SwiftUI. This tool is designed for c
    
 ```
 
- bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/ios-swift-template/main/create_swift_app.sh") -i
+ bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/iOSKickstart/main/create_swift_app.sh") -i
     
 ```
 
@@ -26,9 +26,7 @@ https://github.com/shurutech/ios-swift-template/assets/127201055/c5344d73-d3a3-4
 
 <details>
   <summary>Requirements:</summary>
-
-  This is the detailed content that was hidden and can now be seen! You can put any Markdown or HTML content here.
-
+   
   - Xcode 15+
   - MacOS
   - Basic iOS development knowledge
@@ -57,7 +55,7 @@ We plan to continue building after the initial release and look forward to the f
 
 ## Contribution Guidelines
 
-Thank you for your interest in contributing to our iOS Swift Template project! We value the contributions of each developer and encourage you to share your ideas, improvements, and fixes with us. To ensure a smooth collaboration process, please follow these guidelines.
+Thank you for your interest in contributing to our iOSKickstart project! We value the contributions of each developer and encourage you to share your ideas, improvements, and fixes with us. To ensure a smooth collaboration process, please follow these guidelines.
 
 Before you begin:
 - Make sure you have a GitHub account.
@@ -143,5 +141,5 @@ We are committed to providing a welcoming and inspiring community for all. By pa
 
 Feel free to contact the project maintainers if you have any questions or need further guidance on contributing.
 
-Thank you for contributing to our iOS App Template project! Your efforts help make our project better for everyone.
+Thank you for contributing to our iOSKickstart project! Your efforts help make our project better for everyone.
 
