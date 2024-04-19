@@ -10,8 +10,8 @@ import SwiftUI
 struct ConfirmationSheet: View {
     @Binding var isConfirmationGiven: Bool
     @Binding var isOpen: Bool
-    var title = "Are you sure?"
-    var subTitle = "Are you really really sure that you want to go ahead with this action. It can have permanent consequences?"
+    var title: LocalizedStringKey = "Are you sure?"
+    var subTitle: LocalizedStringKey = "Are you really really sure that you want to go ahead with this action. It can have permanent consequences?"
 
     
     var body: some View {
@@ -32,7 +32,7 @@ struct ConfirmationSheet: View {
                 TextButton(onClick: {
                     isConfirmationGiven.toggle()
                     isOpen.toggle()
-                }, text: "Yes, sure.", style: .filled, color: .primaryNavyBlue)
+                }, text: "YesSure.", style: .filled, color: .primaryNavyBlue)
             }.padding(.bottom, 20)
         }.padding()
     }

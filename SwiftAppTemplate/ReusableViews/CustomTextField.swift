@@ -22,7 +22,7 @@ struct CustomTextField: View {
             }
             
             TextField("", text: $inputText)
-                .foregroundColor(.black)
+                .foregroundColor(.text)
                 .padding(.horizontal, 8)
                 .padding(.vertical, 12)
                 .background(

@@ -1,0 +1,94 @@
+/* 
+  Localizable.strings
+  SwiftAppTemplate
+
+  Created by Vijay Goswami on 05/01/24.
+  
+*/
+
+//MARK: - AuthorizationScreen
+"Login/SignUp" = "Connexion/Inscription";
+"Login" = "Connexion";
+"Password" = "Mot de passe";
+
+//MARK: - AcceptTermsAndConditionsScreen
+"Terms&Conditions" = "Conditions Générales";
+"ReadAndAcceptTerms&Conditions" = "Lire et accepter les Conditions Générales";
+"DummyTermsAndConditions" = "Je pénètre dans un modèle d'application iOS.\nJe vais améliorer mon application selon mes besoins.\n...";
+
+//MARK: - OnboardingScreen
+"Onboarding" = "Intégration";
+"Next" = "Suivant";
+"GetStarted" = "Commencer";
+
+//MARK: - Tabs
+"Home" = "Accueil";
+"Profile" = "Profil";
+"Messages" = "Messages";
+
+//MARK: - Settings
+"Settings" = "Paramètres";
+"Name" = "Nom";
+"Email" = "E-mail";
+"Gender" = "Genre";
+"DateOfBirth" = "Date de naissance";
+"Country" = "Pays";
+"Language" = "Langue";
+"Logout" = "Déconnexion";
+"DeleteAccount" = "Supprimer le compte";
+"Update" = "Mettre à jour";
+"Appearance" = "Apparence";
+"Light" = "Clair";
+"Dark" = "Sombre";
+"LogoutBottomSheetTitle" = "Êtes-vous sûr de vouloir vous déconnecter ?";
+"DeleteAccountBottomSheetTitle" = "Cela supprimera toutes vos données utilisateur. Êtes-vous sûr ?";
+"LogoutBottomSheetSubTitle" = "Cela vous déconnectera, et vous devrez saisir à nouveau vos identifiants pour utiliser l'application.";
+"DeleteAccountBottomSheetSubTitle" = "C'est un choix irréversible. Les données utilisateur supprimées ne seront pas récupérées une fois supprimées. Procédez avec prudence.";
+
+//MARK: - User Details
+"UpdateUserDetails" = "Mettre à jour les détails de l'utilisateur";
+"NamePlaceHolder" = "Votre nom";
+"EmailPlaceHolder" = "Votre adresse e-mail";
+"GenderPlaceHolder" = "Votre genre";
+"DateOfBirthPlaceHolder" = "Sélectionnez la date de naissance";
+"SelectCountry" = "Sélectionner le pays";
+"SelectCountryPlaceHolder" = "Sélectionnez votre pays";
+"SelectLanguage" = "Sélectionner la langue";
+"SelectLanguagePlaceHolder" = "Sélectionnez votre langue";
+"Done" = "Terminé";
+"Update" = "Mettre à jour";
+"SaveUserInfoBottomSheetTitle" = "Voulez-vous enregistrer ?";
+"SaveUserInfoBottomSheetSubTitle" = "Veuillez confirmer tous les détails avant de sauvegarder.";
+"UserDetails" = "Détails de l'utilisateur";
+"Continue" = "Continuer";
+
+//MARK: - Details
+"Details" = "Détails";
+
+"Cancel" = "Annuler";
+"YesSure." = "Oui, bien sûr.";
+"Tab" = "Onglet";
+
+"Male" = "Homme";
+"Female" = "Femme";
+"Other" = "Autre";
+
+"Weather" = "Météo";
+"Summary:" = "Résumé :";
+"Temperature:" = "Température :";
+"Humidity:" = "Humidité :";
+
+"TemperatureIs" = "La température est";
+"RealFeelIs" = "La sensation réelle est";
+"MaxItWillGoIs" = "Le maximum atteignable est";
+"MinItWillFallIs" = "Le minimum descendra à";
+"YouCanSeeAsFarAs" = "Vous pouvez voir aussi loin que";
+"ThePressureYouBeFeelingIs" = "La pression que vous ressentirez est";
+
+"Delhi" = "Delhi";
+"Jaipur" = "Jaipur";
+"Mumbai" = "Mumbai";
+"Chennai" = "Chennai";
+"Bengaluru" = "Bengaluru";
+"Kolkata" = "Kolkata";
+

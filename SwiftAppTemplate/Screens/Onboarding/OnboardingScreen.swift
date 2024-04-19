@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct OnboardingScreen: View {
-    private let title: String = "Onboarding"
     let images: [Image] = [
         Image(.onboarding1),
         Image(.onboarding2)
@@ -18,8 +17,8 @@ struct OnboardingScreen: View {
     
     @State private var selectedTab = 0
 
-    var buttonText: String {
-        selectedTab == (images.count-1) ? "Get Started" : "Next"
+    var buttonText: LocalizedStringKey {
+        selectedTab == (images.count-1) ? "GetStarted" : "Next"
     }
     
     //MARK: - Views
@@ -27,14 +26,14 @@ struct OnboardingScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: getLocalString(title)
+                Header(text: "Onboarding"
                        , hasBackButton: true
                        ,onBackArrowClick: { onBackPressed() }
                 )
                 
                 pageView
                 
-                TextButton(onClick: onNextButtonPressed, text: getLocalString(buttonText))
+                TextButton(onClick: onNextButtonPressed, text: buttonText)
             }
             .padding()
         }

@@ -17,7 +17,7 @@ struct WeatherScreen: View {
                 VStack(spacing: 20){
                     if(!viewModel.isDataLoading){
                         ForEach(viewModel.weatherData, id: \.self){ data in
-                            CardView(title: data.name,
+                            CardView(title: getLocalString(data.name) ,
                                      subTitle: makeDescription(weatherItem: data))
                             .onTapGesture {
                                 viewModel.selectedCardIndex = viewModel.weatherData.firstIndex(of: data)!
@@ -60,9 +60,9 @@ struct WeatherScreen: View {
     private func makeDescription(weatherItem: WeatherData) -> String{
         var description = ""
         
-        description += "Summary: \(weatherItem.weather[0].description) \n"
-        description += "Temp: \(kelvinToCelsius(kelvinTemp: weatherItem.main.temp)) °C \n"
-        description += "Humidity: \(weatherItem.main.humidity)%"
+        description +=  getLocalString("Summary:") + " " + "\(weatherItem.weather[0].description) \n"
+        description += getLocalString("Temperature:") + " " + "\(kelvinToCelsius(kelvinTemp: weatherItem.main.temp)) °C \n"
+        description += getLocalString("Humidity:") + " " + "\(weatherItem.main.humidity)%"
         
         return description
     }

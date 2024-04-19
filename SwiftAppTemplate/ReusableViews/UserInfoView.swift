@@ -17,8 +17,8 @@ struct UserInfoView: View{
                 .resizable()
                 .frame(width: 150, height: 100)
                 .clipShape(Circle())
-            TextKeyValueView(key: "Name:", value: name)
-            TextKeyValueView(key: "Email:", value: email)
+            TextKeyValueView(key: getLocalString("Name") + ":" , value: name)
+            TextKeyValueView(key: getLocalString("Email") + ":", value: email)
         }
         .foregroundColor(.primaryNavyBlue)
     }

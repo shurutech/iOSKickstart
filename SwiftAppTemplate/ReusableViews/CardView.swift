@@ -10,7 +10,7 @@ import SwiftUI
 struct CardView: View {
     var title = "Title"
     var subTitle = "SubTitle"
-    var backgroundColor = Color.white
+    var backgroundColor = Color.background
     var cornerRadius = 10.0
     var shadowRadius = 5.0
     var infoAction: () -> Void = {}

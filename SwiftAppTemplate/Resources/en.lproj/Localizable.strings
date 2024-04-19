@@ -9,18 +9,17 @@
 //MARK: - AuthorizationScreen
 "Login/SignUp" = "Login/SignUp";
 "Login" = "Login";
-"Name" = "Name";
-"Your name" = "Your name";
 "Password" = "Password";
 
 //MARK: - AcceptTermsAndConditionsScreen
-"Terms & Conditions" = "Terms & Conditions";
-"Read and accept Terms & Conditions" = "Read and accept Terms & Conditions";
+"Terms&Conditions" = "Terms & Conditions";
+"ReadAndAcceptTerms&Conditions" = "Read and accept Terms & Conditions";
+"DummyTermsAndConditions" = "I am entering into an iOS app template.\nI will improve my app as per my needs.\n...";
 
 //MARK: - OnboardingScreen
 "Onboarding" = "Onboarding";
 "Next" = "Next";
-"Get Started" = "Get Started";
+"GetStarted" = "Get Started";
 
 //MARK: - Tabs
 "Home" = "Home";
@@ -29,8 +28,67 @@
 
 //MARK: - Settings
 "Settings" = "Settings";
+"Name" = "Name";
+"Email" = "Email";
+"Gender" = "Gender";
+"DateOfBirth" = "Date Of Birth";
+"Country" = "Country";
+"Language" = "Language";
+"Logout" = "Logout";
+"DeleteAccount" = "Delete Account";
+"Update" = "Update";
+"Appearance" = "Appearance";
+"Light" = "Light";
+"Dark" = "Dark";
+"LogoutBottomSheetTitle" = "Are you sure that you want to logout?";
+"DeleteAccountBottomSheetTitle" = "This will delete all your user data. Are you sure?";
+"LogoutBottomSheetSubTitle" = "This will log you out, and you'll have to input your credentials again to use the app.";
+"DeleteAccountBottomSheetSubTitle" = "This is an irreversible choice. The deleted user data will not get recovered once deleted. Proceed with caution.";
+
+//MARK: - User Details
+"UpdateUserDetails" = "Update User Details";
+"NamePlaceHolder" = "Your name";
+"EmailPlaceHolder" = "Your email address";
+"GenderPlaceHolder" = "Your gender";
+"DateOfBirthPlaceHolder" = "Select dob";
+"SelectCountry" = "Select Country";
+"SelectCountryPlaceHolder" = "Select your country";
+"SelectLanguage" = "Select Language";
+"SelectLanguagePlaceHolder" = "Select your language";
+"Done" = "Done";
+"Update" = "Update";
+"SaveUserInfoBottomSheetTitle" = "Do you want to save?";
+"SaveUserInfoBottomSheetSubTitle" = "Please confirm all details before saving.";
+"UserDetails" = "User Details";
+"Continue" = "Continue";
+
 
 //MARK: - Details
 "Details" = "Details";
 
+"Cancel" = "Cancel";
+"YesSure." = "Yes, sure.";
+"Tab" = "Tab";
 
+"Male" = "Male";
+"Female" = "Female";
+"Other" = "Other";
+
+"Weather" = "Weather";
+"Summary:" = "Summary:";
+"Temperature:" = "Temperature:";
+"Humidity:" = "Humidity:";
+
+"TemperatureIs" = "Temperature is";
+"RealFeelIs" = "Real feel is";
+"MaxItWillGoIs" = "Max it will go is";
+"MinItWillFallIs" = "Min it will fall is";
+"YouCanSeeAsFarAs" = "You can see as far as";
+"ThePressureYouBeFeelingIs" = "The pressure you'd be feeling is";
+
+"Delhi" = "Delhi";
+"Jaipur" = "Jaipur";
+"Mumbai" = "Mumbai";
+"Chennai" = "Chennai";
+"Bengaluru" = "Bengaluru";
+"Kolkata" = "Kolkata";

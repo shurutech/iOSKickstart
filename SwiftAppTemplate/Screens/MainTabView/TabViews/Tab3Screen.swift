@@ -10,7 +10,7 @@ import SwiftUI
 struct Tab3Screen: View {
     var body: some View {
         VStack {
-            Text("Tab3")
+            Text(getLocalString("Tab")+"3")
             WebScreen() // Use and Delete Screen , This should be removed
         }
     }

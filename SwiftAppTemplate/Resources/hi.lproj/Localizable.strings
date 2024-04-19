@@ -1,0 +1,94 @@
+/* 
+  Localizable.strings
+  SwiftAppTemplate
+
+  Created by Vijay Goswami on 05/01/24.
+  
+*/
+
+///MARK: - AuthorizationScreen
+"Login/SignUp" = "लॉगिन/साइनअप";
+"Login" = "लॉगिन";
+"Password" = "पासवर्ड";
+
+//MARK: - AcceptTermsAndConditionsScreen
+"Terms&Conditions" = "नियम व शर्तें";
+"ReadAndAcceptTerms&Conditions" = "नियम और शर्तों को पढ़ें और स्वीकार करें";
+"DummyTermsAndConditions" = "मैं एक iOS ऐप टेम्पलेट में प्रवेश कर रहा हूं।\nमैं अपनी आवश्यकतानुसार अपने ऐप में सुधार करूंगा।\n...";
+
+//MARK: - OnboardingScreen
+"Onboarding" = "ऑनबोर्डिंग";
+"Next" = "अगला";
+"GetStarted" = "शुरू करें";
+
+//MARK: - Tabs
+"Home" = "होम";
+"Profile" = "प्रोफ़ाइल";
+"Messages" = "संदेश";
+
+//MARK: - Settings
+"Settings" = "सेटिंग्स";
+"Name" = "नाम";
+"Email" = "ईमेल";
+"Gender" = "लिंग";
+"DateOfBirth" = "जन्म तिथि";
+"Country" = "देश";
+"Language" = "भाषा";
+"Logout" = "लॉगआउट";
+"DeleteAccount" = "खाता हटाएं";
+"Update" = "अपडेट";
+"Appearance" = "दृश्य स्वरूप";
+"Light" = "हल्का";
+"Dark" = "गहरा";
+"LogoutBottomSheetTitle" = "क्या आप वाकई में लॉगआउट करना चाहते हैं?";
+"DeleteAccountBottomSheetTitle" = "इससे आपका सारा डेटा हट जाएगा। क्या आप वाकई में सुनिश्चित हैं?";
+"LogoutBottomSheetSubTitle" = "इससे आप लॉगआउट हो जाएंगे, और ऐप का उपयोग करने के लिए फिर से अपने विवरण दर्ज करने होंगे।";
+"DeleteAccountBottomSheetSubTitle" = "यह एक अपरिवर्तनीय चयन है। एक बार हटाए जाने के बाद हटाया गया डेटा वापस नहीं आएगा। सावधानी से आगे बढ़ें।";
+
+//MARK: - User Details
+"UpdateUserDetails" = "उपयोगकर्ता विवरण अपडेट करें";
+"NamePlaceHolder" = "आपका नाम";
+"EmailPlaceHolder" = "आपका ईमेल पता";
+"GenderPlaceHolder" = "आपका लिंग";
+"DateOfBirthPlaceHolder" = "जन्म तिथि चुनें";
+"SelectCountry" = "देश चुनें";
+"SelectCountryPlaceHolder" = "अपना देश चुनें";
+"SelectLanguage" = "भाषा चुनें";
+"SelectLanguagePlaceHolder" = "अपनी भाषा चुनें";
+"Done" = "हो गया";
+"Update" = "अपडेट करें";
+"SaveUserInfoBottomSheetTitle" = "क्या आप सहेजना चाहते हैं?";
+"SaveUserInfoBottomSheetSubTitle" = "कृपया सहेजने से पहले सभी विवरणों की पुष्टि करें।";
+"UserDetails" = "उपयोगकर्ता विवरण";
+"Continue" = "जारी रखें";
+
+
+//MARK: - Details
+"Details" = "विवरण";
+
+"Cancel" = "रद्द करें";
+"YesSure." = "हाँ, निश्चित";
+"Tab" = "टैब";
+
+"Male" = "पुरुष";
+"Female" = "महिला";
+"Other" = "अन्य";
+
+"Weather" = "मौसम";
+"Summary:" = "सारांश:";
+"Temperature:" = "तापमान:";
+"Humidity:" = "आर्द्रता:";
+
+"TemperatureIs" = "तापमान है";
+"RealFeelIs" = "वास्तविक अनुभव है";
+"MaxItWillGoIs" = "अधिकतम यह जाएगा";
+"MinItWillFallIs" = "न्यूनतम यह गिरेगा";
+"YouCanSeeAsFarAs" = "आप जितना देख सकते हैं";
+"ThePressureYouBeFeelingIs" = "आप जो दबाव महसूस करेंगे वह है";
+
+"Delhi" = "दिल्ली";
+"Jaipur" = "जयपुर";
+"Mumbai" = "मुंबई";
+"Chennai" = "चेन्नई";
+"Bengaluru" = "बेंगलुरु";
+"Kolkata" = "कोलकाता";

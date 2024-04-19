@@ -8,15 +8,6 @@
 import SwiftUI
 
 struct AuthorizationScreen: View {
-    private let title: String = "Login/SignUp"
-    private let buttonText: String = "Login"
-    private let nameTitle: String = "Name"
-    private let namePlaceHolder: String = "Your name"
-    private let emailPlaceHolder: String = "Your email"
-    private let passwordTitle: String = "Password"
-    private let emailTitle: String = "Email"
-    
-    @State var name: String = ""
     @State var password: String = ""
     @State var email: String = ""
     
@@ -25,39 +16,27 @@ struct AuthorizationScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: getLocalString(title))
-                nameField
-                    .padding(.vertical, 20)
+                Header(text: "Login/SignUp")
                 emailField
                     .padding(.bottom, 20)
                 passwordField
                 Spacer()
-                TextButton(onClick: onLoginButtonClick, text: getLocalString(buttonText), color: canLogin() ? .primaryNavyBlue : .gray)
+                TextButton(onClick: onLoginButtonClick, text: "Login", color: canLogin() ? .primaryNavyBlue : .gray)
             }
             .padding()
         }
+        
+        
     }
     
-    var nameField : some View {
-        VStack(alignment: .leading) {
-            Text(getLocalString(nameTitle))
-                .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
-            TextField(getLocalString(namePlaceHolder), text: $name)
-                .padding(14)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.primaryNavyBlue,  lineWidth: 1)
-                )
-        }
-    }
+
     
     var emailField : some View {
         VStack(alignment: .leading) {
-            Text(getLocalString(emailTitle))
+            Text(getLocalString("Email"))
                 .font(.notoSansMedium16)
                 .foregroundColor(.primaryNavyBlue)
-            TextField(getLocalString(emailPlaceHolder), text: $email)
+            TextField(getLocalString("EmailPlaceHolder"), text: $email)
                 .autocapitalization(.none)
                 .padding(14)
                 .overlay(
@@ -69,10 +48,10 @@ struct AuthorizationScreen: View {
     
     var passwordField : some View {
         VStack(alignment: .leading) {
-            Text(getLocalString(passwordTitle))
+            Text(getLocalString("Password"))
                 .font(.notoSansMedium16)
                 .foregroundColor(.primaryNavyBlue)
-            SecureField(getLocalString(passwordTitle), text: $password)
+            SecureField(getLocalString("Password"), text: $password)
                 .padding(14)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -81,12 +60,19 @@ struct AuthorizationScreen: View {
         }
     }
     
+    var rectangle: some View {
+        return overlay (
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.primaryNavyBlue, lineWidth: 1)
+        )
+    }
+    
     //MARK: - Functions
     
     private func login() {
         Task { @MainActor in
             do {
-                try await AuthenticationManager.shared.login(user: User(name: name, password: password, email: email))
+                try await AuthenticationManager.shared.login(user: User(email: email, password: password))
             }
             catch {
                 ErrorHandler.recordError(withCustomMessage: "Error logging in.", error)
@@ -103,7 +89,7 @@ struct AuthorizationScreen: View {
     }
     
     private func canLogin() -> Bool{
-        return !name.isEmpty && !password.isEmpty
+        return !email.isEmpty && !password.isEmpty
     }
 }
 

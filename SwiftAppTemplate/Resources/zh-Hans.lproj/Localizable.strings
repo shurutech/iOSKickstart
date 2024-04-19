@@ -1,0 +1,93 @@
+/* 
+  Localizable.strings
+  SwiftAppTemplate
+
+  Created by Vijay Goswami on 05/01/24.
+  
+*/
+
+//MARK: - AuthorizationScreen
+"Login/SignUp" = "登录/注册";
+"Login" = "登录";
+"Password" = "密码";
+
+//MARK: - AcceptTermsAndConditionsScreen
+"Terms&Conditions" = "条款和条件";
+"ReadAndAcceptTerms&Conditions" = "阅读并接受条款和条件";
+"DummyTermsAndConditions" = "我正在进入一个iOS应用模板。\n我将根据我的需求改进我的应用。\n...";
+
+//MARK: - OnboardingScreen
+"Onboarding" = "新手引导";
+"Next" = "下一步";
+"GetStarted" = "开始使用";
+
+//MARK: - Tabs
+"Home" = "首页";
+"Profile" = "个人资料";
+"Messages" = "消息";
+
+//MARK: - Settings
+"Settings" = "设置";
+"Name" = "姓名";
+"Email" = "电子邮件";
+"Gender" = "性别";
+"DateOfBirth" = "出生日期";
+"Country" = "国家";
+"Language" = "语言";
+"Logout" = "登出";
+"DeleteAccount" = "删除账户";
+"Update" = "更新";
+"Appearance" = "外观";
+"Light" = "浅色模式";
+"Dark" = "深色模式";
+"LogoutBottomSheetTitle" = "您确定要退出登录吗？";
+"DeleteAccountBottomSheetTitle" = "这将删除您的所有用户数据。您确定吗？";
+"LogoutBottomSheetSubTitle" = "这将使您退出登录，您将需要再次输入您的凭据才能使用应用。";
+"DeleteAccountBottomSheetSubTitle" = "这是不可逆的选择。一旦删除，删除的用户数据将无法恢复。请谨慎操作。";
+
+//MARK: - User Details
+"UpdateUserDetails" = "更新用户详情";
+"NamePlaceHolder" = "您的姓名";
+"EmailPlaceHolder" = "您的电子邮件地址";
+"GenderPlaceHolder" = "您的性别";
+"DateOfBirthPlaceHolder" = "选择出生日期";
+"SelectCountry" = "选择国家";
+"SelectCountryPlaceHolder" = "选择您的国家";
+"SelectLanguage" = "选择语言";
+"SelectLanguagePlaceHolder" = "选择您的语言";
+"Done" = "完成";
+"Update" = "更新";
+"SaveUserInfoBottomSheetTitle" = "您想要保存吗？";
+"SaveUserInfoBottomSheetSubTitle" = "保存前请确认所有细节。";
+"UserDetails" = "用户详情";
+"Continue" = "继续";
+
+//MARK: - Details
+"Details" = "详情";
+
+"Cancel" = "取消";
+"YesSure." = "是的，当然。";
+"Tab" = "标签";
+
+"Male" = "男";
+"Female" = "女";
+"Other" = "其他";
+
+"Weather" = "天气";
+"Summary:" = "概述：";
+"Temperature:" = "温度：";
+"Humidity:" = "湿度：";
+
+"TemperatureIs" = "温度是";
+"RealFeelIs" = "体感温度是";
+"MaxItWillGoIs" = "最高温度是";
+"MinItWillFallIs" = "最低温度是";
+"YouCanSeeAsFarAs" = "能见度达到";
+"ThePressureYouBeFeelingIs" = "您将感受到的气压是";
+
+"Delhi" = "德里";
+"Jaipur" = "斋浦尔";
+"Mumbai" = "孟买";
+"Chennai" = "钦奈";
+"Bengaluru" = "班加罗尔";
+"Kolkata" = "加尔各答";

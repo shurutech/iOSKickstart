@@ -1,0 +1,93 @@
+/* 
+  Localizable.strings
+  SwiftAppTemplate
+
+  Created by Vijay Goswami on 05/01/24.
+  
+*/
+
+//MARK: - AuthorizationScreen
+"Login/SignUp" = "تسجيل الدخول/الاشتراك";
+"Login" = "تسجيل الدخول";
+"Password" = "كلمة المرور";
+
+//MARK: - AcceptTermsAndConditionsScreen
+"Terms&Conditions" = "الشروط والأحكام";
+"ReadAndAcceptTerms&Conditions" = "اقرأ ووافق على الشروط والأحكام";
+"DummyTermsAndConditions" = "أنا أدخل إلى قالب تطبيق iOS.\nسأحسّن تطبيقي وفقًا لاحتياجاتي.\n...";
+
+//MARK: - OnboardingScreen
+"Onboarding" = "التهيئة";
+"Next" = "التالي";
+"GetStarted" = "ابدأ";
+
+//MARK: - Tabs
+"Home" = "الرئيسية";
+"Profile" = "الملف الشخصي";
+"Messages" = "الرسائل";
+
+//MARK: - Settings
+"Settings" = "الإعدادات";
+"Name" = "الاسم";
+"Email" = "البريد الإلكتروني";
+"Gender" = "الجنس";
+"DateOfBirth" = "تاريخ الميلاد";
+"Country" = "البلد";
+"Language" = "اللغة";
+"Logout" = "تسجيل الخروج";
+"DeleteAccount" = "حذف الحساب";
+"Update" = "تحديث";
+"Appearance" = "المظهر";
+"Light" = "فاتح";
+"Dark" = "داكن";
+"LogoutBottomSheetTitle" = "هل أنت متأكد من أنك تريد تسجيل الخروج؟";
+"DeleteAccountBottomSheetTitle" = "سيؤدي ذلك إلى حذف جميع بيانات المستخدم الخاصة بك. هل أنت متأكد؟";
+"LogoutBottomSheetSubTitle" = "سيتم تسجيل خروجك، وسيتعين عليك إدخال بيانات اعتمادك مرة أخرى لاستخدام التطبيق.";
+"DeleteAccountBottomSheetSubTitle" = "هذا خيار لا رجوع فيه. لن يتم استرداد البيانات المستخدم المحذوفة بمجرد حذفها. تقدم بحذر.";
+
+//MARK: - User Details
+"UpdateUserDetails" = "تحديث تفاصيل المستخدم";
+"NamePlaceHolder" = "اسمك";
+"EmailPlaceHolder" = "عنوان بريدك الإلكتروني";
+"GenderPlaceHolder" = "جنسك";
+"DateOfBirthPlaceHolder" = "اختر تاريخ الميلاد";
+"SelectCountry" = "اختر البلد";
+"SelectCountryPlaceHolder" = "اختر بلدك";
+"SelectLanguage" = "اختر اللغة";
+"SelectLanguagePlaceHolder" = "اختر لغتك";
+"Done" = "تم";
+"Update" = "تحديث";
+"SaveUserInfoBottomSheetTitle" = "هل تريد الحفظ؟";
+"SaveUserInfoBottomSheetSubTitle" = "يرجى التأكد من جميع التفاصيل قبل الحفظ.";
+"UserDetails" = "تفاصيل المستخدم";
+"Continue" = "استمرار";
+
+//MARK: - Details
+"Details" = "التفاصيل";
+
+"Cancel" = "إلغاء";
+"YesSure." = "نعم، بالتأكيد.";
+"Tab" = "علامة التبويب";
+
+"Male" = "ذكر";
+"Female" = "أنثى";
+"Other" = "آخر";
+
+"Weather" = "الطقس";
+"Summary:" = "ملخص:";
+"Temperature:" = "درجة الحرارة:";
+"Humidity:" = "الرطوبة:";
+
+"TemperatureIs" = "درجة الحرارة هي";
+"RealFeelIs" = "الإحساس الفعلي هو";
+"MaxItWillGoIs" = "أقصى ما ستصل إليه هو";
+"MinItWillFallIs" = "الحد الأدنى الذي ستنخفض إليه هو";
+"YouCanSeeAsFarAs" = "يمكنك الرؤية لمسافة";
+"ThePressureYouBeFeelingIs" = "الضغط الذي ستشعر به هو";
+
+"Delhi" = "دلهي";
+"Jaipur" = "جايبور";
+"Mumbai" = "مومباي";
+"Chennai" = "تشيناي";
+"Bengaluru" = "بنغالورو";
+"Kolkata" = "كولكاتا";

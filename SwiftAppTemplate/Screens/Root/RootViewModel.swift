@@ -13,6 +13,8 @@ class RootViewModel : ObservableObject {
     // MARK: - Attributs
     
     @Published var isAppStartCompleted: Bool = false
+    @Published var isUserDetailsFilled: Bool =
+        UserPreferences.shared.isProfileComplete
     @Published var isTermsAndConditionsAccepted: Bool =  UserPreferences.shared.isPrivacyPolicyAccepted
     @Published private(set) var isOnboardingCompleted: Bool = UserPreferences.shared.isOnboardingCompleted
     
@@ -30,8 +32,16 @@ class RootViewModel : ObservableObject {
     }
     
     func setInitialScreenVisitedStatus() {
+        isUserDetailsFilled = UserPreferences.shared.isProfileComplete
         isTermsAndConditionsAccepted =  UserPreferences.shared.isPrivacyPolicyAccepted
         isOnboardingCompleted = UserPreferences.shared.isOnboardingCompleted
+    }
+    
+    func markUserDetailsCompleted() {
+        guard !isUserDetailsFilled else { return }
+        
+        UserPreferences.shared.isProfileComplete = true
+        isUserDetailsFilled = true
     }
     
     func markTermsAndConditionsAccepted() {
