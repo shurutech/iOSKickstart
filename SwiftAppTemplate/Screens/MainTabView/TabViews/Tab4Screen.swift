@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Tab4Screen: View {
     var body: some View {
-        Text("Tab4")
+        Text(getLocalString("Tab")+"4")
     }
 }
 

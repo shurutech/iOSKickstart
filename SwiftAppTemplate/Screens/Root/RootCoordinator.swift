@@ -11,6 +11,7 @@ struct RootCoordinator: View {
     enum Root{
         case splash
         case authorisation
+        case userDetails
         case acceptPolicy
         case onboarding
         case mainApp
@@ -33,6 +34,10 @@ struct RootCoordinator: View {
                     }
             case .authorisation:
                 AuthorizationScreen()
+            case .userDetails:
+                UserDetailsScreen(onCompleted: {
+                    rootViewModel.markUserDetailsCompleted()
+                })
             case .acceptPolicy:
                 TermsAndConditionsScreen(onCompleted: { rootViewModel.markTermsAndConditionsAccepted() })
             case .onboarding:
@@ -45,6 +50,7 @@ struct RootCoordinator: View {
         }
         .onChange(of: rootViewModel.isAppStartCompleted) { _ in updateRoot() }
         .onChange(of: authenticationManager.isAuthenticated) { _ in updateRoot() }
+        .onChange(of: rootViewModel.isUserDetailsFilled) { _ in updateRoot() }
         .onChange(of: rootViewModel.isTermsAndConditionsAccepted) { _ in updateRoot() }
         .onChange(of: rootViewModel.isOnboardingCompleted) { _ in updateRoot() }
     }
@@ -69,6 +75,9 @@ struct RootCoordinator: View {
         else if(!authenticationManager.isAuthenticated) {
             root = .authorisation
             rootViewModel.setInitialScreenVisitedStatus()
+        }
+        else if(!rootViewModel.isUserDetailsFilled) {
+            root = .userDetails
         }
         else if(!rootViewModel.isTermsAndConditionsAccepted) {
             root = .acceptPolicy

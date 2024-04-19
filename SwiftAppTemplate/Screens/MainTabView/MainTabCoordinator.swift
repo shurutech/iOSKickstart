@@ -32,8 +32,8 @@ struct MainTabCoordinator: View {
     var tabView: some View{
         TabView(selection: $viewModel.selectedTab,
                 content:  {
-            Tab1Screen().tabItem { TabItem(title: "Tab1", icon: "1.circle.fill") }.tag(Tab.tab1)
-            Tab2Screen().tabItem { TabItem(title: "Tab2", icon: "2.circle.fill") }.tag(Tab.tab2)
+            Tab1Screen().tabItem { TabItem(title: getLocalString("Tab")+"1", icon: "1.circle.fill") }.tag(Tab.tab1)
+            Tab2Screen().tabItem { TabItem(title: getLocalString("Tab")+"2", icon: "2.circle.fill") }.tag(Tab.tab2)
         })
         .accentColor(.primaryNavyBlue)
         .onAppear{

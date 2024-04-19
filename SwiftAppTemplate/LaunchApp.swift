@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct LaunchApp: App {
+    
+    init() {
+        Preferences.applyAppearance(Preferences.appearanceMode)
+    }
+
     var body: some Scene {
         WindowGroup {
             RootCoordinator()

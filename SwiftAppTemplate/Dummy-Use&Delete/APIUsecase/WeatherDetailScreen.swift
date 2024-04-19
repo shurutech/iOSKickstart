@@ -13,16 +13,16 @@ struct WeatherDetailScreen: View {
     
     var body: some View {
         VStack{
-            Header(text: "\(weatherData.name) Weather", hasBackButton: true, onBackArrowClick: {
+            Header(text: LocalizedStringKey(getLocalString(weatherData.name) + " " + getLocalString("Weather")), hasBackButton: true, onBackArrowClick: {
                 dismiss()
             })
             Spacer()
-            infoText(text: "Temprature is", info: "\(kelvinToCelsius(kelvinTemp: weatherData.main.temp).description) °C")
-            infoText(text: "Real feel is", info: "\(kelvinToCelsius(kelvinTemp: weatherData.main.feelsLike).description) °C")
-            infoText(text: "Max it will go is", info: "\(kelvinToCelsius(kelvinTemp: weatherData.main.tempMax).description) °C")
-            infoText(text: "Min it will fall is", info: "\(kelvinToCelsius(kelvinTemp: weatherData.main.tempMin).description) °C")
-            infoText(text: "You can see as far as", info: "\(weatherData.visibility/1000) km")
-            infoText(text: "The pressue you'd be feeling is", info: "\(weatherData.main.pressure) hectopascal")
+            infoText(text: getLocalString("TemperatureIs"), info: "\(kelvinToCelsius(kelvinTemp: weatherData.main.temp).description) °C")
+            infoText(text: getLocalString("RealFeelIs"), info: "\(kelvinToCelsius(kelvinTemp: weatherData.main.feelsLike).description) °C")
+            infoText(text: getLocalString("MaxItWillGoIs"), info: "\(kelvinToCelsius(kelvinTemp: weatherData.main.tempMax).description) °C")
+            infoText(text: getLocalString("MinItWillFallIs"), info: "\(kelvinToCelsius(kelvinTemp: weatherData.main.tempMin).description) °C")
+            infoText(text: getLocalString("YouCanSeeAsFarAs"), info: "\(weatherData.visibility/1000) km")
+            infoText(text: getLocalString("ThePressureYouBeFeelingIs"), info: "\(weatherData.main.pressure) hectopascal")
             Spacer()
         }.padding()
     }
@@ -37,6 +37,3 @@ struct WeatherDetailScreen: View {
     }
 }
 
-//#Preview {
-//    InfoScreen()
-//}

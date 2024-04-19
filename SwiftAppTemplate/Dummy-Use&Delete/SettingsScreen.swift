@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct SettingsScreen: View {
+
     // MARK: - Attributes
-    
+    @State var presentEditInfoScreen = false
     @StateObject var viewModel: SettingsViewModel = SettingsViewModel()
     @Environment(\.dismiss) var dismiss
+    @State private var selectedMode = Preferences.appearanceMode
+
     
     // MARK: - Views
     
@@ -20,8 +23,30 @@ struct SettingsScreen: View {
             VStack(spacing: 30){
                 
                 Header(text: "Settings", hasBackButton: true, onBackArrowClick: {dismiss()})
+         
+                TitleValueView(title: "Name", value: viewModel.userName)
                 
-                customTextFields
+                TitleValueView(title: "Email", value: viewModel.userEmail)
+                
+                TitleValueView(title: "Gender", value: getLocalString(viewModel.gender))
+                
+                TitleValueView(title: "DateOfBirth", value: viewModel.dob)
+        
+                TitleValueView(title: "Country", value: viewModel.country)
+
+                TitleValueView(title: "Language", value: viewModel.language)
+
+                
+                TextButton(onClick: {
+                    presentEditInfoScreen = true
+                }, text: "Update")
+                .fullScreenCover(isPresented: $presentEditInfoScreen, onDismiss: {
+                    viewModel.setUp()
+                }, content: {
+                    EditUserDetailsScreen()
+                })
+                
+                AppearanceSelectionView(selectedMode: $selectedMode)
                 
                 buttons
                 
@@ -33,31 +58,23 @@ struct SettingsScreen: View {
         }
         .navigationBarBackButtonHidden(true)
         .onAppear{
-            viewModel.onSaveChanges = {dismiss()}
-            viewModel.setup()
+            viewModel.setUp()
         }
     }
     
-    var customTextFields: some View{
-        VStack{
-            CustomTextField(inputText: $viewModel.userName, placeholder: "Enter Name", cornerRadius: 10, borderColor: .primaryNavyBlue)
-            
-            CustomTextField(inputText: $viewModel.userEmail, placeholder: "Enter Email", cornerRadius: 10, borderColor: .primaryNavyBlue)
-        }
-    }
     
     var buttons: some View{
         VStack{
-            TextButton(onClick: {
-                viewModel.currentBottomSheetType = .save
-            }, text: "Save")
+          
             Spacer()
-            TextButton(onClick: {
-                viewModel.currentBottomSheetType = .logout
-            }, text: "Logout", style: .outline)
-            TextButton(onClick: {
-                viewModel.currentBottomSheetType = .delete
-            }, text: "Delete Account", style: .outline)
+            HStack{
+                TextButton(onClick: {
+                    viewModel.currentBottomSheetType = .logout
+                }, text: "Logout", style: .outline, color: .orange)
+                TextButton(onClick: {
+                    viewModel.currentBottomSheetType = .delete
+                }, text: "DeleteAccount", style: .outline, color: .red)
+            }
         }
     }
     
@@ -76,6 +93,44 @@ struct SettingsScreen: View {
     }
 }
 
+struct TitleValueView: View {
+    let title: LocalizedStringKey
+    let value: String
+    var body: some View {
+        HStack {
+            Text(title)
+            Spacer()
+            Text(value)
+        }
+        .foregroundColor(.text)
+    }
+}
+
+struct AppearanceSelectionView: View {
+    @Binding var selectedMode: AppearanceMode
+    
+    var body: some View {
+        HStack {
+            Text(getLocalString("Appearance"))
+            Spacer()
+            Picker(getLocalString("Appearance"), selection: $selectedMode) {
+                Text(getLocalString("Light")).tag(AppearanceMode.light)
+                Text(getLocalString("Dark")).tag(AppearanceMode.dark)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .onChange(of: selectedMode) { newValue in
+                Preferences.appearanceMode = newValue
+            }
+        }
+        .foregroundColor(.text)
+    }
+}
+
+
 #Preview {
     SettingsScreen()
 }
+
+
+
+

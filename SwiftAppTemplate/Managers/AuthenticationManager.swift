@@ -22,8 +22,8 @@ class AuthenticationManager : ObservableObject {
         let authToken = "dummy_token_qwertyuiopasdfghjklzxcvbnm"
       
         if(KeyChainStorage.shared.setAuthToken(authToken)){
-            UserPreferences.shared.userName = user.name
-            UserPreferences.shared.userEmail = user.email
+            UserPreferences.shared.saveUser(user: User(email: user.email, password: user.password))
+            KeyChainStorage.shared.setPassword(user.password)
             UserPreferences.shared.isAuthenticated = true
             isAuthenticated = true
         }

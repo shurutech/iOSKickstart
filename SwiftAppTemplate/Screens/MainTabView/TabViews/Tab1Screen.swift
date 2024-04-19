@@ -10,7 +10,7 @@ import SwiftUI
 struct Tab1Screen: View {
     var body: some View {
         VStack {
-            Text("Tab1")
+            Text(getLocalString("Tab")+"1")
             WeatherScreen()  // Use and Delete Screen , This should be removed
         }
     }

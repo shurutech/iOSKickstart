@@ -10,7 +10,7 @@ import SwiftUI
 struct Tab2Screen: View {
     var body: some View {
         VStack {
-            Text("Tab2")
+            Text(getLocalString("Tab")+"2")
             ProfileScreen()  // Use and Delete Screen , This should be removed
         }
     }

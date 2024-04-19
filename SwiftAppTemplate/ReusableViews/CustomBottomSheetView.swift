@@ -51,7 +51,7 @@ struct CustomBottomSheetView<Content: View>: View {
                         }
                         self.content
                     }
-                    .background(Color.white)
+                    .background(Color.background)
                     .cornerRadius(20)
                     .frame(width: geometry.size.width, height: self.maxHeight, alignment: .top)
                     .frame(height: geometry.size.height, alignment: .bottom)

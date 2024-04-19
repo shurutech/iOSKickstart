@@ -11,36 +11,29 @@ import SwiftUI
 class SettingsViewModel: ObservableObject{
     
     enum BottomSheet{
-        case save
         case logout
         case delete
         
-        var title: String {
+        var title: LocalizedStringKey {
             switch self {
-            case .save:
-                "Do you want to save?"
             case .logout:
-                "Are you sure that you want to logout?"
+                "LogoutBottomSheetTitle"
             case .delete:
-                "This will delete all your user data. Are you sure?"
+                "DeleteAccountBottomSheetTitle"
             }
         }
         
-        var subTitle: String {
+        var subTitle: LocalizedStringKey {
             switch self {
-            case .save:
-                "Saving this will change your username and password."
             case .logout:
-                "This will log you out, and you'll have to input your credentials again to use the app."
+                "LogoutBottomSheetSubTitle"
             case .delete:
-                "This is an irreversible choice. The deleted user data will not get recovered once deleted. Proceed with caution."
+                "DeleteAccountBottomSheetSubTitle"
             }
         }
         
         var sheetSize: CGFloat {
             switch self {
-            case .save:
-                250
             case .logout:
                 300
             case .delete:
@@ -52,6 +45,16 @@ class SettingsViewModel: ObservableObject{
     
     @Published var userName: String = ""
     @Published var userEmail: String = ""
+    @Published var gender: String = ""
+    @Published var dob: String = ""
+    @Published var country = ""
+    @Published var language: String = {
+        guard let languageCode = Locale.current.languageCode,
+              let languageName = Locale.current.localizedString(forLanguageCode: languageCode) else {
+            return "English"
+        }
+        return languageName
+    }()
     @Published var isConfirmationGiven = false{
         didSet{
             if(isConfirmationGiven){
@@ -61,13 +64,10 @@ class SettingsViewModel: ObservableObject{
         }
     }
     @Published var currentBottomSheetType: BottomSheet?
-    @Published var onSaveChanges: () -> Void = {}
     
     
     func handleConfirmation() {
         switch currentBottomSheetType {
-        case .save:
-            saveUserInfo()
         case .logout:
             performLogout()
         case .delete:
@@ -75,12 +75,6 @@ class SettingsViewModel: ObservableObject{
         case nil:
             print("nil")
         }
-    }
-    
-    func saveUserInfo() {
-        UserPreferences.shared.userName = userName
-        UserPreferences.shared.userEmail = userEmail
-        onSaveChanges()
     }
     
     func performLogout() {
@@ -106,8 +100,12 @@ class SettingsViewModel: ObservableObject{
     }
     
     
-    func setup(){
-        userName = UserPreferences.shared.userName
-        userEmail = UserPreferences.shared.userEmail
+    func setUp(){
+        let user = UserPreferences.shared.getUser()
+        userName = user?.name ?? ""
+        userEmail = user?.email ?? ""
+        gender = user?.gender ?? Gender.male.rawValue
+        dob = user?.dob ?? ""
+        country = user?.country ?? ""
     }
 }

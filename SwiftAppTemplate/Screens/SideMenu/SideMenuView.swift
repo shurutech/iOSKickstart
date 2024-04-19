@@ -12,8 +12,8 @@ struct SideMenuView: View {
     @Binding var selectedSideMenuTab: Tab
     @Binding var presentSideMenu: Bool
     @State var screenWidth: CGFloat = 0
-    @State private var userName: String = UserPreferences.shared.userName
-    @State private var userEmail: String = UserPreferences.shared.userEmail
+    @State private var userName: String = UserPreferences.shared.getUser()?.name ?? ""
+    @State private var userEmail: String = UserPreferences.shared.getUser()?.email ?? ""
     
     var body: some View {
         HStack(spacing: 0) {
@@ -34,7 +34,7 @@ struct SideMenuView: View {
                 }
                 .frame(width: screenWidth * (2/3))
                 .background(
-                    Color.white.opacity(0.9)
+                    Color.background.opacity(0.9)
                 )
             }
             Rectangle()
@@ -51,11 +51,11 @@ struct SideMenuView: View {
     
     var menuItems: some View{
         VStack{
-            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.tab1, imageName: "1.circle.fill", title: "Tab1", action: {
+            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.tab1, imageName: "1.circle.fill", title:getLocalString("Tab")+"1", action: {
                 selectedSideMenuTab = .tab1
                 presentSideMenu.toggle()
             })
-            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.tab2, imageName: "2.circle.fill", title: "Tab2", action: {
+            RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.tab2, imageName: "2.circle.fill", title: getLocalString("Tab")+"2", action: {
                 selectedSideMenuTab = .tab2
                 presentSideMenu.toggle()
             })

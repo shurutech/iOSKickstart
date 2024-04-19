@@ -16,11 +16,12 @@ class UserPreferences{
     private init() {}
     
     enum Keys {
-        static let userName = "userName"
-        static let userEmail = "userEmail"
+        static let user = "user"
         static let isAuthenticated = "isAuthenticated"
+        static let isProfileComplete = "isProfileComplete"
         static let isPrivacyPolicyAccepted = "isPrivacyPolicyAccepted"
         static let isOnboardingCompleted = "isOnboardingCompleted"
+        static let selectedAppearance = "selectedAppearance"
     }
     
     func deleteAllUserDefaults() {
@@ -29,28 +30,22 @@ class UserPreferences{
         defaults.synchronize()
     }
     
-    var userName: String {
-        set{
-            defaults.setValue(newValue, forKey: Keys.userName)
-        }
-        get{
-            guard let userName = defaults.value(forKey: Keys.userName) as? String else {
-                return ""
-            }
-            return userName
+    func saveUser(user: User) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(user) {
+            defaults.set(encoded, forKey: Keys.user)
+            defaults.synchronize()
         }
     }
     
-    var userEmail: String {
-        set{
-            defaults.setValue(newValue, forKey: Keys.userEmail)
-        }
-        get{
-            guard let userEmail = defaults.value(forKey: Keys.userEmail) as? String else {
-                return ""
+    func getUser() -> User? {
+        if let savedUser = defaults.object(forKey: Keys.user) as? Data {
+            let decoder = JSONDecoder()
+            if let loadedUser = try? decoder.decode(User.self, from: savedUser) {
+                return loadedUser
             }
-            return userEmail
         }
+        return nil
     }
     
     var isAuthenticated: Bool {
@@ -59,6 +54,15 @@ class UserPreferences{
         }
         get{
             return defaults.bool(forKey: Keys.isAuthenticated)
+        }
+    }
+    
+    var isProfileComplete: Bool {
+        set{
+            defaults.setValue(newValue, forKey: Keys.isProfileComplete)
+        }
+        get{
+            return defaults.bool(forKey: Keys.isProfileComplete)
         }
     }
     
@@ -77,6 +81,15 @@ class UserPreferences{
         }
         get{
             return defaults.bool(forKey: Keys.isOnboardingCompleted)
+        }
+    }
+    
+    var selectedAppearance: String {
+        set{
+            defaults.setValue(newValue, forKey: Keys.selectedAppearance)
+        }
+        get{
+            return defaults.string(forKey: Keys.selectedAppearance) ?? AppearanceMode.light.rawValue
         }
     }
 }

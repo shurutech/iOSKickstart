@@ -8,6 +8,14 @@
 import Foundation
 import UIKit
 
+enum Gender: String, CaseIterable, Identifiable {
+    case male = "Male"
+    case female = "Female"
+    case other = "Other"
+
+    var id: String { self.rawValue }
+}
+
 func removeFocusFromTextField(){
     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
 }
@@ -16,6 +24,19 @@ func kelvinToCelsius(kelvinTemp: Double) -> Double {
     let celsius = kelvinTemp - 273.15
     return celsius.rounded(toPlaces: 2)
 }
+
+func formatDate(_ date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd-MM-yyyy"
+    return formatter.string(from: date)
+}
+
+func openDeviceSettings() {
+       guard let url = URL(string: UIApplication.openSettingsURLString) else {
+           return
+       }
+       UIApplication.shared.open(url)
+   }
 
 extension Double {
     func formattedAsIntegerOrDecimal() -> String {

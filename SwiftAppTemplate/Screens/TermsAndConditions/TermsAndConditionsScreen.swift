@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct TermsAndConditionsScreen: View {
-    private let title: String = "Terms & Conditions"
-    private let buttonText: String = "Next"
-    private let tncText: String = "Read and accept Terms & Conditions"
-    
     let onCompleted: () -> Void
     @State var isTermsSelected: Bool = false
     @State var isLoading: Bool = true
@@ -22,17 +18,16 @@ struct TermsAndConditionsScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: getLocalString(title))
+                Header(text: "Terms&Conditions")
                 
-                Text("I am entering into an iOS app template.\nI will improve my app as per my needs.\n...")
-                    .foregroundColor(.black)
+                Text(getLocalString("DummyTermsAndConditions"))
                     .padding(.top, 50)
                 
                 termsView
                 
                 Spacer()
                 
-                TextButton(onClick: { onNextPressed() }, text: getLocalString(buttonText), color: canGoNext() ? .primaryNavyBlue : .gray)
+                TextButton(onClick: { onNextPressed() }, text: "Next", color: canGoNext() ? .primaryNavyBlue : .gray)
             }
         }
         .padding()
@@ -49,7 +44,7 @@ struct TermsAndConditionsScreen: View {
                     .frame(width: 20)
                     .foregroundColor(.primaryNavyBlue)
                 
-                Text(getLocalString(tncText))
+                Text(getLocalString("ReadAndAcceptTerms&Conditions"))
                     .font(.notoSansMedium16)
                     .foregroundColor(.primaryNavyBlue)
             }
