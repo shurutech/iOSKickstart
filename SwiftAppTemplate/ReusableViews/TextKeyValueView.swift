@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct TextKeyValueView: View {
-    var key: String
+    var key: LocalizedStringKey
     var value: String
     
     var body: some View {
         HStack{
-            Text(key)
+            Text(key) + Text(":")
             Text(value)
         }.frame(alignment: .leading)
     }

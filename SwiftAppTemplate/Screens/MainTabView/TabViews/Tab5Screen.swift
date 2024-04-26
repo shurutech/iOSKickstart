@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Tab5Screen: View {
     var body: some View {
-        Text(getLocalString("Tab")+"5")
+        Text(AppStrings.Tab) + Text("5")
     }
 }
 

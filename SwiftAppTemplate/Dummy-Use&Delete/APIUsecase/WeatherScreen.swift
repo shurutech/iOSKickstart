@@ -36,9 +36,9 @@ struct WeatherScreen: View {
                         set: { _ in viewModel.apiError = nil }
                     )) {
                         Alert(
-                            title: Text("Error"),
-                            message: Text(viewModel.apiError?.localizedDescription ?? "An unknown error occurred"),
-                            dismissButton: .default(Text("OK"))
+                            title: Text(AppStrings.Error),
+                            message: Text(viewModel.apiError?.localizedDescription ?? "\(AppStrings.ErrorMessage)"),
+                            dismissButton: .default(Text(AppStrings.OK))
                         )
                     }
         }
@@ -60,9 +60,9 @@ struct WeatherScreen: View {
     private func makeDescription(weatherItem: WeatherData) -> String{
         var description = ""
         
-        description +=  getLocalString("Summary:") + " " + "\(weatherItem.weather[0].description) \n"
-        description += getLocalString("Temperature:") + " " + "\(kelvinToCelsius(kelvinTemp: weatherItem.main.temp)) °C \n"
-        description += getLocalString("Humidity:") + " " + "\(weatherItem.main.humidity)%"
+        description +=  getLocalString(AppStrings.Summary) + ": " + "\(weatherItem.weather[0].description) \n"
+        description += getLocalString(AppStrings.Temperature) + ": " + "\(kelvinToCelsius(kelvinTemp: weatherItem.main.temp)) °C \n"
+        description += getLocalString(AppStrings.Humidity) + ": " + "\(weatherItem.main.humidity)%"
         
         return description
     }

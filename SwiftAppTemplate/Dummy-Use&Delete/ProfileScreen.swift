@@ -20,7 +20,7 @@ struct ProfileScreen: View {
                     Image(systemName: "gearshape")
                         .resizable()
                         .frame(width: 20, height: 20)
-                    Text(LocalizedStringKey("Settings"))
+                    Text(AppStrings.Settings)
                         .font(.notoSansRegular16)
                 }
                 .onTapGesture {

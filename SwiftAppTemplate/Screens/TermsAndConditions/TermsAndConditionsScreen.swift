@@ -18,16 +18,16 @@ struct TermsAndConditionsScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: "Terms&Conditions")
+                Header(text: AppStrings.TermsAndConditions)
                 
-                Text(getLocalString("DummyTermsAndConditions"))
+                Text(AppStrings.DummyTermsAndConditions)
                     .padding(.top, 50)
                 
                 termsView
                 
                 Spacer()
                 
-                TextButton(onClick: { onNextPressed() }, text: "Next", color: canGoNext() ? .primaryNavyBlue : .gray)
+                TextButton(onClick: { onNextPressed() }, text: AppStrings.Next, color: canGoNext() ? .primaryNavyBlue : .gray)
             }
         }
         .padding()
@@ -44,7 +44,7 @@ struct TermsAndConditionsScreen: View {
                     .frame(width: 20)
                     .foregroundColor(.primaryNavyBlue)
                 
-                Text(getLocalString("ReadAndAcceptTerms&Conditions"))
+                Text(AppStrings.ReadAndAcceptTermsConditions)
                     .font(.notoSansMedium16)
                     .foregroundColor(.primaryNavyBlue)
             }

@@ -22,33 +22,16 @@ struct SettingsScreen: View {
         ZStack{
             VStack(spacing: 30){
                 
-                Header(text: "Settings", hasBackButton: true, onBackArrowClick: {dismiss()})
+                Header(text: AppStrings.Settings, hasBackButton: true, onBackArrowClick: {dismiss()})
          
-                TitleValueView(title: "Name", value: viewModel.userName)
+               userDetailsView
                 
-                TitleValueView(title: "Email", value: viewModel.userEmail)
-                
-                TitleValueView(title: "Gender", value: getLocalString(viewModel.gender))
-                
-                TitleValueView(title: "DateOfBirth", value: viewModel.dob)
-        
-                TitleValueView(title: "Country", value: viewModel.country)
-
-                TitleValueView(title: "Language", value: viewModel.language)
-
-                
-                TextButton(onClick: {
-                    presentEditInfoScreen = true
-                }, text: "Update")
-                .fullScreenCover(isPresented: $presentEditInfoScreen, onDismiss: {
-                    viewModel.setUp()
-                }, content: {
-                    EditUserDetailsScreen()
-                })
+               updateButtonView
                 
                 AppearanceSelectionView(selectedMode: $selectedMode)
+                    .padding(.top, 20)
                 
-                buttons
+                bottomButtons
                 
             }.padding()
             
@@ -62,18 +45,43 @@ struct SettingsScreen: View {
         }
     }
     
+    var userDetailsView: some View {
+        VStack(spacing: 20) {
+            TitleValueView(title: AppStrings.Name, value: viewModel.userName)
+            
+            TitleValueView(title: AppStrings.Email, value: viewModel.userEmail)
+            
+            TitleValueView(title: AppStrings.Gender, value: getLocalString(viewModel.gender))
+            
+            TitleValueView(title: AppStrings.DateOfBirth, value: viewModel.dob)
+            
+            TitleValueView(title: AppStrings.Country, value: getLocalString(viewModel.country))
+            
+            TitleValueView(title: AppStrings.Language, value: viewModel.language)
+        }
+    }
     
-    var buttons: some View{
+    var updateButtonView: some View {
+        TextButton(onClick: {
+            presentEditInfoScreen = true
+        }, text: AppStrings.Update)
+        .fullScreenCover(isPresented: $presentEditInfoScreen, onDismiss: {
+            viewModel.setUp()
+        }, content: {
+            EditUserDetailsScreen()
+        })
+    }
+    
+    var bottomButtons: some View{
         VStack{
-          
             Spacer()
             HStack{
                 TextButton(onClick: {
                     viewModel.currentBottomSheetType = .logout
-                }, text: "Logout", style: .outline, color: .orange)
+                }, text: AppStrings.Logout, style: .outline, color: .orange)
                 TextButton(onClick: {
                     viewModel.currentBottomSheetType = .delete
-                }, text: "DeleteAccount", style: .outline, color: .red)
+                }, text: AppStrings.DeleteAccount, style: .outline, color: .red)
             }
         }
     }
@@ -111,11 +119,11 @@ struct AppearanceSelectionView: View {
     
     var body: some View {
         HStack {
-            Text(getLocalString("Appearance"))
+            Text(AppStrings.Appearance)
             Spacer()
-            Picker(getLocalString("Appearance"), selection: $selectedMode) {
-                Text(getLocalString("Light")).tag(AppearanceMode.light)
-                Text(getLocalString("Dark")).tag(AppearanceMode.dark)
+            Picker(AppStrings.Appearance, selection: $selectedMode) {
+                Text(AppStrings.Light).tag(AppearanceMode.light)
+                Text(AppStrings.Dark).tag(AppearanceMode.dark)
             }
             .pickerStyle(SegmentedPickerStyle())
             .onChange(of: selectedMode) { newValue in

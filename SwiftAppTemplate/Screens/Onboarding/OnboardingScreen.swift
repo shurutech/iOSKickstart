@@ -18,7 +18,7 @@ struct OnboardingScreen: View {
     @State private var selectedTab = 0
 
     var buttonText: LocalizedStringKey {
-        selectedTab == (images.count-1) ? "GetStarted" : "Next"
+        selectedTab == (images.count-1) ? AppStrings.GetStarted : AppStrings.Next
     }
     
     //MARK: - Views
@@ -26,9 +26,10 @@ struct OnboardingScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: "Onboarding"
+                Header(text: AppStrings.Onboarding
                        , hasBackButton: true
-                       ,onBackArrowClick: { onBackPressed() }
+                       ,onBackArrowClick: { 
+                    onBackPressed() }
                 )
                 
                 pageView

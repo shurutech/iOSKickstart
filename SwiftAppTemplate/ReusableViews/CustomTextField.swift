@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomTextField: View {
     @Binding var inputText: String
-    var placeholder: String
+    var placeholder: LocalizedStringKey
     var cornerRadius: CGFloat
     var borderColor: Color
     
