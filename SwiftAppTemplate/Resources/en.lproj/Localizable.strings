@@ -21,11 +21,6 @@
 "Next" = "Next";
 "GetStarted" = "Get Started";
 
-//MARK: - Tabs
-"Home" = "Home";
-"Profile" = "Profile";
-"Messages" = "Messages";
-
 //MARK: - Settings
 "Settings" = "Settings";
 "Name" = "Name";
@@ -67,7 +62,7 @@
 "Details" = "Details";
 
 "Cancel" = "Cancel";
-"YesSure." = "Yes, sure.";
+"YesSure" = "Yes, sure.";
 "Tab" = "Tab";
 
 "Male" = "Male";
@@ -75,9 +70,9 @@
 "Other" = "Other";
 
 "Weather" = "Weather";
-"Summary:" = "Summary:";
-"Temperature:" = "Temperature:";
-"Humidity:" = "Humidity:";
+"Summary" = "Summary";
+"Temperature" = "Temperature";
+"Humidity" = "Humidity";
 
 "TemperatureIs" = "Temperature is";
 "RealFeelIs" = "Real feel is";
@@ -92,3 +87,14 @@
 "Chennai" = "Chennai";
 "Bengaluru" = "Bengaluru";
 "Kolkata" = "Kolkata";
+
+"India" = "India";
+"USA" = "USA";
+"UK" = "UK";
+"France" = "France";
+"China" = "China";
+"UAE" = "UAE";
+
+"Error" = "Error";
+"ErrorMessage" = "An unknown error occurred";
+"OK" = "OK";

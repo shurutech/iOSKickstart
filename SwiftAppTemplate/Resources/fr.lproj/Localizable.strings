@@ -21,11 +21,6 @@
 "Next" = "Suivant";
 "GetStarted" = "Commencer";
 
-//MARK: - Tabs
-"Home" = "Accueil";
-"Profile" = "Profil";
-"Messages" = "Messages";
-
 //MARK: - Settings
 "Settings" = "Paramètres";
 "Name" = "Nom";
@@ -66,7 +61,7 @@
 "Details" = "Détails";
 
 "Cancel" = "Annuler";
-"YesSure." = "Oui, bien sûr.";
+"YesSure" = "Oui, bien sûr.";
 "Tab" = "Onglet";
 
 "Male" = "Homme";
@@ -74,9 +69,9 @@
 "Other" = "Autre";
 
 "Weather" = "Météo";
-"Summary:" = "Résumé :";
-"Temperature:" = "Température :";
-"Humidity:" = "Humidité :";
+"Summary" = "Résumé ";
+"Temperature" = "Température ";
+"Humidity" = "Humidité ";
 
 "TemperatureIs" = "La température est";
 "RealFeelIs" = "La sensation réelle est";
@@ -92,3 +87,13 @@
 "Bengaluru" = "Bengaluru";
 "Kolkata" = "Kolkata";
 
+"India" = "Inde";
+"USA" = "États-Unis";
+"UK" = "Royaume-Uni";
+"France" = "France";
+"China" = "Chine";
+"UAE" = "Émirats Arabes Unis";
+
+"Error" = "Erreur";
+"ErrorMessage" = "Une erreur inconnue s'est produite";
+"OK" = "OK";

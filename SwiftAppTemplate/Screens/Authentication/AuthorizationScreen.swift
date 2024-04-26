@@ -16,42 +16,26 @@ struct AuthorizationScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: "Login/SignUp")
-                emailField
+                Header(text: AppStrings.LoginScreenTitle)
+                
+                CustomTitleTextFieldView(label: AppStrings.Email, placeholder: AppStrings.EmailPlaceHolder, inputText: $email)
                     .padding(.bottom, 20)
+                
                 passwordField
+                
                 Spacer()
-                TextButton(onClick: onLoginButtonClick, text: "Login", color: canLogin() ? .primaryNavyBlue : .gray)
+                TextButton(onClick: onLoginButtonClick, text: AppStrings.Login, color: canLogin() ? .primaryNavyBlue : .gray)
             }
             .padding()
-        }
-        
-        
-    }
-    
-
-    
-    var emailField : some View {
-        VStack(alignment: .leading) {
-            Text(getLocalString("Email"))
-                .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
-            TextField(getLocalString("EmailPlaceHolder"), text: $email)
-                .autocapitalization(.none)
-                .padding(14)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.primaryNavyBlue,  lineWidth: 1)
-                )
         }
     }
     
     var passwordField : some View {
         VStack(alignment: .leading) {
-            Text(getLocalString("Password"))
+            Text(AppStrings.Password)
                 .font(.notoSansMedium16)
                 .foregroundColor(.primaryNavyBlue)
-            SecureField(getLocalString("Password"), text: $password)
+            SecureField(AppStrings.Password, text: $password)
                 .padding(14)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)

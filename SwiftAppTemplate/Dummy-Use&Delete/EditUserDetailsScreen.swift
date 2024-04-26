@@ -29,24 +29,35 @@ struct EditUserDetailsScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Header(text: "UpdateUserDetails", hasBackButton: true, onBackArrowClick: {
+                Header(text: AppStrings.UpdateUserDetails, hasBackButton: true, onBackArrowClick: {
+                    AnalyticsManager.logButtonClickEvent(buttonType: .back, label: "")
                     dismiss()
                 })
                 
-                nameField
+                CustomTitleTextFieldView(label: AppStrings.Name, placeholder: AppStrings.NamePlaceHolder, inputText: $name)
                     .padding(.vertical, 20)
                 
-                emailField
+                CustomTitleTextFieldView(label: AppStrings.Email, placeholder: AppStrings.EmailPlaceHolder, inputText: $email)
                 
-                genderField
+                GenderView(selectedGender: $selectedGender)
                     .padding(.vertical, 20)
                 
-                dobField
+                CustomTitleTextFieldView(label: AppStrings.DateOfBirth, placeholder: AppStrings.DateOfBirthPlaceHolder, inputText: Binding.constant(formatDate(dateOfBirth)))
+                    .onTapGesture {
+                        self.showingDatePicker = true
+                    }
+                    .popover(isPresented: $showingDatePicker, attachmentAnchor: .point(.bottom), arrowEdge: .bottom) {
+                        DatePickerPopover(isPresented: $showingDatePicker, dateSelection: $dateOfBirth, title: AppStrings.DateOfBirthPlaceHolder, doneButtonLabel: AppStrings.Done)
+                    }
+
                 
-                countryField
+                CountryView(selectedCountry: $selectedCountry)
                     .padding(.vertical, 20)
                 
-                languageField
+                CustomTitleTextFieldView(label: AppStrings.SelectLanguage, placeholder: AppStrings.SelectCountryPlaceHolder, inputText: Binding.constant(selectedLanguage))
+                    .onTapGesture {
+                        openDeviceSettings()
+                    }
                 
                 Spacer()
                 
@@ -54,7 +65,7 @@ struct EditUserDetailsScreen: View {
                     if hasEnteredAllDetails() {
                         showConfirmation = true
                     }
-                }, text: "Update")
+                }, text: AppStrings.Update)
             }
             .padding(20)
            
@@ -64,7 +75,7 @@ struct EditUserDetailsScreen: View {
         }
         .onChange(of: isConfirmationGiven) { isConfirmationGiven in
             if(isConfirmationGiven){
-                saveDetails()
+                saveUserDetails(name: name, email: email, dob: dateOfBirth, gender: selectedGender, country: selectedCountry, language: selectedLanguage)
                 dismiss()
             }
         }
@@ -74,118 +85,15 @@ struct EditUserDetailsScreen: View {
      
     }
     
-    private var nameField : some View {
-        VStack(alignment: .leading) {
-            Text(getLocalString("Name"))
-                .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
-            TextField(getLocalString("NamePlaceHolder"), text: $name)
-                .padding(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.primaryNavyBlue,  lineWidth: 1)
-                )
-        }
-    }
-    
-    private var emailField : some View {
-        VStack(alignment: .leading) {
-            Text(getLocalString("Email"))
-                .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
-            TextField(getLocalString("EmailPlaceHolder"), text: $email)
-                .padding(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.primaryNavyBlue,  lineWidth: 1)
-                )
-        }
-    }
-    
-    private var genderField : some View {
-        VStack(alignment: .leading){
-            Text(getLocalString("Gender"))
-                .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
-            Picker(getLocalString("GenderPlaceHolder"), selection: $selectedGender) {
-                ForEach(Gender.allCases) { gender in
-                    Text(getLocalString(gender.rawValue)).tag(gender)
-                }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-        }
-    }
-    
-    private var dobField: some View {
-        VStack(alignment: .leading){
-            
-            Text(getLocalString("DateOfBirth"))
-                .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
-            CustomTextField(inputText: Binding.constant(formatDate(dateOfBirth)), placeholder: getLocalString("DateOfBirthPlaceHolder"), cornerRadius: 10, borderColor: .primaryNavyBlue)
-                .onTapGesture {
-                    self.showingDatePicker = true
-                }
-                .popover(isPresented: $showingDatePicker, attachmentAnchor: .point(.bottom), arrowEdge: .bottom) {
-                    VStack {
-                        DatePicker(
-                            getLocalString("DateOfBirthPlaceHolder"),
-                            selection: $dateOfBirth,
-                            displayedComponents: .date
-                        )
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                        .labelsHidden()
-                        .frame(maxHeight: 400)
-                        
-                        Button(getLocalString("Done")) {
-                            self.showingDatePicker = false
-                        }
-                        .padding()
-                    }
-                    .padding()
-                }
-        }
-    }
-    
-    private var countryField: some View {
-        VStack(alignment: .leading){
-            HStack {
-                Text(getLocalString("SelectCountry"))
-                    .font(.notoSansMedium16)
-                    .foregroundColor(.primaryNavyBlue)
-                Picker(getLocalString("SelectCountryPlaceHolder"), selection: $selectedCountry){
-                    ForEach(Constants.countriesOptions, id: \.self){
-                        country in
-                        Text(country)
-                    }
-                }
-                .pickerStyle(DefaultPickerStyle())
-                
-                Spacer()
-            }
-        }
-    }
-    
-    private var languageField: some View {
-        VStack(alignment: .leading){
-            Text(getLocalString("SelectLanguage"))
-                .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
-            CustomTextField(inputText: Binding.constant(selectedLanguage), placeholder: getLocalString("SelectLanguagePlaceHolder"), cornerRadius: 10, borderColor: .primaryNavyBlue)
-                .onTapGesture {
-                    openDeviceSettings()
-                }
-        }
-    }
     
     private var bottomSheet: some View {
         CustomBottomSheetView(isOpen: $showConfirmation, maxHeight: 250, content: {
-            ConfirmationSheet(isConfirmationGiven: $isConfirmationGiven, isOpen: $showConfirmation, title: "SaveUserInfoBottomSheetTitle", subTitle: "SaveUserInfoBottomSheetSubTitle")
+            ConfirmationSheet(isConfirmationGiven: $isConfirmationGiven, isOpen: $showConfirmation, title: AppStrings.SaveUserInfoBottomSheetTitle, subTitle: AppStrings.SaveUserInfoBottomSheetSubTitle)
         })
     }
     
     private func hasEnteredAllDetails() -> Bool {
-        return !name.isEmpty && !selectedGender.rawValue.isEmpty && !dateOfBirth.description.isEmpty && !selectedCountry.isEmpty && !selectedCountry.isEmpty
+        return !name.isEmpty && !selectedGender.rawValue.isEmpty && !dateOfBirth.description.isEmpty && !selectedCountry.isEmpty && !selectedLanguage.isEmpty
     }
     
     private func initializeDetails() {
@@ -198,10 +106,6 @@ struct EditUserDetailsScreen: View {
         selectedCountry = user?.country ?? ""
     }
     
-    private func saveDetails() {
-        let user = User(name: name, email: email, password: KeyChainStorage.shared.getPassword(), dob: formatDate(dateOfBirth), gender: selectedGender.rawValue, country: selectedCountry, language: selectedLanguage)
-        UserPreferences.shared.saveUser(user: user)
-    }
 }
 
 #Preview {

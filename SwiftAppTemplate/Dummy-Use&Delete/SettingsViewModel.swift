@@ -17,18 +17,18 @@ class SettingsViewModel: ObservableObject{
         var title: LocalizedStringKey {
             switch self {
             case .logout:
-                "LogoutBottomSheetTitle"
+                AppStrings.LogoutBottomSheetTitle
             case .delete:
-                "DeleteAccountBottomSheetTitle"
+                AppStrings.DeleteAccountBottomSheetTitle
             }
         }
         
         var subTitle: LocalizedStringKey {
             switch self {
             case .logout:
-                "LogoutBottomSheetSubTitle"
+                AppStrings.LogoutBottomSheetSubTitle
             case .delete:
-                "DeleteAccountBottomSheetSubTitle"
+                AppStrings.DeleteAccountBottomSheetSubTitle
             }
         }
         

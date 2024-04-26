@@ -21,11 +21,6 @@
 "Next" = "下一步";
 "GetStarted" = "开始使用";
 
-//MARK: - Tabs
-"Home" = "首页";
-"Profile" = "个人资料";
-"Messages" = "消息";
-
 //MARK: - Settings
 "Settings" = "设置";
 "Name" = "姓名";
@@ -66,7 +61,7 @@
 "Details" = "详情";
 
 "Cancel" = "取消";
-"YesSure." = "是的，当然。";
+"YesSure" = "是的，当然。";
 "Tab" = "标签";
 
 "Male" = "男";
@@ -74,9 +69,9 @@
 "Other" = "其他";
 
 "Weather" = "天气";
-"Summary:" = "概述：";
-"Temperature:" = "温度：";
-"Humidity:" = "湿度：";
+"Summary" = "概述";
+"Temperature" = "温度";
+"Humidity" = "湿度";
 
 "TemperatureIs" = "温度是";
 "RealFeelIs" = "体感温度是";
@@ -91,3 +86,14 @@
 "Chennai" = "钦奈";
 "Bengaluru" = "班加罗尔";
 "Kolkata" = "加尔各答";
+
+"India" = "印度";
+"USA" = "美国";
+"UK" = "英国";
+"France" = "法国";
+"China" = "中国";
+"UAE" = "阿拉伯联合酋长国";
+
+"Error" = "错误";
+"ErrorMessage" = "发生未知错误";
+"OK" = "确定";

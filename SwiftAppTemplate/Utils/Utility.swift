@@ -16,6 +16,11 @@ enum Gender: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
+func saveUserDetails(name: String, email: String, dob: Date, gender: Gender, country: String, language: String){
+    let user = User(name: name, email: email, password: KeyChainStorage.shared.getPassword(), dob: formatDate(dob), gender: gender.rawValue, country: country, language: language)
+    UserPreferences.shared.saveUser(user: user)
+}
+
 func removeFocusFromTextField(){
     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
 }

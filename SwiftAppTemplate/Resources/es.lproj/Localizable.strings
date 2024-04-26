@@ -21,11 +21,6 @@
 "Next" = "Siguiente";
 "GetStarted" = "Comenzar";
 
-//MARK: - Tabs
-"Home" = "Inicio";
-"Profile" = "Perfil";
-"Messages" = "Mensajes";
-
 //MARK: - Settings
 "Settings" = "Configuración";
 "Name" = "Nombre";
@@ -66,7 +61,7 @@
 "Details" = "Detalles";
 
 "Cancel" = "Cancelar";
-"YesSure." = "Sí, claro.";
+"YesSure" = "Sí, claro.";
 "Tab" = "Pestaña";
 
 "Male" = "Masculino";
@@ -74,9 +69,9 @@
 "Other" = "Otro";
 
 "Weather" = "Clima";
-"Summary:" = "Resumen:";
-"Temperature:" = "Temperatura:";
-"Humidity:" = "Humedad:";
+"Summary" = "Resumen";
+"Temperature" = "Temperatura";
+"Humidity" = "Humedad";
 
 "TemperatureIs" = "La temperatura es";
 "RealFeelIs" = "La sensación real es";
@@ -91,3 +86,14 @@
 "Chennai" = "Chennai";
 "Bengaluru" = "Bengaluru";
 "Kolkata" = "Kolkata";
+
+"India" = "India";
+"USA" = "Estados Unidos";
+"UK" = "Reino Unido";
+"France" = "Francia";
+"China" = "China";
+"UAE" = "Emiratos Árabes Unidos";
+
+"Error" = "Error";
+"ErrorMessage" = "Ocurrió un error desconocido";
+"OK" = "OK";

@@ -21,11 +21,6 @@
 "Next" = "अगला";
 "GetStarted" = "शुरू करें";
 
-//MARK: - Tabs
-"Home" = "होम";
-"Profile" = "प्रोफ़ाइल";
-"Messages" = "संदेश";
-
 //MARK: - Settings
 "Settings" = "सेटिंग्स";
 "Name" = "नाम";
@@ -67,7 +62,7 @@
 "Details" = "विवरण";
 
 "Cancel" = "रद्द करें";
-"YesSure." = "हाँ, निश्चित";
+"YesSure" = "हाँ, निश्चित";
 "Tab" = "टैब";
 
 "Male" = "पुरुष";
@@ -75,9 +70,9 @@
 "Other" = "अन्य";
 
 "Weather" = "मौसम";
-"Summary:" = "सारांश:";
-"Temperature:" = "तापमान:";
-"Humidity:" = "आर्द्रता:";
+"Summary" = "सारांश";
+"Temperature" = "तापमान";
+"Humidity" = "आर्द्रता";
 
 "TemperatureIs" = "तापमान है";
 "RealFeelIs" = "वास्तविक अनुभव है";
@@ -92,3 +87,14 @@
 "Chennai" = "चेन्नई";
 "Bengaluru" = "बेंगलुरु";
 "Kolkata" = "कोलकाता";
+
+"India" = "भारत";
+"USA" = "अमेरिका";
+"UK" = "यूनाइटेड किंगडम";
+"France" = "फ्रांस";
+"China" = "चीन";
+"UAE" = "संयुक्त अरब अमीरात";
+
+"Error" = "त्रुटि";
+"ErrorMessage" = "एक अज्ञात त्रुटि हुई है";
+"OK" = "ठीक है";
