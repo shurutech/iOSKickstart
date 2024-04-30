@@ -42,6 +42,7 @@ struct SettingsScreen: View {
         .navigationBarBackButtonHidden(true)
         .onAppear{
             viewModel.setUp()
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
         }
     }
     
@@ -63,6 +64,7 @@ struct SettingsScreen: View {
     
     var updateButtonView: some View {
         TextButton(onClick: {
+            AnalyticsManager.logButtonClickEvent(buttonType: .primary, label: "Update")
             presentEditInfoScreen = true
         }, text: AppStrings.Update)
         .fullScreenCover(isPresented: $presentEditInfoScreen, onDismiss: {
@@ -77,9 +79,11 @@ struct SettingsScreen: View {
             Spacer()
             HStack{
                 TextButton(onClick: {
+                    AnalyticsManager.logButtonClickEvent(buttonType: .secondary, label: "Logout")
                     viewModel.currentBottomSheetType = .logout
                 }, text: AppStrings.Logout, style: .outline, color: .orange)
                 TextButton(onClick: {
+                    AnalyticsManager.logButtonClickEvent(buttonType: .secondary, label: "Delete Account")
                     viewModel.currentBottomSheetType = .delete
                 }, text: AppStrings.DeleteAccount, style: .outline, color: .red)
             }

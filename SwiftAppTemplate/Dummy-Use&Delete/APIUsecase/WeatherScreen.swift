@@ -46,6 +46,7 @@ struct WeatherScreen: View {
         .loader(viewModel.isDataLoading)
         .onAppear{
             getWeatherData()
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
         }
     }
     

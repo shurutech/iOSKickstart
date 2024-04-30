@@ -29,6 +29,7 @@ struct OnboardingScreen: View {
                 Header(text: AppStrings.Onboarding
                        , hasBackButton: true
                        ,onBackArrowClick: { 
+                    AnalyticsManager.logButtonClickEvent(buttonType: .back, label: "")
                     onBackPressed() }
                 )
                 
@@ -37,6 +38,9 @@ struct OnboardingScreen: View {
                 TextButton(onClick: onNextButtonPressed, text: buttonText)
             }
             .padding()
+        }
+        .onAppear {
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
         }
     }
     
@@ -61,6 +65,7 @@ struct OnboardingScreen: View {
     //MARK: - Functions
     
    private func onNextButtonPressed() {
+       AnalyticsManager.logButtonClickEvent(buttonType: ButtonType.primary, label:  selectedTab == (images.count-1) ? "Get Started" : "Next" )
         if selectedTab < (images.count-1) {
             withAnimation {
                 selectedTab += 1

@@ -63,7 +63,7 @@ struct RootCoordinator: View {
                 try await rootViewModel.start()
             }
             catch{
-                print("Error while starting app \(error)")
+                ErrorHandler.logError(message: "Error while starting app", error: error)
             }
         }
     }

@@ -19,6 +19,8 @@ enum AppError: Error, Identifiable {
     case genericError
     case unauthorizedAccess
     case failedToLoadToken
+    case tokenStoringFailed
+
 
     var localizedDescription: String {
         switch self {
@@ -38,6 +40,8 @@ enum AppError: Error, Identifiable {
             return "Access denied."
         case .failedToLoadToken:
             return "Something went wrong! Please try again."
+        case .tokenStoringFailed:
+            return "Failed to store token."
         }
     }
 }

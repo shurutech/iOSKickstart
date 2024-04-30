@@ -30,7 +30,7 @@ class NetworkManager {
             return try decoder.decode(T.self, from: data)
         }
         catch {
-            ErrorHandler.recordError(withCustomMessage: "Decoding error (\(api.data.0), \(api.data.1))", error)
+            ErrorHandler.logError(message: "Decoding error (\(api.data.0), \(api.data.1))", error: error)
             throw AppError.decodingError(error)
         }
     }
@@ -40,8 +40,7 @@ class NetworkManager {
         try await withCheckedThrowingContinuation { continuation in
             request(api) { result in
                 if case .failure(let error) = result {
-                    ErrorHandler.recordError(withCustomMessage: "Request failed (\(api.data.0), \(api.data.1))", error)
-                    print("Request failed (\(api.data.0), \(api.data.1)) \(error)")
+                    ErrorHandler.logError(message: "Request failed (\(api.data.0), \(api.data.1))", error: error)
                 }
                 
                 continuation.resume(with: result)
@@ -90,7 +89,9 @@ class NetworkManager {
                     self.handleFailure(error: error, response: response, completion: completion)
                 }
             }
+        #if DEBUG
             .cURLDescription { print("---\n\($0)\n---") }
+        #endif
     }
     
     

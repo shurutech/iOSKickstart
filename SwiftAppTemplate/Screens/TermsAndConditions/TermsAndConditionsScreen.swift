@@ -31,6 +31,9 @@ struct TermsAndConditionsScreen: View {
             }
         }
         .padding()
+        .onAppear {
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+        }
     }
     
     var termsView: some View {
@@ -62,6 +65,7 @@ struct TermsAndConditionsScreen: View {
     
     private func onNextPressed() {
         if(!canGoNext()) {
+            AnalyticsManager.logButtonClickEvent(buttonType: ButtonType.primary, label: "Next")
             return
         }
         onCompleted()

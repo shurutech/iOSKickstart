@@ -24,6 +24,7 @@ class WeatherViewModel : ObservableObject {
                 weatherData.append(data)
             }
             catch {
+                ErrorHandler.logError(message: "No weather data", error: error)
                 apiError = error as? AppError
             }
         }
