@@ -46,16 +46,20 @@ struct SideMenuView: View {
         .edgesIgnoringSafeArea(.all)
         .onAppear{
             screenWidth = UIScreen.main.bounds.width
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+            
         }
     }
     
     var menuItems: some View{
         VStack{
             RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.tab1, imageName: "1.circle.fill", title:getLocalString("Tab")+"1", action: {
+                AnalyticsManager.logButtonClickEvent(buttonType: .text, label: "Tab1")
                 selectedSideMenuTab = .tab1
                 presentSideMenu.toggle()
             })
             RowView(isSelected: $selectedSideMenuTab.wrappedValue == Tab.tab2, imageName: "2.circle.fill", title: getLocalString("Tab")+"2", action: {
+                AnalyticsManager.logButtonClickEvent(buttonType: .text, label: "Tab2")
                 selectedSideMenuTab = .tab2
                 presentSideMenu.toggle()
             })

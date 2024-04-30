@@ -45,6 +45,7 @@ struct MainTabCoordinator: View {
         HStack{
             Button{
                 withAnimation{
+                    AnalyticsManager.logButtonClickEvent(buttonType: .secondary, label: "Side menu")
                     presentSideMenu = true
                 }
             } label: {

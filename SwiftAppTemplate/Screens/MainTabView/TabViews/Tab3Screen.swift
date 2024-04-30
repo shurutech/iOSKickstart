@@ -13,6 +13,9 @@ struct Tab3Screen: View {
             Text(AppStrings.Tab) + Text("3")
             WebScreen() // Use and Delete Screen , This should be removed
         }
+        .onAppear {
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+        }
     }
 }
 

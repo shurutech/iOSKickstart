@@ -73,7 +73,7 @@ class SettingsViewModel: ObservableObject{
         case .delete:
             deleteAccount()
         case nil:
-            print("nil")
+            ErrorHandler.logError(message: "No bottom sheet found", error: AppError.genericError)
         }
     }
     
@@ -83,7 +83,7 @@ class SettingsViewModel: ObservableObject{
                 try await AuthenticationManager.shared.logout()
             }
             catch {
-                ErrorHandler.recordError(withCustomMessage: "Error logging out.", error)
+                ErrorHandler.logError(message: "Error while logging out.", error: error)
             }
         }
     }
@@ -94,7 +94,7 @@ class SettingsViewModel: ObservableObject{
                 try await AuthenticationManager.shared.deleteAccount()
             }
             catch {
-                ErrorHandler.recordError(withCustomMessage: "Error deleting account.", error)
+                ErrorHandler.logError(message: "Error while deleting account.", error: error)
             }
         }
     }

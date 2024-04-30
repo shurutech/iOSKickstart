@@ -56,6 +56,7 @@ struct UserDetailsScreen: View {
             
             TextButton(onClick: {
                 if hasEnteredAllDetails() {
+                    AnalyticsManager.logButtonClickEvent(buttonType: ButtonType.primary, label: "Continue")
                     
                     saveUserDetails(name: name, email: UserPreferences.shared.getUser()?.email ?? "", dob: dateOfBirth, gender: selectedGender, country: selectedCountry, language: selectedLanguage)
                     
@@ -64,6 +65,9 @@ struct UserDetailsScreen: View {
             }, text: AppStrings.Continue)
         }
         .padding(20)
+        .onAppear {
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+        }
         Spacer()
     }
     

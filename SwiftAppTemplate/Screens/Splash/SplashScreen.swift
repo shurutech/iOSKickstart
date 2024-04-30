@@ -19,6 +19,9 @@ struct SplashScreen: View {
             }
             .padding()
         }
+        .onAppear {
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+        }
     }
 }
 

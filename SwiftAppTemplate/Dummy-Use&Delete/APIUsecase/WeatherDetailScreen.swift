@@ -24,7 +24,11 @@ struct WeatherDetailScreen: View {
             infoText(text: AppStrings.YouCanSeeAsFarAs, info: "\(weatherData.visibility/1000) km")
             infoText(text: AppStrings.ThePressureYouBeFeelingIs, info: "\(weatherData.main.pressure) hectopascal")
             Spacer()
-        }.padding()
+        }
+        .padding()
+        .onAppear {
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+        }
     }
     
     func infoText(text: LocalizedStringKey, info: String) -> some View{

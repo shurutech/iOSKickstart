@@ -9,7 +9,12 @@ import SwiftUI
 
 struct Tab5Screen: View {
     var body: some View {
-        Text(AppStrings.Tab) + Text("5")
+        VStack {
+            Text(AppStrings.Tab) + Text("5")
+        }
+        .onAppear {
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+        }
     }
 }
 

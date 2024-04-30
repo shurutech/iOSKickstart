@@ -26,9 +26,10 @@ class AuthenticationManager : ObservableObject {
             KeyChainStorage.shared.setPassword(user.password)
             UserPreferences.shared.isAuthenticated = true
             isAuthenticated = true
+            AnalyticsManager.logCustomEvent(eventType: EventType.login, properties: ["email": user.email])
         }
         else {
-            print("Failed to store token")
+            ErrorHandler.logError(message: "Error while login", error: AppError.tokenStoringFailed)
         }
     }
     

@@ -28,6 +28,9 @@ struct AuthorizationScreen: View {
             }
             .padding()
         }
+        .onAppear {
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+        }
     }
     
     var passwordField : some View {
@@ -59,7 +62,7 @@ struct AuthorizationScreen: View {
                 try await AuthenticationManager.shared.login(user: User(email: email, password: password))
             }
             catch {
-                ErrorHandler.recordError(withCustomMessage: "Error logging in.", error)
+                ErrorHandler.logError(message: "Error while logging in.", error: error)
             }
         }
     }
@@ -68,7 +71,7 @@ struct AuthorizationScreen: View {
         if(!canLogin()){
             return
         }
-        
+        AnalyticsManager.logButtonClickEvent(buttonType: ButtonType.primary, label: "Login")
         login()
     }
     
