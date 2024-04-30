@@ -130,7 +130,7 @@ if [ "$REQUIRE_SIDE_MENU" = "n" ] || [ "$REQUIRE_SIDE_MENU" = "N" ]; then
     fi
     
     #Removing from MainTabCoordinator
-    delete_lines "$pathToMainCoordinator" 12 19 24-28 44-59
+    delete_lines "$pathToMainCoordinator" 12 19 24-28 44-60
     
 elif [ "$REQUIRE_SIDE_MENU" = "y" ] || [ "$REQUIRE_SIDE_MENU" = "Y" ]; then
     echo "Side menu will be added."
@@ -237,13 +237,13 @@ if [ "$REQUIRE_TNC_SCREEN" = "n" ] || [ "$REQUIRE_TNC_SCREEN" = "N" ]; then
     fi
     
     #Removing from root coordinator
-    delete_lines "$pathToRootCoordinator" 14 36 37 40 48 73-75
+    delete_lines "$pathToRootCoordinator" 15 41-42 45 54 82-84
     
     #Removing from RootViewModel
-    delete_lines "$pathToRootViewModel" 16 33 37-42
+    delete_lines "$pathToRootViewModel" 17 35 46-51
     
     #Removing from OnBoardingScreen
-    delete_lines "$pathToOnBoardingScreen" 31 32
+    delete_lines "$pathToOnBoardingScreen" 30-33
 
 elif [ "$REQUIRE_TNC_SCREEN" = "y" ] || [ "$REQUIRE_TNC_SCREEN" = "Y" ]; then
     echo "Terms and conditions screen will be added."
@@ -276,16 +276,16 @@ if [ "$REQUIRE_ONBOARDING_SCREEN" = "n" ] || [ "$REQUIRE_ONBOARDING_SCREEN" = "N
     
     #Removing from rootCoordinator
     if $REMOVE_TNC_SCREEN; then
-        delete_lines "$pathToRootCoordinator" 14 35-37 44 66 68-70
+        delete_lines "$pathToRootCoordinator" 15 40-42 50 77-79
     else
-        delete_lines "$pathToRootCoordinator" 15 38-41 49 76-78
+        delete_lines "$pathToRootCoordinator" 16 43-46 55 85-87
     fi
     
     #Removing from RootViewModel
     if $REMOVE_TNC_SCREEN; then
-        delete_lines "$pathToRootViewModel" 16 31-33 36-41
+        delete_lines "$pathToRootViewModel" 17 34 45-50
     else
-        delete_lines "$pathToRootViewModel" 17 34 44-49
+        delete_lines "$pathToRootViewModel" 18 36 53-58
     fi
     
 
