@@ -13,8 +13,7 @@ class RootViewModel : ObservableObject {
     // MARK: - Attributs
     
     @Published var isAppStartCompleted: Bool = false
-    @Published var isUserDetailsFilled: Bool =
-        UserPreferences.shared.isProfileComplete
+    @Published var isUserDetailsFilled: Bool = UserPreferences.shared.isProfileComplete
     @Published var isTermsAndConditionsAccepted: Bool =  UserPreferences.shared.isPrivacyPolicyAccepted
     @Published private(set) var isOnboardingCompleted: Bool = UserPreferences.shared.isOnboardingCompleted
     
