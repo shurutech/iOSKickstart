@@ -296,6 +296,41 @@ else
 fi
 
 
+# Ask the user to include the Appearance dark/light feature in from settings
+echo -e "\033[31mDo you require dark/light Appearance feature from settings screen? (Yn): \033[0m\c"
+read REQUIRE_APPEARANCE_SCREEN
+REMOVE_APPEARANCE_SCREEN=false
+
+if [ "$REQUIRE_APPEARANCE_SCREEN" = "n" ] || [ "$REQUIRE_APPEARANCE_SCREEN" = "N" ]; then
+    REMOVE_APPEARANCE_SCREEN=true
+#    pathOfAppearancePreferenceFolder="$DESTINATION_PATH/$NEW_APP_NAME/Utils/AppearancePreference"
+    
+#    echo "Removing folder: $pathOfAppearancePreferenceFolder"
+#    rm -rf "$pathOfAppearancePreferenceFolder"
+    
+    pathToSettings="$DESTINATION_PATH/$NEW_APP_NAME/Dummy-Use&Delete/SettingsScreen.swift"
+    pathToLaunchApp="$DESTINATION_PATH/$NEW_APP_NAME/LaunchApp.swift"
+    pathToUserPreferences="$DESTINATION_PATH/$NEW_APP_NAME/Utils/UserPreferences.swift"
+    
+    # Check and update permissions
+    if [ ! -r "$pathToSettings" ] || [ ! -r "$pathToLaunchApp" ]; then
+        chmod +r "$pathToSettings"
+        chmod +r "$pathToLaunchApp"
+    fi
+    
+    delete_lines "$pathToSettings" 16 31-32 121-139
+    
+    delete_lines "$pathToLaunchApp" 17-19
+    
+    delete_lines "$pathToUserPreferences" 24 87-94
+
+elif [ "$REQUIRE_APPEARANCE_SCREEN" = "y" ] || [ "$REQUIRE_APPEARANCE_SCREEN" = "Y" ]; then
+    echo "Appearance screen will be added."
+else
+    echo "Incorrect input given."
+fi
+
+
 
 # Execute Ruby script
 ruby << RUBY_SCRIPT
@@ -306,6 +341,7 @@ new_project_name = "$NEW_APP_NAME"
 remove_side_menu = $REMOVE_SIDE_MENU
 remove_tnc_screen = $REMOVE_TNC_SCREEN
 remove_onboarding_screen = $REMOVE_ONBOARDING_SCREEN
+remove_appearance_feature = $REMOVE_APPEARANCE_SCREEN
 num_tab = $NUM_TABS
 project_path = "#{Dir.pwd}/#{new_project_name}.xcodeproj"
 
@@ -385,6 +421,9 @@ project.targets.each do |target|
     if file_ref.path == 'OnboardingScreen.swift' && remove_onboarding_screen == true
       target.source_build_phase.remove_file_reference(file_ref)
     end
+    if file_ref.path == 'AppearancePreference.swift' && remove_appearance_feature == true
+      target.source_build_phase.remove_file_reference(file_ref)
+    end
     
     (5).downto(num_tab+1).each do |i|
       if file_ref.path == "Tab#{i}Screen.swift"
@@ -409,6 +448,9 @@ project.targets.each do |target|
       end
       if remove_onboarding_screen == true
         remove_group(child, target, "OnboardingScreen.swift")
+      end
+      if remove_appearance_feature == true
+        remove_group(child, target, "AppearancePreference.swift")
       end
     end
   end
