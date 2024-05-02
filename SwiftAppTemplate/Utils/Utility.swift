@@ -16,6 +16,14 @@ enum Gender: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
+var userLanguage: String = {
+    guard let languageCode = Locale.current.languageCode,
+          let languageName = Locale.current.localizedString(forLanguageCode: languageCode) else {
+        return "English"
+    }
+    return languageName
+}()
+
 func saveUserDetails(name: String, email: String, dob: Date, gender: Gender, country: String, language: String){
     let user = User(name: name, email: email, password: KeyChainStorage.shared.getPassword(), dob: formatDate(dob), gender: gender.rawValue, country: country, language: language)
     UserPreferences.shared.saveUser(user: user)

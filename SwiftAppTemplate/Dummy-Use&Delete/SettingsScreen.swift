@@ -58,7 +58,7 @@ struct SettingsScreen: View {
             
             TitleValueView(title: AppStrings.Country, value: getLocalString(viewModel.country))
             
-            TitleValueView(title: AppStrings.Language, value: viewModel.language)
+            TitleValueView(title: AppStrings.Language, value: userLanguage)
         }
     }
     

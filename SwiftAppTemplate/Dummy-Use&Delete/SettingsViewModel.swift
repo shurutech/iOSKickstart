@@ -48,13 +48,6 @@ class SettingsViewModel: ObservableObject{
     @Published var gender: String = ""
     @Published var dob: String = ""
     @Published var country = ""
-    @Published var language: String = {
-        guard let languageCode = Locale.current.languageCode,
-              let languageName = Locale.current.localizedString(forLanguageCode: languageCode) else {
-            return "English"
-        }
-        return languageName
-    }()
     @Published var isConfirmationGiven = false{
         didSet{
             if(isConfirmationGiven){

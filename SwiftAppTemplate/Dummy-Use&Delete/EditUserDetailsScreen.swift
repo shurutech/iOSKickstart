@@ -14,13 +14,6 @@ struct EditUserDetailsScreen: View {
     @State private var dateOfBirth = Date()
     @State private var showingDatePicker = false
     @State private var selectedCountry: String = ""
-    private var selectedLanguage: String {
-           guard let languageCode = Locale.current.languageCode,
-                 let languageName = Locale.current.localizedString(forLanguageCode: languageCode) else {
-               return "English"
-           }
-           return languageName
-       }
     private var startDate = Calendar.current.date(byAdding: .year, value: -100, to: Date()) ?? Date()
     @Environment(\.dismiss) var dismiss
     @State private var showConfirmation: Bool = false
@@ -54,7 +47,7 @@ struct EditUserDetailsScreen: View {
                 CountryView(selectedCountry: $selectedCountry)
                     .padding(.vertical, 20)
                 
-                CustomTitleTextFieldView(label: AppStrings.SelectLanguage, placeholder: AppStrings.SelectCountryPlaceHolder, inputText: Binding.constant(selectedLanguage))
+                CustomTitleTextFieldView(label: AppStrings.SelectLanguage, placeholder: AppStrings.SelectLanguagePlaceHolder, inputText: Binding.constant(userLanguage))
                     .onTapGesture {
                         openDeviceSettings()
                     }
@@ -64,7 +57,7 @@ struct EditUserDetailsScreen: View {
                 TextButton(onClick: {
                     if hasEnteredAllDetails() {
                         AnalyticsManager.logButtonClickEvent(buttonType: .primary, label: "Update")
-                        AnalyticsManager.logCustomEvent(eventType: .updateUser, properties: ["name": name, "email": email, "gender": selectedGender, "country": selectedCountry, "language": selectedLanguage])
+                        AnalyticsManager.logCustomEvent(eventType: .updateUser, properties: ["name": name, "email": email, "gender": selectedGender, "country": selectedCountry, "language": userLanguage])
                         showConfirmation = true
                     }
                 }, text: AppStrings.Update)
@@ -77,7 +70,7 @@ struct EditUserDetailsScreen: View {
         }
         .onChange(of: isConfirmationGiven) { isConfirmationGiven in
             if(isConfirmationGiven){
-                saveUserDetails(name: name, email: email, dob: dateOfBirth, gender: selectedGender, country: selectedCountry, language: selectedLanguage)
+                saveUserDetails(name: name, email: email, dob: dateOfBirth, gender: selectedGender, country: selectedCountry, language: userLanguage)
                 dismiss()
             }
         }
@@ -96,7 +89,7 @@ struct EditUserDetailsScreen: View {
     }
     
     private func hasEnteredAllDetails() -> Bool {
-        return !name.isEmpty && !selectedGender.rawValue.isEmpty && !dateOfBirth.description.isEmpty && !selectedCountry.isEmpty && !selectedLanguage.isEmpty
+        return !name.isEmpty && !selectedGender.rawValue.isEmpty && !dateOfBirth.description.isEmpty && !selectedCountry.isEmpty
     }
     
     private func initializeDetails() {
