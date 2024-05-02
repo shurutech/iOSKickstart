@@ -14,13 +14,6 @@ struct UserDetailsScreen: View {
     @State private var dateOfBirth = Date()
     @State private var showingDatePicker = false
     @State var selectedCountry: String = "India"
-    var selectedLanguage: String {
-           guard let languageCode = Locale.current.languageCode,
-                 let languageName = Locale.current.localizedString(forLanguageCode: languageCode) else {
-               return "English"
-           }
-           return languageName
-       }
     var startDate = Calendar.current.date(byAdding: .year, value: -100, to: Date()) ?? Date()
     let onCompleted: () -> Void
     
@@ -46,7 +39,7 @@ struct UserDetailsScreen: View {
 
             CountryView(selectedCountry: $selectedCountry)
             
-            CustomTitleTextFieldView(label: AppStrings.SelectLanguage, placeholder: AppStrings.SelectCountryPlaceHolder, inputText: Binding.constant(selectedLanguage))
+            CustomTitleTextFieldView(label: AppStrings.SelectLanguage, placeholder: AppStrings.SelectLanguagePlaceHolder, inputText: Binding.constant(userLanguage))
                 .onTapGesture {
                     openDeviceSettings()
                 }
@@ -58,7 +51,7 @@ struct UserDetailsScreen: View {
                 if hasEnteredAllDetails() {
                     AnalyticsManager.logButtonClickEvent(buttonType: ButtonType.primary, label: "Continue")
                     
-                    saveUserDetails(name: name, email: UserPreferences.shared.getUser()?.email ?? "", dob: dateOfBirth, gender: selectedGender, country: selectedCountry, language: selectedLanguage)
+                    saveUserDetails(name: name, email: UserPreferences.shared.getUser()?.email ?? "", dob: dateOfBirth, gender: selectedGender, country: selectedCountry, language: userLanguage)
                     
                     onCompleted()
                 }
