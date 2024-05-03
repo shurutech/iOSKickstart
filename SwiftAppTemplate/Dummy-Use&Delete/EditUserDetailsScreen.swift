@@ -57,7 +57,7 @@ struct EditUserDetailsScreen: View {
                 TextButton(onClick: {
                     if hasEnteredAllDetails() {
                         AnalyticsManager.logButtonClickEvent(buttonType: .primary, label: "Update")
-                        var userProperties = ["name": name, "email": email, "gender": selectedGender, "country": selectedCountry, "language": userLanguage] as [String : Any]
+                        let userProperties = ["name": name, "email": email, "gender": selectedGender, "country": selectedCountry, "language": userLanguage] as [String : Any]
                         AnalyticsManager.logCustomEvent(eventType: .updateUser, properties: userProperties)
                         showConfirmation = true
                     }
