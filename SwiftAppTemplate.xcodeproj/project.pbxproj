@@ -237,7 +237,6 @@
 				6B6775922B4537E30014DAC3 /* Preview Content */,
 				6B67758A2B4537E20014DAC3 /* Products */,
 				6B67758B2B4537E20014DAC3 /* SwiftAppTemplate */,
-				6B83EE942BD8DC310045A32B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -409,13 +408,6 @@
 				6B972C362BC912C70000544F /* UserDetailsScreen.swift */,
 			);
 			path = UserDetails;
-			sourceTree = "<group>";
-		};
-		6B83EE942BD8DC310045A32B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6BB5611A2B4C02A90026382B /* Utils */ = {
