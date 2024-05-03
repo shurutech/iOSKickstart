@@ -32,7 +32,7 @@ fi
 OLD_APP_NAME="SwiftAppTemplate"
 DESTINATION_PATH="$HOME/Desktop/$NEW_APP_NAME"
 # Release tag to clone
-RELEASE_TAG="v0.0.1"
+RELEASE_TAG="v0.0.2"
 
 # Create the destination directory if it doesn't exist
 mkdir -p "$DESTINATION_PATH"
