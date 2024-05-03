@@ -7,7 +7,7 @@ An iOS app boilerplate generator built with SwiftUI. This tool is designed for c
    
 ```
 
- bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/iOSKickstart/v0.0.1/create_swift_app.sh") -i
+ bash <(curl -fsSL "https://raw.githubusercontent.com/shurutech/iOSKickstart/v0.0.2/create_swift_app.sh") -i
     
 ```
 
