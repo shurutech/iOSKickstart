@@ -296,23 +296,60 @@ else
 fi
 
 
+# Ask about localization support
+echo -e "\033[32mApp has additional language support - French, Hindi, Spanish, Chinese, Arabic. \033[0m"
+echo -e "\033[31mDo you want to disable additional language support? (Y/n): \033[0m\c"
+read disable_localization
+if [ "$disable_localization" = "Y" ] || [ "$disable_localization" = "y" ]; then
+    LOCALIZATION_DISABLED=true
+else
+    LOCALIZATION_DISABLED=false
+fi
+
+# Function to disable localization
+function disable_localization() {
+   
+    local app_path="$1"
+    echo "Disabling additional language support..."
+
+    find "$app_path" -name "*.lproj" ! -name "en.lproj" -exec rm -rf {} \;
+    echo "Additional language support has been disabled."
+    
+    pathToUserDetailsScreen="$DESTINATION_PATH/$NEW_APP_NAME/Screens/UserDetails/UserDetailsScreen.swift"
+    pathToEditUserDetailsScreen="$DESTINATION_PATH/$NEW_APP_NAME/Dummy-Use&Delete/EditUserDetailsScreen.swift"
+    pathToSettingsScreen="$DESTINATION_PATH/$NEW_APP_NAME/Dummy-Use&Delete/SettingsScreen.swift"
+
+    # Check and update permissions
+    if [ ! -r "$pathToUserDetailsScreen" ] || [ ! -r "$pathToEditUserDetailsScreen" ] || [ ! -r "$pathToSettingsScreen" ]; then
+        chmod +r "$pathToUserDetailsScreen"
+        chmod +r "$pathToEditUserDetailsScreen"
+        chmod +r "$pathToSettingsScreen"
+    fi
+    
+    delete_lines "$pathToUserDetailsScreen" 42-46
+    
+    delete_lines "$pathToEditUserDetailsScreen" 50-53
+    
+    delete_lines "$pathToSettingsScreen" 61
+}
+
+if $LOCALIZATION_DISABLED; then
+    disable_localization "$DESTINATION_PATH"
+fi
+
+
 # Ask the user to include the Appearance dark/light feature in from settings
-echo -e "\033[31mDo you require dark/light Appearance feature from settings screen? (Yn): \033[0m\c"
+echo -e "\033[31mDo you want to enable the dark/light appearance feature in the settings screen? (Yn): \033[0m\c"
 read REQUIRE_APPEARANCE_SCREEN
 REMOVE_APPEARANCE_SCREEN=false
 
 if [ "$REQUIRE_APPEARANCE_SCREEN" = "n" ] || [ "$REQUIRE_APPEARANCE_SCREEN" = "N" ]; then
     REMOVE_APPEARANCE_SCREEN=true
-#    pathOfAppearancePreferenceFolder="$DESTINATION_PATH/$NEW_APP_NAME/Utils/AppearancePreference"
-    
-#    echo "Removing folder: $pathOfAppearancePreferenceFolder"
-#    rm -rf "$pathOfAppearancePreferenceFolder"
-    
+
     pathToSettings="$DESTINATION_PATH/$NEW_APP_NAME/Dummy-Use&Delete/SettingsScreen.swift"
     pathToLaunchApp="$DESTINATION_PATH/$NEW_APP_NAME/LaunchApp.swift"
     pathToUserPreferences="$DESTINATION_PATH/$NEW_APP_NAME/Utils/UserPreferences.swift"
     
-    # Check and update permissions
     if [ ! -r "$pathToSettings" ] || [ ! -r "$pathToLaunchApp" ]; then
         chmod +r "$pathToSettings"
         chmod +r "$pathToLaunchApp"
@@ -342,6 +379,7 @@ remove_side_menu = $REMOVE_SIDE_MENU
 remove_tnc_screen = $REMOVE_TNC_SCREEN
 remove_onboarding_screen = $REMOVE_ONBOARDING_SCREEN
 remove_appearance_feature = $REMOVE_APPEARANCE_SCREEN
+localization_disabled = $LOCALIZATION_DISABLED
 num_tab = $NUM_TABS
 project_path = "#{Dir.pwd}/#{new_project_name}.xcodeproj"
 
@@ -464,6 +502,20 @@ if remove_tnc_screen == true
 end
 if remove_onboarding_screen == true
   remove_folder(project.main_group, "Onboarding")
+end
+
+if localization_disabled == true
+    locales_to_remove = ["ar", "zh-Hans", "es", "fr", "hi"]
+    
+    locales_to_remove.each do |locale|
+      project.root_object.known_regions.reject! { |region| region == locale }
+
+      project.files.each do |file|
+        if file.path.match(/#{locale}.lproj/)
+          file.remove_from_project
+        end
+      end
+    end
 end
 
 # Rename a specific group (change 'SpecificGroupName' to the name of the group you want to rename)
