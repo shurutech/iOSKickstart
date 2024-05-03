@@ -23,7 +23,8 @@ An iOS app boilerplate generator built with SwiftUI. This tool is designed for c
 
  ## Demo Video
 
-https://github.com/shurutech/ios-swift-template/assets/127201055/c5344d73-d3a3-453f-bf8e-d865e36558bf
+
+https://github.com/shurutech/iOSKickstart/assets/127201055/4eb34ee0-f1c0-419a-8055-61cd0e2902ff
 
 
 <details>
@@ -41,7 +42,8 @@ https://github.com/shurutech/ios-swift-template/assets/127201055/c5344d73-d3a3-4
   After creating your app, follow these steps:
  
  - Open the newly created app in Xcode and check the Configuration Folder. Update the values of variables such as APP_NAME, APP_BUNDLE_ID, and BASE_URL in the Debug and Release configuration files as per your project. Note that different APP_BUNDLE_IDs are used for debug and release modes. To create a single app for both modes, ensure both bundle IDs are the same.
- - Update Launcher icon and Splash logo as per App display. Icons and images can be updated from Assets file located in Resources folder. 
+ - Update Launcher icon and Splash logo as per App display. Icons and images can be updated from Assets file located in Resources folder.
+ - GoogleService-Info.plist Update: v0.0.2 has added feature of crashlytics and analytics with integration of firebase SDK. So you need your registered on firebase. Update values of GoogleService-Info.plist with your app's configuration.
  - Dummy-Use&Delete Folder: This folder contains example files used in TabScreens and for API flow use cases. For networking or API use cases, the Open Weather API is utilized for fetching weather data in the app. Use these files for reference, then delete them later.
 
 </details>  
