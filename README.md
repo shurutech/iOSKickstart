@@ -1,5 +1,5 @@
 # iOSKickstart
-An iOS app boilerplate generator built with SwiftUI. This tool is designed for creating new iOS apps by taking configuration on command line, with a basic screen flows: Splash > Authorization/Login-SignUp > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app code follows the idiomatic swift & iOS guidelines.
+An iOS app boilerplate generator built with SwiftUI. This tool is designed for creating new iOS apps by taking configuration on command line, with a basic screen flows: Splash > Authorization/Login-SignUp > User Details > Terms & Conditions > Onboarding (Carousel) > Main Tab Screens. These screens use dummy content. Adding new screens or deleting existing ones can be easily managed, and the app code follows the idiomatic swift & iOS guidelines.
 
 ## Get Started
 
@@ -17,6 +17,8 @@ An iOS app boilerplate generator built with SwiftUI. This tool is designed for c
      - Whether a sidebar is required (y for yes or n for no)
      - The number of tabs needed in the created app (between 2 to 5)
      - Whether the Terms and Conditions and Onboarding screens are required.
+     - Additional language support(localization) in app is required or not
+     - Dark/light mode feature in settings screen is required or not
    - New app will be created in Desktop folder
 
  ## Demo Video
@@ -43,6 +45,19 @@ https://github.com/shurutech/ios-swift-template/assets/127201055/c5344d73-d3a3-4
  - Dummy-Use&Delete Folder: This folder contains example files used in TabScreens and for API flow use cases. For networking or API use cases, the Open Weather API is utilized for fetching weather data in the app. Use these files for reference, then delete them later.
 
 </details>  
+
+## New Features (v0.0.2)
+
+- **UserDetails Screen**: Added UserDetails screen where users can provide details like name, country, date of birth, gender, language, etc. These details can be modified from the Settings screen.
+
+- **Dark/Light Mode Toggler**: Added a dark/light mode toggler in the Settings screen to allow users to switch between dark and light modes.
+
+- **Localization Support**: Added localization support with Hindi, Spanish, French, Chinese, and Arabic languages.
+
+- **Crashlytics and Analytics with Firebase**: Integrated Crashlytics and analytics support using Firebase for improved app monitoring and analytics.
+
+  > **Note**: Before using Firebase services, you need to create your Firebase iOS app and update the values in the GoogleService-Info.plist file with your Firebase project's configuration.
+
 
 ## Next Steps/Features
 We plan to continue building after the initial release and look forward to the feedback from the community. As of now we have following features planned out for next releases.
