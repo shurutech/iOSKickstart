@@ -57,7 +57,8 @@ struct EditUserDetailsScreen: View {
                 TextButton(onClick: {
                     if hasEnteredAllDetails() {
                         AnalyticsManager.logButtonClickEvent(buttonType: .primary, label: "Update")
-                        AnalyticsManager.logCustomEvent(eventType: .updateUser, properties: ["name": name, "email": email, "gender": selectedGender, "country": selectedCountry, "language": userLanguage])
+                        var userProperties = ["name": name, "email": email, "gender": selectedGender, "country": selectedCountry, "language": userLanguage] as [String : Any]
+                        AnalyticsManager.logCustomEvent(eventType: .updateUser, properties: userProperties)
                         showConfirmation = true
                     }
                 }, text: AppStrings.Update)
@@ -76,7 +77,7 @@ struct EditUserDetailsScreen: View {
         }
         .onAppear(){
             initializeDetails()
-            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self))
         }
      
     }

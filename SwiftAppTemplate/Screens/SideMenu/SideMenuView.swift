@@ -46,7 +46,7 @@ struct SideMenuView: View {
         .edgesIgnoringSafeArea(.all)
         .onAppear{
             screenWidth = UIScreen.main.bounds.width
-            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self))
             
         }
     }

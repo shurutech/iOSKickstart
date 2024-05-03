@@ -42,7 +42,7 @@ struct SettingsScreen: View {
         .navigationBarBackButtonHidden(true)
         .onAppear{
             viewModel.setUp()
-            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self))
         }
     }
     

@@ -14,7 +14,7 @@ struct Tab1Screen: View {
             WeatherScreen()  // Use and Delete Screen , This should be removed
         }
         .onAppear {
-            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self))
         }
     }
 }
