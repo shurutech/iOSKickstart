@@ -31,14 +31,11 @@ fi
 
 OLD_APP_NAME="SwiftAppTemplate"
 DESTINATION_PATH="$HOME/Desktop/$NEW_APP_NAME"
-# Release tag to clone
-RELEASE_TAG="v0.0.2"
 
 # Create the destination directory if it doesn't exist
 mkdir -p "$DESTINATION_PATH"
 
-# Clone the template project at a specific release tag into the destination directory
-git clone --branch "$RELEASE_TAG" --depth 1 https://github.com/shurutech/iOSKickstart.git "$DESTINATION_PATH"
+git clone https://github.com/shurutech/iOSKickstart.git "$DESTINATION_PATH"
 
 # Navigate to the cloned directory
 cd "$DESTINATION_PATH" || exit
