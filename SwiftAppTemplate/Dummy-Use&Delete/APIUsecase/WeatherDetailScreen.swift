@@ -27,7 +27,7 @@ struct WeatherDetailScreen: View {
         }
         .padding()
         .onAppear {
-            AnalyticsManager.logScreenView(screenName: String(describing: Self.self), screenClass: String(describing: Self.self))
+            AnalyticsManager.logScreenView(screenName: String(describing: Self.self))
         }
     }
     
